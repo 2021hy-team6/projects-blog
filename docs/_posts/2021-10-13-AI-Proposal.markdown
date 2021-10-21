@@ -2,6 +2,7 @@
 layout: post
 title:  "AI Project Proposal"
 date:   2021-10-13 00:00:00 +0900
+author: DW Chung
 category: AI
 ---
 
