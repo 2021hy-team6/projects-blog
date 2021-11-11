@@ -4,3 +4,10 @@
 
 layout: home
 ---
+{% for post in site.posts %}
+  <h1><b>{{ post.title }}</b></h1>
+  <time datetime="{{ page.date | date: "%d %B %Y" }}">{{ post.date | date_to_long_string }}</time>
+  <p>{{ post.content }}</p>
+  <hr><br>
+{% endfor %}
+
