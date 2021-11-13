@@ -9,5 +9,6 @@ category: SE
 
 Please refer below for the Work In Progress PDF for the Recycling Assistant.
 
-<object data="{{ site.baseurl }}/files/recycling-assistant-paper-WIP.pdf" width="800" height="800" type='application/pdf'></object>
+**Link to the .tex file:** [recycling-assistant-paper-WIP.tex](https://github.com/2021hy-team6/projects-blog/blob/gh-pages/docs/files/recycling-assistant-paper-WIP.tex)
 
+<object data="{{ site.baseurl }}/files/recycling-assistant-paper-WIP.pdf" width="800" height="800" type='application/pdf'></object>
