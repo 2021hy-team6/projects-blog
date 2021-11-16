@@ -252,8 +252,7 @@ To allow the possibility of expanding and leaving the data accessible, PostgreSQ
 \begin{center}
 SageMaker
 \end{center}
-
-SageMaker is an ML integrated platform provided on the AWS Cloud. One of the advantages to use this software is that it provides the accelerated computing resourses. One of the main concerns about our desired model is that there is a large volume of image dataset to train, and the model should be able to provide the various classification results. Due to the compute power of the AWS service, it takes less time to acquire the trained model.
+SageMaker is an ML integrated platform provided on Amazon Web Services. One of the advantages to use this software is that it provides the accelerated computing resourses. One of the main concerns about our desired model is that there is a large volume of image dataset to train, and the model should be able to provide the various classification results. Due to the compute power of the AWS service, it takes less time to acquire the trained model.
 Another advantage is that the distributed training is available. Because we can choose how much instances to engage in the training,this feature also reduces the total training time through a parallel processing.
 \newline
 \begin{center}
@@ -274,29 +273,45 @@ Mask R-CNN Tensorflow from AWS projects
 Mask R-CNN is based on the Tensorpack project and it's faster than other implementations on the AWS. It's more efficient compared to an equivalent implementation in Keras, in addition to supporting distributed training. More details below.
 \newline
 Link : https://github.com/aws-samples/mask-rcnn-tensorflow
-  
+
+\begin{center}
+OpenCV
+\end{center}
+OpenCV is a software library that focuses on computer vision. It contains support for ML model execution, as well as various image manipulation functions. A lot of the UI features will be implemented via OpenCV (ie. bounding boxes, displaying of results, etc), and the model will be fed to OpenCV's native model handling to return these results. It is available on many platforms and languages, supporting Linux, C++ and Python, amongst many others.
+    
 
 \section{Specifications}
 \subsection{Input Support}
 The application will provide an interface in order to connect to a connected camera, to which a connection will then be established. Appropriate feedback will be outputted in the event that the connection is invalid, or fails.
 \newline
 The camera should be able to output a minimum of a 640x480 resolution, and at a stable framerate above 20 FPS. In addition, RGB color division should be supported. Feedback will be handled through the software side, in order to detect when a connection was not able to be established or an unexpected error occurred.
+\newline
+This specification will support the user holding up an object to the camera - with the connection and handling being done via OpenCV. In the event that the input is of a significantly higher resolution, it may be appropriately downscaled and transformed in order to preserve performance and inference time. 
 
 \subsection{Output Feedback}
-Output feedback will be provided in a couple of different ways. Firstly, a bounding box, or outline will be drawn around each detected object, and appropriately tagged. Secondly, an output will be provided to show what was detected, in addition to its confidence level. Thirdly, an additional output will be displayed to convey the detected category.
+Output feedback will be provided in a couple of different ways. Firstly, a bounding box, or outline will be drawn around each detected object, and appropriately tagged. Secondly, an output will be provided to show what was detected, in addition to its confidence level. Finally, an additional output will be displayed to convey the detected category.
+\newline
+If the application upon startup, or during execution, encounters an exception, the exception will be logged and the user will be notified through the UI. OpenCV will be used in order to display UI elements for the results of the scan, such as the detected category.
+If the object was unable to be scanned, or scanned with a very low confidence rate, the user will be notified through appropriate GUI elements, also drawn through OpenCV.
 
 \subsection{Realtime Analysis}
 The model will be trained with 640x640+ resolution COCO annotated input. Based on the detected category, the application will advise on recycling. Classifications, scores and masks for each detection will be outputted per frame. It includes the request and response time with the precision of milliseconds. 
+\newline
+OpenCV will be used in order to display UI elements such as framerate, classification, score, in addition to drawing the masks/bounding boxes for each detection, alongside inference time.
 
 \subsection{Database and Statistics}
 The application tracks all detected wastes and collects statistics to a database. Each entry will record the timestamp, in addition to the classification, score/confidence, and detected masks for the predictions. Transactions will be committed upon completion of detection, or upon end of the session.
 \newline
 To provide statistics, the application will collect information regarding the number of the predicted frames, as well as the category, and subcategory that it detected - alongside confidence and other scores, such as the inference time.
+\newline
+Each detection will call an SQL query (PostgreSQL) to insert information resulting from each object scan - the category, subcategory, confidence, inference time, etc. This database may be accessed locally by the user or other applications so that the user may see more statistics on their recycling and scanning habits.
 
 \subsection{Focused Feedback}
 At a basic level, the application describes the detected object, object category, confidence scoring, and draws a bounding box, or mask around the object.
 
 For detailed matters, the application provides feedback on how to properly dispose of the object in question. For example, it will notify the user if the detected object is not considered to be recycled, based on the Ministry of Environment's posted guidance (eg. If a cigarette is used for the input, it will reply with a notice that cigarettes are not recyclable. If a plastic bottle is held up, it will tip the user that crushing the bottle may be helpful, or to dispose of the label separately).
+\newline
+For this feedback, OpenCV will be used in order to overlay above feedback (ie. drawing a background, and printing text above). The data for recyclability instructions, or tips will be contained in a JSON file, which will be stored in a map/dictionary and referenced upon successfull object inference.
 \newline
 \newline
 Link: https://me.go.kr/upload/2/editor/202009/18/20200918181806.png
