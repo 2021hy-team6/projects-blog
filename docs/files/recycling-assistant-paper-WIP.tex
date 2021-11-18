@@ -62,14 +62,18 @@ We envision the final product to be largely focused on the real-time detection a
 \subsection{User Interface}
 
 The application should have a clear interface in which the user may hold up the object in question to the camera, and the application should be able to output what type of object it is via, and which category of recycling it belongs in text output, as well as show which item it is referring to through graphics such as bounding boxes.
+\newline
+The user interface should also output additional diagnostics data, such as FPS and inference time, as well as provide some UI element to notify the user that object detection is in progress.
 
 \subsection{Input Support}
 
 The application should be able to support a real-time input of a camera, through either a physically connected input, or a local network camera input.
+In the event that a valid input is not detected, or there is an issue while connecting to the camera, a proper error message should be provided so that the user may attempt to correct for the error.
 
 \subsection{Output Feedback}
 
 The application should be able to draw at the very least, bounding boxes, or correctly segment the object, and output it on the display. This is in order to output appropriate feedback to the user on which item was identified, and how it came to the conclusion it did. Then, it should output the result through text, as well as the confidence level.
+In the event that the model is not confident (low confidence score) in its inference, then it should also provide a UI element that also relays that information to the user.
 
 \subsection{Real Time Analysis}
 
@@ -78,12 +82,14 @@ The application should be able to handle real-time detection, as well as be able
 \subsection{Database and Statistics}
 
 The application should store statistics on the types of objects that were displayed to the camera, to a database. This database may be used in the future in order to draw and show statistics on for example, the most frequently inquired object, and object classification.
+\newline
+Whenever a scan is performed, a picture of the frame should be stored, alongside the confidence, score, category, detected objected, etc.
 
-\subsection{Extra - Focused Feedback}
+\subsection{Recyclability Feedback}
 
-As a stretch goal, the application should be able to add a more specific explanation to each output, educating the user on why a certain object is not recyclable, or why it is not recyclable in its current state.
-
-\newpage
+The application should be able to add a more specific explanation to each output, educating the user on why a certain object is not recyclable, or why it is not recyclable in its current state. For example, if two incompatible objects are detected together, then it should advise the user that "hybrids" are typically not recyclable together.
+\newline
+In addition, it should also output additional general tips for each recycling category, such as "emptying air out of the bottle can conserve space!".
 
 \section{Existing Products}
 
@@ -92,14 +98,20 @@ There are quite a bit of related existing products for this Recycling related AI
 \subsection{Recycle Mate \textsuperscript{[1]}}
 
 An Android/iOS application which scans an item, and identifies which bin it goes into. It is highly localized, directing users into the correct bin to dispose of based on information provided by the local council - thus, it is limited to residents in New South Wales only. It takes a picture of the item, analyzes it and directs the user to which color bin it needs to be disposed of in.
+\newline
+Common user complaints seem to link to its relative inflexibility in usage location (New South Wales Only) in addition to some general clunkiness of it requiring a picture being taken of the object.
 
 \subsection{Bin-e Smart Waste Bin \textsuperscript{[2]}}
 
 A "Smart Recycling Bin", which automatically sorts the inserted item into the correct bin. It uses an inserted camera alongside object recognition in order to correctly sort the item.
+\newline
+The object drops into a chamber in which the object is then detected, compressed, and sorted into one of several recycle bins. 
 
 \subsection{World Waste Platform \textsuperscript{[3]}}
 
-The "Let's Do It AI Project" is a project developed in conjunction with the Let's Do It Foundation and SIFR in partnership with Microsoft. It detects trash, but does not classify between whether or not an item is recyclable, as it is focused on identifying litter.
+The "Let's Do It AI Project" is a project developed in conjunction with the Let's Do It Foundation and SIFR in partnership with Microsoft.
+\newline
+It seems to focus specifically on detecting trash in the wild, and not other types of classification. In other words, it detects trash, but does not classify between whether or not an item falls into one of several categories - rather, it just detects if it sees trash/litter.
 
 \subsection{TrashBot \textsuperscript{[4]}}
 
@@ -121,6 +133,8 @@ A similar approach, the Intuitive AI uses computer vision and machine learning t
 \bibitem{b5} "Greyparrot AI." Greyparrot, https://www.greyparrot.ai/waste-composition-analysis-software
 \bibitem{b5} "Trash-Talking Recycling AI." Nvidia Blogs, https://blogs.nvidia.com/blog/2020/02/03/intuitive-ai-schools-you-on-recycling/
 \end{thebibliography}
+
+\newpage
 
 \section{Initial Thoughts / Project Preamble}
 As mentioned previously, as AI in Environmental related work seems to be of high interest, there are quite a few already existing products and concepts - some of which have already been commercialized or industrialized. As a result, there are a lot of great resources that will be of great use in relation to this project. 
@@ -182,12 +196,16 @@ Lim Hongrok & Back-End &
 
 \newpage
 
-\section{Design \& Architecture (Draft)}
+\section{Design \& Architecture}
 At its core, the application handles a real-time video input through either connected network camera, or a physically connected camera (eg. USB). Through OpenCV, the application then analyzes the input and draws a bounded box around the identified object based on its stored/frozen model. The application then returns feedback through text on whether the object is recyclable, or belongs in general waste. If the item is recyclable, it returns feedback based on which type of recycling it belongs in alongside the confidence level. In the event that the item is unknown, or does not return a valid result, the application will either direct the user to the general waste, or return feedback that the application is unsure.
 
-The model is trained using one of the plentiful provided databases such as the TACO Dataset, as it contains a plethora of COCO formatted annotated images. A real-time detection system such as YOLO or RCNN may be leveraged in order to provide fast detection of objects. As the application needs to keep a reasonable framerate, there will need to be some experimentation between a cross of speed and detection accuracy.
+The model will trained using one of the plentiful provided databases such as the TACO Dataset, as it contains a plethora of COCO formatted annotated images. A real-time detection system such as YOLO or RCNN may be leveraged in order to provide fast detection of objects. As the application needs to keep a reasonable framerate, there will need to be some experimentation between a cross of speed and detection accuracy.
+
+AWS SageMaker may be used in order to train the models, as we want to train a large dataset, and optimize for accuracy as much as possible.
 
 Once the item is identified and classified, the timestamp, identification, classification category will be saved to the local database. Though this database will not be normally accessible to the user, it will be designed in such a way that future feature additions or applications may access it and present data.
+
+OpenCV will be used to handle all input, but also user interface elements, such as providing the result, the special instructions, detected category, etc.
 
 \begin{table}[htbp]
     \begin{tabular}{|p{2cm}|p{2.9cm}|p{2.9cm}|}
@@ -202,12 +220,12 @@ A separate super-category will be maintained alongside additional tips - for exa
 This data will then be outputted to the user, with the object instance being drawn, alongside confidence level, and the detected category, super-category and special instructions, or advice.
 
 \newpage
-\section{Development environment}
+\section{Development Environment}
 \subsection{Platform}
 \begin{center}
     Linux
 \end{center}
-This application will mainly look to support the Linux environment, so that adapting the usage to work on other devices, such as the Raspberry Pi may be possible. However, due to the resource intensive nature of this application, it will mainly focus on supporting the Desktop Linux environment.
+This application will mainly be supported on the Linux environment. In conjunction with our programming language choice, it will be easier to adapt to different devices, such as embedded devices, or servers. However, due to the resource intensive nature of this application, it will mainly focus on supporting on the Desktop Linux environment. 
 
 \subsection{Programming Language}
 \begin{center}
@@ -216,9 +234,11 @@ Python, C++
 As the project has a focus on using OpenCV, and the detection and classification of objects, Python will be used in order to process the dataset. C++ may also be leveraged for the OpenCV aspect, but Python may also be used in its stead, as Python has various accessible libraries which helps manipulate images; Inspection, Labeling, and Augmentation. In addition, there are abundant packages to handle and visualize the image.
 
 \begin{center}
-PostgreSQL
+SQL (PostgreSQL)
 \end{center}
 To allow the possibility of expanding and leaving the data accessible, PostgreSQL will be used in order to record the result. In addition, PostgreSQL provides `Large Object` type that would be more fitting than a normal `BLOB` type in our application.
+\newline
+In addition, storing additional data per inference would also leave additional room for debugging, as we can refer back to the confidence level, categorical data, etc, generated for an image, allowing us to determine for example, why an image or object was unable to be accurately identified.
 
 \subsection{Development Environment}
 \noindent
@@ -238,10 +258,10 @@ To allow the possibility of expanding and leaving the data accessible, PostgreSQ
 \newline
 - 10 Hours (\$0.906 per hour - ml.g4dn.xlarge), 4 Instances
 \newline
-- Estimated ~(10 * 4) * \$0.906 = \$36.24
+- Estimated ~(10*4)*\$0.906 = \$36.24
 \newline
 \newline
-- AWS EFS : \$5
+- AWS Elastic File System : \$5
 \newline
 - 50GB in total, 20\% of which is frequently accessed
 \newline
@@ -253,7 +273,7 @@ To allow the possibility of expanding and leaving the data accessible, PostgreSQ
 SageMaker
 \end{center}
 SageMaker is an ML integrated platform provided on Amazon Web Services. One of the advantages to use this software is that it provides the accelerated computing resourses. One of the main concerns about our desired model is that there is a large volume of image dataset to train, and the model should be able to provide the various classification results. Due to the compute power of the AWS service, it takes less time to acquire the trained model.
-Another advantage is that the distributed training is available. Because we can choose how much instances to engage in the training,this feature also reduces the total training time through a parallel processing.
+Another advantage is that the distributed training is available. Because we can choose how much instances to engage in the training, this would reduce the total training time through a parallel processing.
 \newline
 \begin{center}
 EFS
@@ -263,22 +283,23 @@ EFS(Elastic File System) is a cloud storage service of AWS. While the distribute
 \begin{center}
 Mask R-CNN
 \end{center}
-Mask R-CNN is a DNN that looks to detect segment, or instance objects in an image. Internal components like RPN and FPN can reduce latency. More details below.
+Mask R-CNN is a Convolutional Neural Network that focuses on image segmentation - that is, the segmenting of the object from the rest of the image. Mask R-CNN would be used in our case to be able to draw a mask around the object, rather than just a bounding box. However, it does incur a performance penalty and requires training as well. As a result, SageMaker would be of additional use here, as it excels in parallel data training, which would accelerate model training in this section.
 \newline
 Link : https://arxiv.org/abs/1703.06870
 \newline
 \begin{center}
-Mask R-CNN Tensorflow from AWS projects
+Mask R-CNN Tensorflow
 \end{center}
-Mask R-CNN is based on the Tensorpack project and it's faster than other implementations on the AWS. It's more efficient compared to an equivalent implementation in Keras, in addition to supporting distributed training. More details below.
+Amazon Web Services has made a "performance focused implementation of Mask RCNN based on the Tensorpack implementation" publicly available on GitHub. As we are planning on using SageMaker in order to train our Mask-RCNN model, we are planning to use this specific fork, or implementation of Mask RCNN. 
 \newline
 Link : https://github.com/aws-samples/mask-rcnn-tensorflow
 
 \begin{center}
 OpenCV
 \end{center}
-OpenCV is a software library that focuses on computer vision. It contains support for ML model execution, as well as various image manipulation functions. A lot of the UI features will be implemented via OpenCV (ie. bounding boxes, displaying of results, etc), and the model will be fed to OpenCV's native model handling to return these results. It is available on many platforms and languages, supporting Linux, C++ and Python, amongst many others.
-    
+OpenCV is a software library that focuses on computer vision. It contains support for ML model execution, as well as various image manipulation functions. 
+\newline
+A lot of the UI features will be implemented via OpenCV (ie. bounding boxes, displaying of results, etc), and the model will be fed to OpenCV's native model handling to return these results. It is available on many platforms and languages, supporting Linux, C++ and Python, amongst many others.
 
 \section{Specifications}
 \subsection{Input Support}
