@@ -1,7 +1,16 @@
 title: Projects Blog
 description: >-
   Projects Blog for 2021 HYU Team 6
+
 baseurl: /projects-blog/
 url: 2021hy-team6.github.io/
 
 theme: minima
+
+include:
+  - _pages
+
+header_pages:
+  - _pages/ai.markdown
+  - _pages/se.markdown
+  - _pages/posts.markdown

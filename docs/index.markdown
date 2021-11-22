@@ -1,14 +1,20 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
+layout: page
+title: Team 6 Tech Blog
 ---
-{% for post in site.posts %}
-  <h1><b>{{ post.title }}</b></h1>
-  <h3><u>{{ post.author }}</u></h3>
-  <time datetime="{{ page.date | date: "%d %B %Y" }}">{{ post.date | date_to_long_string }}</time>
-  <p>{{ post.content }}</p>
-  <hr><br>
-{% endfor %}
+
+**Projects**
+
+|Category|Project                |Post                               |
+|--------|-----------------------|-----------------------------------|
+|AI      |sentiment-transcriber  |[link]({{ "/ai/" | relative_url }})|
+|SE      |recycle-assistant      |[link]({{ "/se/" | relative_url }})|
+
+**Members**
+
+|Name       |Organization                                    |Email                |
+|-----------|------------------------------------------------|---------------------|
+|DW Chung   |Dept. of Information Systems, Hanyang University|dwchung@hanyang.ac.kr|
+|Kim Soohyun|Dept. of Information Systems, Hanyang University|soowithwoo@gmail.com |
+|Lim Hongrok|Dept. of Information Systems, Hanyang University|hongrr123@gmail.com  |
 
