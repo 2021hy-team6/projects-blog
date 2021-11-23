@@ -6,6 +6,8 @@ permalink: /ai/
 
 > Sentiment Analysis on Live Transcription
 
+Github Repository : [link](https://github.com/2021hy-team6/nugu-transcribe)
+
 **Members**
 
 * Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
