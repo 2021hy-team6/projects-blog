@@ -72,7 +72,7 @@ appearing words were filtered (ie. "book", "film").
 A max vocabulary count was then implemented, with only the top N words being kept, so as to minimize niche vocabulary affecting the training.
 
 After this initial processing, our wordcloud looked like the following: 
-![wordcloud](https://imgur.com/088b2cab-b509-4380-9e16-d8bd7ae69f3c)
+![wordcloud](https://i.imgur.com/Uxoz9m0.png)
 
 Then came the decision on whether to go with a multiclass classification system, or with a binary system. We tried both, but to explain - 
 Training a multiclass classification system with all 5 classes (1, 2, 3, 4, 5 star reviews) resulted in fairly low validation accuracy (>40% or much lower).
