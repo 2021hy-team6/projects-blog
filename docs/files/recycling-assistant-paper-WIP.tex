@@ -37,94 +37,121 @@ hongrr123@gmail.com}
 \maketitle
 
 \begin{abstract}
-Correctly identifying and categorizing Recyclables can be difficult at times. As such, the Recycling Assistant hopes to be able to both educate, as well as, assist in the matter of correctly identifying which category of recycling an item belongs to, as well as determine if an item cannot be recycled in its current state (and belongs in the general waste).
+Sometimes being able to correctly identify and understand how to recycle certain items can be difficult. As such, the Recycling Assistant hopes to be able to alleviate some of those questions, via the identification and categorization of more common objects.
+
+An observation that can be made is that certain recyclable items are not often disposed of an in efficient manner - such as plastic bottles not being emptied of air - causing a lot of empty volume. As a result, an additional feature that the Recycling Assistant hopes to implement is notifying the user when an item can be disposed of in a more optimal manner.
 \end{abstract}
 
 \begin{IEEEkeywords}
 identification, detection, classification, opencv, recycling, waste
 \end{IEEEkeywords}
 
+\section{Role Assignments}
+Below is the table of external role assignments for this project. Due to the small team size, the development manager position has been split between the software developers, in order to facilitate quick decision making.
+\newline
+
+\begin{table}[htbp!]\normalsize
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{1.7cm}|p{4.5cm}|}
+\hline
+\textbf{Name} & \textbf{\textit{Role}}& \textbf{\textit{Responsibilities}}\\
+\hline
+Doo Woong Chung & Co-Development Manager \& Software Developer &
+Responsible for assigning tasks and identifying the next step in the project/what needs to be done to stay on track, and converting requirements into tangible functionality. In addition, they are also responsible for identifying frameworks that would work best with the project.\newline
+\newline Responsible for implementing software functionality and collaborating with other Software Developers in order to fulfill and push required features. Also responsible for maintaining code and coordinating pull requests.
+\\ \hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+\newpage
+
+\begin{table}[htbp!]\normalsize
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{1.7cm}|p{4.5cm}|}
+\hline
+\textbf{Name} & \textbf{\textit{Role}}& \textbf{\textit{Responsibilities}}\\
+\hline
+Kim Soohyun & User \& Customer &
+Responsible for testing the application, and pointing out any flaws in the application that may requirement improvement.\newline
+\newline In addition, they are responsible for providing feedback in how to improve upon those flaws in order, as well as continuously checking off on whether the requirements are being fulfilled. 
+\newline In the event that the requirements do not seem to be fulfilled at a reasonable level, they are responsible for relaying actionable feedback, and evaluating implemented features.
+\\ \hline
+Lim Hongrok & Co-Development Manager \& Software Developer &
+Responsible for implementing software functionality and collaborating with other Software Developers in order to fulfill and push required features.\newline
+\newline In addition, they are responsible for keeping things grounded, and making sure that the minimum viable product is on track. 
+\newline They are also responsible for communicating with the user and customer to receive and incorporate feedback into the product. Also responsible for maintaining code and coordinating pull requests.
+\\ \hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\newpage
+
 \section{Introduction}
-The Recycling Assistant is a project hoping to identify, and categorize recyclable materials. In this form, we envision the Recycling Assistant to allow the user to hold up an item and display which category of recycling the item belongs in. In the event that the item is not recyclable, it will notify the user accordingly. 
+\subsection{Problem Statement}
+The Recycling Assistant is a project hoping to identify, and categorize recyclable materials. In this form, we envision the Recycling Assistant to allow the user to hold up an item and display which category of recycling the item belongs in. In the event that the item is not recyclable, it will notify the user accordingly. In addition, if there is an additional tip for that category (ie. detected bottle) it will notify the user that an optimal method of recycling the item would be to minimize its volume (crushing it). \\
+Recycling can be a convoluted topic at times, with people sometimes confusing what is recyclable and what is not. As a result, objects are often incorrectly disposed of, with either recyclables ending up in general waste, or objects that aren't recyclable, heading to the recycling plant. For example, hybrid materials is often the case, or confusion regarding the actual material of the object. This leads to only a fraction of the submitted recycled waste actually being able to be recycled, with the remainder heading back to landfills. \\
 
-Recycling can be convoluted at times, with people sometimes confusing what is recyclable and what is not. As a result, objects are often incorrectly disposed of, with either recyclables ending up in general waste, or objects that aren't recyclable, heading to the recycling plant. This leads to only a fraction of the submitted recycled waste actually being able to be recycled, with the remainder heading back to landfills. 
+Our goal is to provide an assistant program that can quickly guide the user to which type of category of recycling the item that the user shows the camera, belongs in - if it is recyclable to begin with. Otherwise, they will be notified that it is more fitted to general waste, or unknown. This would help cut down on the issue of the user either not being sure of whether the object is recyclable and disposing of it in general waste, as well as help provide the user with helpful tips on how to optimize their recycle behavior.\\
+We hope to also be able to incorporate the detection of different materials in a way such that the Assistant can differentiate between several types of material on the same object, and inform the user on why the object would not be recyclable in its current state (ie. Plastic film on a paper box is detected).\\
 
-Our goal is to provide an assistant program that can quickly guide the user to which type of category of recycling the item that the user shows the camera, belongs in - if it is recyclable to begin with. Otherwise, they will be notified that it is more fitted to general waste.
+\subsection{Motivation}
 
-As AI usage in environmentally friendly initiatives is something that is of high interest, waste-related datasets are plentiful. We hope to leverage these datasets in order to train the neural network, while OpenCV will be used to receive and output a processed video stream. A database may also be maintained in order to provide statistics on which types of objects are most frequently identified, which can be linked to by other applications or services. 
+The idea for this project stems from the observation that recycling, while seemingly a simple topic from an external point of view, can get confusing with certain types of objects. For example, as a mixture of different materials are often used in products these days, it is sometimes confusing to tell if an object is really recyclable or not. \\
+In addition, as AI/ML usage in environmentally friendly initiatives is a topic of high interest, waste-related datasets are plentiful, and we hope to leverage these datasets in order to train something that would help users with a quick and easy way to optimize their recycling behavior, while also providing useful statistics.\\
 
-As a stretch goal, we hope to be able to support the detection of different materials in a way such that the Assistant can differentiate between several types of material on the same object, and inform the user on why the object is not recyclable in its current state (ie. Plastic film on a paper box needs to be separated).
-We envision the final product to be largely focused on the real-time detection and classification of objects such that it can differentiate between recyclable categories, as well as differentiate between recyclables and non-recyclables.
+While there are a fair amount of similar, existing projects, they are targeted towards commercial/industrial applications, and are typically not open source. Thus, we were motivated to provide an open-source alternative application for users to be able to run themselves.\\
 
-
-\section{Requirements Analysis}
-
-\subsection{User Interface}
-
-The application should have a clear interface in which the user may hold up the object in question to the camera, and the application should be able to output what type of object it is via, and which category of recycling it belongs in text output, as well as show which item it is referring to through graphics such as bounding boxes.
-\newline
-The user interface should also output additional diagnostics data, such as FPS and inference time, as well as provide some UI element to notify the user that object detection is in progress.
-
-\subsection{Input Support}
-
-The application should be able to support a real-time input of a camera, through either a physically connected input, or a local network camera input.
-In the event that a valid input is not detected, or there is an issue while connecting to the camera, a proper error message should be provided so that the user may attempt to correct for the error.
-
-\subsection{Output Feedback}
-
-The application should be able to draw at the very least, bounding boxes, or correctly segment the object, and output it on the display. This is in order to output appropriate feedback to the user on which item was identified, and how it came to the conclusion it did. Then, it should output the result through text, as well as the confidence level.
-In the event that the model is not confident (low confidence score) in its inference, then it should also provide a UI element that also relays that information to the user.
-
-\subsection{Real Time Analysis}
-
-The application should be able to handle real-time detection, as well as be able to analyze and classify the object based on the input, and  visual output (ie. text and bounding boxes). 
-
-\subsection{Database and Statistics}
-
-The application should store statistics on the types of objects that were displayed to the camera, to a database. This database may be used in the future in order to draw and show statistics on for example, the most frequently inquired object, and object classification.
-\newline
-Whenever a scan is performed, a picture of the frame should be stored, alongside the confidence, score, category, detected objected, etc.
-
-\subsection{Recyclability Feedback}
-
-The application should be able to add a more specific explanation to each output, educating the user on why a certain object is not recyclable, or why it is not recyclable in its current state. For example, if two incompatible objects are detected together, then it should advise the user that "hybrids" are typically not recyclable together.
-\newline
-In addition, it should also output additional general tips for each recycling category, such as "emptying air out of the bottle can conserve space!".
+Our application focuses on providing people with the convenience of being able to quickly consult with the application and receive feedback on how an object is classified in terms of recyclability, in addition to receiving any potential tips to with regards to their disposal patterns. \\
+As a result, we hope that this application will help reduce the problem of incorrectly recycled objects occurring, or recyclable objects being sent to the landfill from a normal consumer user standpoint. \\~\\
 
 \section{Existing Products}
 
-There are quite a bit of related existing products for this Recycling related AI work, as it is a field of interest in both the AI sector, as well as having a positive environmental affect.
+There are quite a bit of related existing products for this Recycling related AI work, as it is a field of interest in both the AI sector, as well as having a positive environmental affect. However, they generally range from proprietary solutions, or projects that are not open source.
+
+In general, they seem to generally be integrated into specialized commercial applications, or proof of concepts.
+\newline
 
 \subsection{Recycle Mate \textsuperscript{[1]}}
 
 An Android/iOS application which scans an item, and identifies which bin it goes into. It is highly localized, directing users into the correct bin to dispose of based on information provided by the local council - thus, it is limited to residents in New South Wales only. It takes a picture of the item, analyzes it and directs the user to which color bin it needs to be disposed of in.
+
+Recycle Mate is not open source, and often receives feedback that the picture system is clunky, as well as unhelpful to residents residing outside of New South Wales.
 \newline
-Common user complaints seem to link to its relative inflexibility in usage location (New South Wales Only) in addition to some general clunkiness of it requiring a picture being taken of the object.
 
 \subsection{Bin-e Smart Waste Bin \textsuperscript{[2]}}
 
-A "Smart Recycling Bin", which automatically sorts the inserted item into the correct bin. It uses an inserted camera alongside object recognition in order to correctly sort the item.
+A "Smart Recycling Bin", which automatically sorts the inserted item into the correct bin. It uses an inserted camera alongside object recognition in order to correctly sort the item. It is described as an "IOT device which sorts and compresses the recyclables automatically, combining unique AI-based object recognition..."
+
+In a sense, Bin-e's system works similarly to what we are looking to achieve, aside from the IOT device integration.
 \newline
-The object drops into a chamber in which the object is then detected, compressed, and sorted into one of several recycle bins. 
 
 \subsection{World Waste Platform \textsuperscript{[3]}}
 
-The "Let's Do It AI Project" is a project developed in conjunction with the Let's Do It Foundation and SIFR in partnership with Microsoft.
+The "Let's Do It AI Project" is a project developed in conjunction with the Let's Do It Foundation and SIFR in partnership with Microsoft. It detects trash, but does not classify between whether or not an item is recyclable, as it is focused purely on identifying litter from the landscape. 
+
+It is open source, and shares information regarding their experience with live image recognition on their blog.
 \newline
-It seems to focus specifically on detecting trash in the wild, and not other types of classification. In other words, it detects trash, but does not classify between whether or not an item falls into one of several categories - rather, it just detects if it sees trash/litter.
 
 \subsection{TrashBot \textsuperscript{[4]}}
 
-An industrial and commercial application of AI trash sorting, TrashBot identifies if an object inserted into the TrashBot Smart Bin is recyclable, compost-able or belongs in the landfill. 
+An industrial and commercial application of AI trash sorting, TrashBot identifies if an object inserted into the TrashBot Smart Bin is recyclable, compost-able or belongs in the landfill. It is intended for use in industrial automation, separating recyclables from landfill waste. 
+\newline
 
 \subsection{Greyparrot \textsuperscript{[5]}}
 
-An industrial approach to waste recognition, Greyparrot uses AI to recognize and classify waste composition at an industrial level - focusing on identifying waste passing through a camera on a conveyor belt.
+Another industrial approach to waste recognition, Greyparrot uses AI to recognize and classify waste composition at an industrial level - focusing on identifying waste passing through a camera on a conveyor belt.
+
+Based on their released media, it appears to be more detailed than TrashBot, with the ability of distinguishing between types of plastic objects (ie. PET bottles vs plastic tubs).
+\newline
 
 \subsection{Intuitive AI \textsuperscript{[6]}}
 
-A similar approach, the Intuitive AI uses computer vision and machine learning to identify the item the user is holding, and tell them which category of recycling it misses - alongside yelling at the user if they recycle incorrectly or praising the user if they do it correctly.
-  
+A similar approach, the Intuitive AI uses computer vision and machine learning to identify the item the user is holding, and tell them which category of recycling it misses - alongside the novelty of yelling at the user if they recycle incorrectly or praising the user if they do it correctly.
+\newline
+
 \begin{thebibliography}{00}
 \bibitem{b1} “Recycle Mate.” Recycle Mate, https://recyclemate.com.au/. 
 \bibitem{b2} “Bin-e Smart Waste Bin.” Bin-e, https://www.bine.world/. 
@@ -132,31 +159,70 @@ A similar approach, the Intuitive AI uses computer vision and machine learning t
 \bibitem{b4} "TrashBot." CleanRobotics, https://cleanrobotics.com/trashbot/
 \bibitem{b5} "Greyparrot AI." Greyparrot, https://www.greyparrot.ai/waste-composition-analysis-software
 \bibitem{b5} "Trash-Talking Recycling AI." Nvidia Blogs, https://blogs.nvidia.com/blog/2020/02/03/intuitive-ai-schools-you-on-recycling/
-\end{thebibliography}
+\end{thebibliography}~\\~\\
+
+\section{Requirements Analysis}
+
+\subsection{Opening the Application}
+Once the application is started, the user should immediately be presented with a button to begin the session. The session presents with a front-view camera view, alongside other UI elements. If it is the user's first time opening the application, or they do not have a valid settings file, they will be directed to the settings menu referred to in requirement B.1 (Settings Menu).
+\newline
+\subsection {Settings}
+
+The application should come with a set of default or baseline settings, that the user should be able to edit via a set settings context menu button.
+\newline
+\begin{itemize}
+\item{\emph{Settings Menu:}}\\
+The settings menu should contain various settings related to the operation of the application, alongside storage of the data, as well as as having the option of disabling certain UI elements. The settings menu should also contain an option for the user to choose a different camera source (ie. manual entry of a network camera).
+\newline
+
+\item{\emph{Loading/Storage of Settings:}}\\
+When the application starts, the settings should automatically be loaded - with the default being loaded if the current saved data is either corrupted, or not set. 
+
+The settings should be appropriately stored, in a manner that best prevents corruption of the settings data should the application exit in an unintended manner while the application is saving the user's settings. The settings should be saved when the user clicks the "Save Settings" button.
+\newline
+\end{itemize}
+
+\subsection{Exiting the Application}
+The user should be able to exit the application normally, with minimal chance of data corruption. The exit should be smooth, and should aim to exit immediately without interruption or confirmation message.
+\newline
+\subsection{Input Support}
+
+The application should be able to support a real-time input of a camera, through either a physically connected input, or a local network camera input. In the event that there is no valid input detected, the user should be notified appropriately.
+\newline
+\subsection{Real Time Analysis}
+
+The application should be able to handle real-time detection, as well as be able to analyze and classify the object based on the input, and  visual output (ie. text and bounding boxes). 
+\newline
+\subsection{Object Detection}
+
+The application, on successful object detection, should draw a bounding box, or mask around the object and output that result. If multiple objects are detected in the frame, they must also be drawn appropriately.
+\newline
+\subsection{Classification/Categorization}
+
+Based on successful object detection, the user should receive textual feedback on what the detected item's classification/categorization is. For example, if the user holds up a plastic bottle, after detection, the screen should output that it is a detected plastic object.
+\newline
+\subsection{Additional Statistics - Detection}
+
+After successful object detection, the application should show the confidence level of the inference, alongside detected objects in order to be able to insert it into the database specified in requirement G.
+\newline
+\subsection{Failure to Classify/Categorize}
+
+In the event that the application is unable to adequately classify/categorize the object (ie. low confidence), it should ignore the object and not cause a detection event.
+\newline
+\subsection{Local Database}
+A local database should be retained in order to save results of previously detected objects. When an object is successfully scanned, data such as the timestamp, detected object, object classification, object categorization, confidence level, picture, should be stored in the database.
+
+This database should also be able to be accessed by the user in order to draw and show additional statistics, such as most frequently detected category, overall confidence level, etc.
+\newline
+\subsection{Statistics}
+Basic statistics should be available, such as the overall detection count, detection count per category, etc. There should also be a separate set of statistics for the session's detections.
+
+A statistics menu should be available via an UI element on the main screen. The user should be able to reset their statistics as well.
+\newline
+\subsection{Educational Feedback}
+The application should be able to add a general explanation to each output, educating the user on why a certain object is not recyclable, or why it is not recyclable in its current state.
 
 \newpage
-
-\section{Initial Thoughts / Project Preamble}
-As mentioned previously, as AI in Environmental related work seems to be of high interest, there are quite a few already existing products and concepts - some of which have already been commercialized or industrialized. As a result, there are a lot of great resources that will be of great use in relation to this project. 
-
-However, there are some slight differences that can be seen from several of the projects. Of these existing projects, the one closest in terms of end-goal is the "Intuitive AI" project - minus the trash-talking aspect. The base goal is the same - the goal of advising and educating the user on how to recycle a certain object.
-
-Our project, however, also has a stretch goal - the hope of being able to differentiate between "hybrid materials" on the same object. For example, if a paper box also has a plastic part - it needs to be separated.
-
-Fortunately, there are a lot of available datasets that we can utilize, such as TACO, which also supports object segmentation and is full of COCO annotated images, as well as many more other datasets pertaining to waste.
-
-Performance and overall efficiency is also of important, as if the application takes an exorbitant amount of resources in order to operate, then it is not exactly "portable". As a result, we're looking at detection systems such as YOLO due to its performance and high resulting framerate.
-
-We'll be looking at using AWS SageMaker in order to train the model. Getting a more tuned model for more optimized inference performance would be helpful in achieving a more performant application, alongside better detection/classification performance.
-
-As for video input, we're looking at using OpenCV as OpenCV specializes in computer vision, as well as natively supporting streaming input. OpenCV can output "blobs", which can then be fed into the model conveniently. In adttion, as OpenCV and other aforementioned  resources all contain a significant amount of documentation, it would ease and help troubleshooting down the road.
-
-An SQL database will also be used in order to store statistics and data of the items (such as classification, confidence, etc), that can later then be used by other applications, or, in the context of development, be used in order to revise and train the model for better accuracy and detection.
-
-Our first proposal of this project was on a "Smart Recycling Bin" - an idea that has a fair amount of already existing implementations. As a result, we revised our project to being used more as a helper tool in places such as the recycling area - however, after visiting the LG showroom, we think that it could also be helpful in personal devices. As a result of this, we ended up thinking more from static image scanning to real-time object detection and analysis.
-
-\newpage
-
 \section{Role Assignment}
 
 \begin{table}[htbp]
@@ -197,15 +263,13 @@ Lim Hongrok & Back-End &
 \newpage
 
 \section{Design \& Architecture}
-At its core, the application handles a real-time video input through either connected network camera, or a physically connected camera (eg. USB). Through OpenCV, the application then analyzes the input and draws a bounded box around the identified object based on its stored/frozen model. The application then returns feedback through text on whether the object is recyclable, or belongs in general waste. If the item is recyclable, it returns feedback based on which type of recycling it belongs in alongside the confidence level. In the event that the item is unknown, or does not return a valid result, the application will either direct the user to the general waste, or return feedback that the application is unsure.
+At its core, the application handles a real-time video input through either connected network camera, or a physically connected camera (eg. USB). Through OpenCV, the application then analyzes the input and draws a bounded box around the identified object based on its stored/frozen model.\\
 
-The model will trained using one of the plentiful provided databases such as the TACO Dataset, as it contains a plethora of COCO formatted annotated images. A real-time detection system such as YOLO or RCNN may be leveraged in order to provide fast detection of objects. As the application needs to keep a reasonable framerate, there will need to be some experimentation between a cross of speed and detection accuracy.
+The application then returns feedback through text on whether the object is recyclable, or belongs in general waste. If the item is recyclable, it returns feedback based on which type of recycling it belongs in alongside the confidence level. In the event that the item is unknown, or does not return a valid result, the application will either direct the user to the general waste, or return feedback that the application is unsure.\\
 
-AWS SageMaker may be used in order to train the models, as we want to train a large dataset, and optimize for accuracy as much as possible.
+The model is trained using one of the plentiful provided databases such as the TACO Dataset, as it contains a plethora of COCO formatted annotated images. Although we were initially considering a YOLO or YOLO derivative in order to speedy detection, the World Waste Platform technical blog mentioned that they also tested out a YOLO implementation, but decided to go with R-CNN due to the difference in expected accuracy.\\
 
 Once the item is identified and classified, the timestamp, identification, classification category will be saved to the local database. Though this database will not be normally accessible to the user, it will be designed in such a way that future feature additions or applications may access it and present data.
-
-OpenCV will be used to handle all input, but also user interface elements, such as providing the result, the special instructions, detected category, etc.
 
 \begin{table}[htbp]
     \begin{tabular}{|p{2cm}|p{2.9cm}|p{2.9cm}|}
@@ -215,129 +279,354 @@ OpenCV will be used to handle all input, but also user interface elements, such 
     \end{tabular}
 \end{table}
 
-A separate super-category will be maintained alongside additional tips - for example, to notify the user that it is recommended to peel off the bottle label in the event that a plastic bottle is detected. In essence, the model will output the general object category of the detected object, which will then feed into a loaded map that contains special instruction for each super-category.
+A separate super-category will be maintained alongside additional tips - for example, to notify the user that it is recommended to peel off the bottle label in the event that a plastic bottle is detected. In essence, the model will output the general object category of the detected object, which will then feed into a loaded map that contains special instruction for each super-category.\\
 
 This data will then be outputted to the user, with the object instance being drawn, alongside confidence level, and the detected category, super-category and special instructions, or advice.
 
 \newpage
 \section{Development Environment}
-\subsection{Platform}
-\begin{center}
-    Linux
-\end{center}
-This application will mainly be supported on the Linux environment. In conjunction with our programming language choice, it will be easier to adapt to different devices, such as embedded devices, or servers. However, due to the resource intensive nature of this application, it will mainly focus on supporting on the Desktop Linux environment. 
+\subsection{OS}
+We will mainly be looking to use the Linux platform as the "base" platform, as it is more convenient to develop for, but we will also look to maximize compatibility with other operating systems so that it may be easily ported, if required.
+\newline
+\subsection{Services}
+For services, we are looking to use AWS SageMaker and AWS Elastic File System in order to optimize our training of the model. Outside of this, we are not looking to offload any computation to the Cloud in terms of the application relying on connection to a VPS instance for example.
+\newline
 
-\subsection{Programming Language}
-\begin{center}
-Python, C++
-\end{center}
-As the project has a focus on using OpenCV, and the detection and classification of objects, Python will be used in order to process the dataset. C++ may also be leveraged for the OpenCV aspect, but Python may also be used in its stead, as Python has various accessible libraries which helps manipulate images; Inspection, Labeling, and Augmentation. In addition, there are abundant packages to handle and visualize the image.
+\subsection{Languages}
+In this application, C++ may act as the "core" language, while Python will be used in order to handle the dataset, and train the model.\\
+\begin{quote}
+\subsubsection{C++}~\\
+We are targeting usage of the language C++ due to developer familiarity, as well familiarity with libraries that may be leveraged for this project. 
+As mentioned previously, C++ has a fair amount of available libraries and frameworks that would help conserve time when implementing features into the product.
+\end{quote}
+\begin{quote}
+\subsubsection{Python}~\\
+As the project has a focus on using models, and the detection and classification of objects, Python will be used in order to process the dataset, as it has a myriad of tools that can handle that task easily, such as Pandas.
+\end{quote}
+\begin{quote}
+\subsubsection{SQL - PostgreSQL}~\\
+To allow the possibility of expansion and to also leave the data accessible, while offloading the data to the disk rather than the memory, PostgreSQL will be used in order to store data from the detections.
+\end{quote}~\\
 
-\begin{center}
-SQL (PostgreSQL)
-\end{center}
-To allow the possibility of expanding and leaving the data accessible, PostgreSQL will be used in order to record the result. In addition, PostgreSQL provides `Large Object` type that would be more fitting than a normal `BLOB` type in our application.
-\newline
-In addition, storing additional data per inference would also leave additional room for debugging, as we can refer back to the confidence level, categorical data, etc, generated for an image, allowing us to determine for example, why an image or object was unable to be accurately identified.
+\subsection{Environment Resources}
+Though each of our members have different development environments, an example of one of our software development members' development environment would be the following:
 
-\subsection{Development Environment}
-\noindent
-- Ubuntu 20.04.3
-\newline
-- 2 Cores 4 Threads @ 1.90Ghz
-\newline
-- 12GB DDR4 RAM
-\newline
-- GitHub (Version Control)
-\newline
-- AWS SageMaker (Model Training)
-  
-\subsection{Cost Estimation}
-\noindent
-- AWS SageMaker
-\newline
-- 10 Hours (\$0.906 per hour - ml.g4dn.xlarge), 4 Instances
-\newline
-- Estimated ~(10*4)*\$0.906 = \$36.24
-\newline
-\newline
-- AWS Elastic File System : \$5
-\newline
-- 50GB in total, 20\% of which is frequently accessed
-\newline
-- Estimated ~\$4.39 per month
-  
-\subsection{Software In Use}
+\textbf{Allocated VM Resources:}
+\begin{itemize}
+\item VM OS: Ubuntu 18.04
+\begin{itemize}
+\item CPU: 4 Cores @ 3.8GHz
+\item RAM: 8GB DDR4-3200mhz
+\item Storage: 150GB NVMe PCIe3.0x4
+\item Display: 256MB - VBoxSVGA
+\item Network: Intel 1000 MT Desktop (NAT)
+\end{itemize}
+\end{itemize}~\\
 
-\begin{center}
-SageMaker
-\end{center}
-SageMaker is an ML integrated platform provided on Amazon Web Services. One of the advantages to use this software is that it provides the accelerated computing resourses. One of the main concerns about our desired model is that there is a large volume of image dataset to train, and the model should be able to provide the various classification results. Due to the compute power of the AWS service, it takes less time to acquire the trained model.
-Another advantage is that the distributed training is available. Because we can choose how much instances to engage in the training, this would reduce the total training time through a parallel processing.
+\textbf{Model Training Environment:}
+\begin{itemize}
+\item Computation: 1 GPU, 4 vCPUs
+\item RAM: 16GB
+\item Storage: 125GB
+\item Networking: 25Gbps Peak
+\item EBS Bandwidth: 3.5Gbps Peak
+\end{itemize}~\\
+
+\subsection{Version Control}
+We will be using GitHub in order to handle versioning for the project, as it ties in well with GitHub's provision of services such as GitHub Pages, as well as some of our members already having a GitHub account.
+
+Due to some of our members' relative unfamiliarity with the Git flow, GitKraken may be used as a convenient GUI'd Git tool to help visualize Git actions, and avoid possible Git-related issues.
 \newline
-\begin{center}
-EFS
-\end{center}
+
+\subsection{Estimated Costs}
+As the program is mainly built to be run locally, targeting Linux as a base platform, there are virtually no costs associated with the majority of the program, outside of model training-related costs (SageMaker \& EFS).~\\
+
+\textbf{AWS SageMaker:}
+\begin{itemize}
+\item Hours: ~10 @ \$0.906 per hour
+\item Instance: ml.g4dn.xlarge, 4 Instances
+\item Estimated: ~(10 * 4) * \$0.906 = \$36.24
+\end{itemize}
+
+\textbf{AWS Elastic File System:}
+\begin{itemize}
+\item 50GB in total, 20\% of which is frequently accessed
+\item Estimated ~\$4.39 per month
+\end{itemize}~\\
+
+\subsection{Services In Use}
+\subsubsection{AWS SageMaker}~\\
+SageMaker is an ML integrated platform provided on Amazon Web Services. One of the advantages to use this software is that it provides the accelerated computing resourses. One of the main concerns about our desired model is that there is a large volume of image dataset to train, and the model should be able to provide the various classification results. Due to the compute power of the AWS service, it takes less time to acquire the trained model.\\
+Another advantage is that the distributed training is available. Because we can choose how much instances to engage in the training,this feature also reduces the total training time through a parallel processing.
+\newline
+\subsubsection{AWS Elastic File System}~\\
 EFS(Elastic File System) is a cloud storage service of AWS. While the distributed training executes on the cloud, all datasets should be mounted on each instance and be consumed without any concurrent problem, which EFS supports. In addition, its price policy is the number of reading and writing data. As a result, we can efficiently reduce the cost because the total size of required images, including training, validation and augmentation, is quite large, while most of the data remains in "cold storage" during the training.
 \newline
-\begin{center}
-Mask R-CNN
-\end{center}
-Mask R-CNN is a Convolutional Neural Network that focuses on image segmentation - that is, the segmenting of the object from the rest of the image. Mask R-CNN would be used in our case to be able to draw a mask around the object, rather than just a bounding box. However, it does incur a performance penalty and requires training as well. As a result, SageMaker would be of additional use here, as it excels in parallel data training, which would accelerate model training in this section.
-\newline
-Link : https://arxiv.org/abs/1703.06870
-\newline
-\begin{center}
-Mask R-CNN Tensorflow
-\end{center}
-Amazon Web Services has made a "performance focused implementation of Mask RCNN based on the Tensorpack implementation" publicly available on GitHub. As we are planning on using SageMaker in order to train our Mask-RCNN model, we are planning to use this specific fork, or implementation of Mask RCNN. 
-\newline
-Link : https://github.com/aws-samples/mask-rcnn-tensorflow
 
-\begin{center}
-OpenCV
-\end{center}
-OpenCV is a software library that focuses on computer vision. It contains support for ML model execution, as well as various image manipulation functions. 
-\newline
-A lot of the UI features will be implemented via OpenCV (ie. bounding boxes, displaying of results, etc), and the model will be fed to OpenCV's native model handling to return these results. It is available on many platforms and languages, supporting Linux, C++ and Python, amongst many others.
+\subsection{Software In Use}
+We will be looking at leveraging various, and multiple frameworks for this project.\\
 
+\begin{table}[htbp!]\normalsize
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{4.7cm}|}
+\hline
+\textbf{Software} & \textbf{\textit{License}}& \textbf{\textit{Description \& Explanation}}\\
+\hline
+Mask-RCNN Tensorflow\textsuperscript{1} & Apache-2.0 &
+Mask R-CNN is an object recognition algorithm with extra data points allowing the segmenting and masking of detected objects. It uses FPNs, or Feature Pyramid Networks in order to improve accuracy and a Region Proposal Network (RPN) in order to reduce inference time. \newline
+
+This specific fork or implementation of Mask-RCNN is from Amazon Web Services, with a focus on performance. This will allow us to be able to also segment the detected objects from the frame.
+\\ \hline
+OpenCV \textsuperscript{2} & Apache-2.0 &
+OpenCV is a software library that focuses on computer vision. It contains support for ML model execution, as well as various image manipulation functions.\newline
+
+A lot of the internal UI features will be implemented via OpenCV (ie. bounding boxes, displaying of results, etc), and the model will be fed to OpenCV's native model handling to return these results. It is available on many platforms and languages, supporting Linux, C++ and Python, amongst many others.
+\\ \hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\begin{table}[htbp!]\normalsize
+\begin{center}
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{4.7cm}|}
+\hline
+\textbf{Software} & \textbf{\textit{License}}& \textbf{\textit{Description \& Explanation}}\\
+\hline
+Qt \textsuperscript{3} & GPL, LGPLv3 &
+Qt is described as a "cross-platform application development framework for desktop, embedded and mobile". It is written in C++, and handles C++ code. \newline\newline
+Qt will be used in order to implement UI elements in the application. Qt comes complete with a UI designing software, to help the UI building process flow more smoothly.
+\\ \hline
+PostgreSQL \textsuperscript{4} & PostgreSQL License (Liberal) &
+PostgreSQL is an open-source database management system. It is an object-relational database management system, that comes with built-in C language bindings.\newline\newline
+PostgreSQL would mainly be used for our database operations - for the storage of both general and debugging data related to user scans.
+\\ \hline
+libpqxx \textsuperscript{5} & BSD-3 &
+libpqxx is the C++ API for PostgreSQL, as a convenient library in order to be able to use C++ in order to establish a database connection instead of the built-in C language bindings.\newline\newline
+It is a C++ wrapper for the built-in wrapper for the PostgreSQL standard C bindings (libpq) - it will be used in order to insert data into the PostgreSQL database.
+\\ \hline
+rapidjson \textsuperscript{6} & MIT/JSON License &
+rapidjson is a fast and efficient JSON parser written in C++, with two main styles of parsing/generation - SAX/DOM.\newline\newline
+rapidjson will be used in order to handle (read/write) settings and configuration, which will be stored in the JSON format.
+\\ \hline
+\end{tabular}
+\label{tab1}
+\end{center}
+\end{table}
+
+\begin{thebibliography}{00}
+\bibitem{b1} “Mask-RCNN-Tensorflow” AWS, https://github.com/aws-samples/mask-rcnn-tensorflow/
+\bibitem{b2} “OpenCV” OpenCV, https://github.com/opencv/opencv/
+\bibitem{b3} "Qt" Qt, https://www.qt.io/
+\bibitem{b4} "PostgreSQL" PostgreSQL, https://www.postgresql.org/
+\bibitem{b5} "libpqxx" jtv, https://github.com/jtv/libpqxx/
+\bibitem{b6} "rapidjson" Tencent, https://github.com/Tencent/rapidjson/
+\end{thebibliography}~\\~\\
+
+\subsection{Styling Guidelines}
+\subsubsection{CppCoreGuidelines}
+\begin{itemize}
+\item https://isocpp.github.io/CppCoreGuidelines/
+\end{itemize}~\\
+For C++, we will be referring to the CppCoreGuidelines in order to stick to a consistent coding style, as well as avoiding unintended consequences that may arise from, for example, improper pointer handling, as well as avoiding things that may cause bugs that are harder to debug, such as the use of macros.
+\newline
+\subsubsection{Clang-Tidy}
+\begin{itemize}
+\item https://clang.llvm.org/extra/clang-tidy/
+\end{itemize}~\\
+To check whether the code doesn't stray too far from the core guidelines, Clang-Tidy with the CppCoreGuidelines flag will be used to ease the process.~\\
+
+\subsection{Dataset}
+\subsubsection{TACO}
+\begin{itemize}
+\item http://tacodataset.org/
+\item https://github.com/pedropro/TACO (MIT License)
+\item https://arxiv.org/abs/2003.06975
+\end{itemize}~\\
+We are mainly looking to use the TACO dataset, as it is a specialized dataset on the topic of waste/litter, with segmentation support, and a large set of COCO annotated images. \newline
+However, we will be altering the training data slightly, due to the TACO dataset also containing categories and images that are not completely applicable to our targeted usage - such as cigarette detection.
+\newline\newline
+The TACO dataset also contains enough categories that we feel would cover general use, such as plastic film, plastic bottle, cans, glass, etc - which is commonly seen waste that falls into recycling categories.
+\newline
+In addition, as it contains segmentation support, we would not need to separately perform segmentation masking - which would save us a lot of time compared to manually annotating and segmenting several hundreds to thousands of images, and allow us to use it directly with Mask R-CNN.
+
+\newpage
 \section{Specifications}
-\subsection{Input Support}
-The application will provide an interface in order to connect to a connected camera, to which a connection will then be established. Appropriate feedback will be outputted in the event that the connection is invalid, or fails.
-\newline
-The camera should be able to output a minimum of a 640x480 resolution, and at a stable framerate above 20 FPS. In addition, RGB color division should be supported. Feedback will be handled through the software side, in order to detect when a connection was not able to be established or an unexpected error occurred.
-\newline
-This specification will support the user holding up an object to the camera - with the connection and handling being done via OpenCV. In the event that the input is of a significantly higher resolution, it may be appropriately downscaled and transformed in order to preserve performance and inference time. 
+\subsection{Initial Page}
+When the user first runs the application, their settings/config file will be read, and then they will be directed an initial starting screen. As the application will be run locally, there will be no login or registration required. The window size should be fixed. ~\\
 
-\subsection{Output Feedback}
-Output feedback will be provided in a couple of different ways. Firstly, a bounding box, or outline will be drawn around each detected object, and appropriately tagged. Secondly, an output will be provided to show what was detected, in addition to its confidence level. Finally, an additional output will be displayed to convey the detected category.
-\newline
-If the application upon startup, or during execution, encounters an exception, the exception will be logged and the user will be notified through the UI. OpenCV will be used in order to display UI elements for the results of the scan, such as the detected category.
-If the object was unable to be scanned, or scanned with a very low confidence rate, the user will be notified through appropriate GUI elements, also drawn through OpenCV.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/start.eps}
+    \caption{Initial Starting Page}
+\end{figure}~\\
 
-\subsection{Realtime Analysis}
-The model will be trained with 640x640+ resolution COCO annotated input. Based on the detected category, the application will advise on recycling. Classifications, scores and masks for each detection will be outputted per frame. It includes the request and response time with the precision of milliseconds. 
-\newline
-OpenCV will be used in order to display UI elements such as framerate, classification, score, in addition to drawing the masks/bounding boxes for each detection, alongside inference time.
+Once the "Start" button is clicked, they will be brought to the next menu. However, if the config file is valid (ie. does not fail the checks outlined in specification C: Reading the Configuration File), and the "skip\_start" settings flag is enabled, the application will skip directly to the scanning window, skipping the appearance of specification A: Initial Page.~\\
 
-\subsection{Database and Statistics}
-The application tracks all detected wastes and collects statistics to a database. Each entry will record the timestamp, in addition to the classification, score/confidence, and detected masks for the predictions. Transactions will be committed upon completion of detection, or upon end of the session.
-\newline
-To provide statistics, the application will collect information regarding the number of the predicted frames, as well as the category, and subcategory that it detected - alongside confidence and other scores, such as the inference time.
-\newline
-Each detection will call an SQL query (PostgreSQL) to insert information resulting from each object scan - the category, subcategory, confidence, inference time, etc. This database may be accessed locally by the user or other applications so that the user may see more statistics on their recycling and scanning habits.
+\subsection{Config File}
+Upon application start, the settings/config file will be read. The settings/config file will read for and expect the following JSON values:~\\
 
-\subsection{Focused Feedback}
-At a basic level, the application describes the detected object, object category, confidence scoring, and draws a bounding box, or mask around the object.
+\begin{itemize}
+\item default\_source\_index: int
+\item default\_source\_index: string
+\item default\_source\_type: int
+\item skip\_start: bool
+\item model\_source: string
+\item db\_usage: bool
+\item db\_conn\_string: string
+\item db\_user: string
+\item db\_pw: string
+\end{itemize}~\\
 
-For detailed matters, the application provides feedback on how to properly dispose of the object in question. For example, it will notify the user if the detected object is not considered to be recycled, based on the Ministry of Environment's posted guidance (eg. If a cigarette is used for the input, it will reply with a notice that cigarettes are not recyclable. If a plastic bottle is held up, it will tip the user that crushing the bottle may be helpful, or to dispose of the label separately).
-\newline
-For this feedback, OpenCV will be used in order to overlay above feedback (ie. drawing a background, and printing text above). The data for recyclability instructions, or tips will be contained in a JSON file, which will be stored in a map/dictionary and referenced upon successfull object inference.
-\newline
-\newline
-Link: https://me.go.kr/upload/2/editor/202009/18/20200918181806.png
-\newline
-Link: https://me.go.kr/upload/2/editor/202009/18/20200918181814.png
+This will then be saved in memory in the form of an unordered\_map, for internal reference within the application.~\\
 
+\subsection{Reading the Configuration File}
+The settings/config file will be stored in the directory under the name "settings.json", in the JSON format. The conditions that would cause an error are the following:~\\
+
+\begin{quote}
+\subsubsection{File Not Found}~\\
+If the configuration file is not in the directory, or if it has not been generated yet (ie. user's first launch).
+\end{quote}
+
+\begin{quote}
+\subsubsection{JSON Initial Document Parse Failure}~\\
+If the JSON parser encounters an issue while reading the file due to it being in an invalid JSON format, or corrupted.
+\end{quote}
+
+\begin{quote}
+\subsubsection{JSON Validity Failure}~\\
+If the JSON file is empty (typically resulting from unexpected closing/crashing while writing to the file).
+\end{quote}
+
+\begin{quote}
+\subsubsection{JSON Objects Failure}~\\
+If the JSON does not contain the required objects, or has an unexpectedly incorrect type.
+\end{quote}
+
+\begin{quote}
+\subsubsection{JSON Value Failure}~\\
+If the JSON does not contain valid values in its objects. The validation process of the JSON Values will be explained in a later specification.
+\end{quote}~\\
+
+In the case of an error, the user will be directed to the Settings Not Found menu, in specification C: Settings Not Found.~\\
+
+\subsection{Settings Not Found}
+If the application does not detect the settings/config file, or if it is either corrupted or unreadable (more details in specification C: Reading the Configuration File), the user will be notified that the application will launch with default parameters, while also being notified that it will generate a new Config file. This means that any existing file will be overwritten and regenerated with default values.~\\
+
+If the user accepts (OK button), the application will proceed with the creation of a new Config file, while the user may also reject (Cancel button) to return to the previous screen, so that they may either try to manually adjust the JSON file, or save the parameter values before the file is overwritten.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/settings_alert.eps}
+    \caption{Settings Not Found}
+\end{figure}~\\
+
+\newpage
+\subsection{Failure to Connect}
+In the event that the application was not able to connect to the camera (usually occurring if the camera is not connected or offline), the user will be notified with a message box stating that there was an issue connecting to the camera.
+
+They will see an empty detection screen, but will be able to access the settings menu in the top left corner (status bar). This will allow the user to adjust their set source.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/camera_source_error.eps}
+    \caption{Dialog Window Notification}
+\end{figure}~\\
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/camera_source_error_2.eps}
+    \caption{After Dismissing Dialog Window Notification}
+
+\end{figure}~\\
+
+\newpage
+\subsection{Detection/Scanner Screen}
+The detection/scanner element takes up the vast majority of the application window estate. In this, a live camera feed is shown, based on the value assigned to the camera. ~\\
+
+The default value is camera index 0 (the device index - 0 refers to the default camera for the system), however it can be assigned to another index, or to a video (ie. mp4 or webcam stream) through the settings menu.~\\
+
+The image format should be correctly converted (from OpenCV's BGR output to RGB) for display in the application, and the webcam stream should not prevent or block the user from using any other user interface elements. In addition, the output frames will be appropriately resized to the window size in a 16:9 ratio.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/scanner.eps}
+    \caption{Scanner Main Screen}
+\end{figure}~\\
+
+\subsection{Object Detection}
+When an object is detected by the model, a bounding box will be drawn on the object, alongside what it recognized, and the confidence level. In addition, the recycling category will be displayed. Unknown objects or the background should not be detected.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/object_detected.eps}
+    \caption{-Placeholder- Successful Detection Frame}
+\end{figure}~\\
+
+\subsection{Settings Menu}
+When the user clicks on "Adjust Settings" in the Settings Context Menu Button, they will be presented with a Settings Menu Window. In the window, they will see three tabs - one for OpenCV Settings, one for Application Settings, and one for Database Settings.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/settings_context_menu.eps}
+    \caption{Settings Context Menu Option}
+\end{figure}~\\
+
+\subsection{OpenCV Settings}
+This tab will contain settings related to OpenCV. The user will be able to choose between whether they would like to set their camera/stream based on the device index, or an IP address in the case of a webcam. The radio buttons will force the user to select one, and not both.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/settings_1.eps}
+    \caption{OpenCV Settings Tab}
+\end{figure}~\\
+
+\subsection{Application Specific Settings}
+This tab will contain settings related to the application. The user will be given the option to "Skip Start Sequence", which would make application starts skip directly to the detection screen.
+
+In addition, advanced users may also specify if they would like to use a custom model source file.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/settings_2.eps}
+    \caption{Application Settings Tab}
+\end{figure}~\\
+
+\subsection{Database Settings}
+This tab will contain settings related to the database. In this, the user may simply decide to choose to disable, or enable, the usage of database with regards to scans. The user may choose to do this if they would prefer not to have a database instance running, have no need for a database, or for privacy reasons.
+
+While advanced users have the option to edit database related settings directly in the JSON, this will not be provided in the settings menu.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/settings_3.eps}
+    \caption{Database Settings Tab}
+\end{figure}~\\
+
+\subsection{Statistics}
+When the user clicks on "View Statistics" in the Statistics Context Menu Button, they will be presented with a Statistics Window. The window should be non-modal - as in, the user should still be able to interact with the other window at the same time while viewing statistics. In the window, they will see two tabs - one for session stats, and one for overall stats.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/stats_context_menu.eps}
+    \caption{Statistics Context Menu}
+\end{figure}~\\
+
+\subsection{Session Statistics}
+In the session stats window, they will see an "Overall Scan Count", and a "Categorical Scan Count". Overall scan count is self-explanatory - it is the number of times any object was scanned. Categorical scan count is the number of times an object from a category was scanned, divided by the overall scan count. The resulting percentage number is then rounded, and then fed into the progress bar.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/statistics_session.eps}
+    \caption{Database Settings Tab}
+\end{figure}~\\
+
+\subsection{Overall Statistics}
+Similarly to the Session Statistics, the user will see an "Overall Scan Count", and a "Categorical Scan Count". However, this section is only functional if database is enabled, as it requires database data in order to operate.~\\
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/statistics_overall.eps}
+    \caption{Database Settings Tab}
+\end{figure}~\\
 
 \end{document}
