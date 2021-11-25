@@ -6,7 +6,7 @@ permalink: /ai/
 
 > Sentiment Analysis on Live Transcription
 
-GitHub Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
+Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
 
 **Members**
 
@@ -72,6 +72,7 @@ appearing words were filtered (ie. "book", "film").
 A max vocabulary count was then implemented, with only the top N words being kept, so as to minimize niche vocabulary affecting the training.
 
 After this initial processing, our wordcloud looked like the following: 
+
 ![wordcloud](https://i.imgur.com/Uxoz9m0.png)
 
 Then came the decision on whether to go with a multiclass classification system, or with a binary system. We tried both, but to explain - 
