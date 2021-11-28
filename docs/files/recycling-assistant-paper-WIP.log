@@ -1,0 +1,1674 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.17)  28 NOV 2021 17:48
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex
+(/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen138
+\@IEEEtrantmpdimenB=\dimen139
+\@IEEEtrantmpdimenC=\dimen140
+\@IEEEtrantmpcountA=\count179
+\@IEEEtrantmpcountB=\count180
+\@IEEEtrantmpcountC=\count181
+\@IEEEtrantmptoksA=\toks15
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 503.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen141
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen142
+\CLASSINFOnormalsizeunitybaselineskip=\dimen143
+\IEEEnormaljot=\dimen144
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+\IEEEquantizedlength=\dimen145
+\IEEEquantizedlengthdiff=\dimen146
+\IEEEquantizedtextheightdiff=\dimen147
+\IEEEilabelindentA=\dimen148
+\IEEEilabelindentB=\dimen149
+\IEEEilabelindent=\dimen150
+\IEEEelabelindent=\dimen151
+\IEEEdlabelindent=\dimen152
+\IEEElabelindent=\dimen153
+\IEEEiednormlabelsep=\dimen154
+\IEEEiedmathlabelsep=\dimen155
+\IEEEiedtopsep=\skip47
+\c@section=\count182
+\c@subsection=\count183
+\c@subsubsection=\count184
+\c@paragraph=\count185
+\c@IEEEsubequation=\count186
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\c@figure=\count187
+\c@table=\count188
+\@IEEEeqnnumcols=\count189
+\@IEEEeqncolcnt=\count190
+\@IEEEsubeqnnumrollback=\count191
+\@IEEEquantizeheightA=\dimen156
+\@IEEEquantizeheightB=\dimen157
+\@IEEEquantizeheightC=\dimen158
+\@IEEEquantizeprevdepth=\dimen159
+\@IEEEquantizemultiple=\count192
+\@IEEEquantizeboxA=\box47
+\@IEEEtmpitemindent=\dimen160
+\IEEEPARstartletwidth=\dimen161
+\c@IEEEbiography=\count193
+\@IEEEtranrubishbin=\box48
+)
+** ATTENTION: Overriding command lockouts (line 2).
+(/usr/local/texlive/2021/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen162
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen163
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count194
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count195
+\leftroot@=\count196
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count197
+\DOTSCASE@=\count198
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box49
+\strutbox@=\box50
+\big@size=\dimen164
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count199
+\c@MaxMatrixCols=\count266
+\dotsspace@=\muskip16
+\c@parentequation=\count267
+\dspbrk@lvl=\count268
+\tag@help=\toks17
+\row@=\count269
+\column@=\count270
+\maxfields@=\count271
+\andhelp@=\toks18
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
+\@envbody=\toks19
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2021/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+\c@ALC@unique=\count272
+\c@ALC@line=\count273
+\c@ALC@rem=\count274
+\c@ALC@depth=\count275
+\ALC@tlm=\skip53
+\algorithmicindent=\skip54
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen171
+\Gin@req@width=\dimen172
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count276
+\l__pdf_internal_box=\box51
+) (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.aux)
+\openout1 = `recycling-assistant-paper-WIP.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+-- Lines per column: 56 (exact).
+(/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count277
+\scratchdimen=\dimen173
+\scratchbox=\box52
+\nofMPsegments=\count278
+\nofMParguments=\count279
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count280
+\MPscratchDim=\dimen174
+\MPnumerator=\count281
+\makeMPintoPDFobject=\count282
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 50--52
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]\OT1/ptm/m/n/10 Doo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+\OT1/ptm/m/n/10 Woong
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]\OT1/ptm/m/n/10 Co-
+ []
+
+
+Overfull \hbox (5.10999pt too wide) in paragraph at lines 59--59
+\OT1/ptm/m/n/10 Development
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+\OT1/ptm/m/n/10 Soft-ware
+ []
+
+
+Underfull \hbox (badness 3826) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 be done to stay on track,
+ []
+
+
+Underfull \hbox (badness 6658) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 and con-vert-ing re-quire-ments
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 into tan-gi-ble func-tion-al-ity.
+ []
+
+
+Underfull \hbox (badness 7256) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 In ad-di-tion, they are also
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 re-spon-si-ble for iden-ti-fy-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 soft-ware func-tion-al-ity and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 col-lab-o-rat-ing with other
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 to ful-fill and push re-quired
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 fea-tures. Also re-spon-si-ble
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--62
+\OT1/ptm/m/n/10 for main-tain-ing code and
+ []
+
+
+Overfull \hbox (3.0861pt too wide) in paragraph at lines 55--65
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]\OT1/ptm/m/n/10 Kim
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]\OT1/ptm/m/n/10 User &
+ []
+
+
+Underfull \hbox (badness 6493) in paragraph at lines 76--79
+[]\OT1/ptm/m/n/10 Responsible for test-ing the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+\OT1/ptm/m/n/10 check-ing off on whether
+ []
+
+
+Underfull \hbox (badness 7133) in paragraph at lines 76--79
+\OT1/ptm/m/n/10 the re-quire-ments are be-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+\OT1/ptm/m/n/10 In the event that the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+\OT1/ptm/m/n/10 re-quire-ments do not seem
+ []
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 76--79
+\OT1/ptm/m/n/10 re-lay-ing ac-tion-able feed-back,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--79
+\OT1/ptm/m/n/10 and eval-u-at-ing im-ple-mented
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+[]\OT1/ptm/m/n/10 Co-
+ []
+
+
+Overfull \hbox (5.10999pt too wide) in paragraph at lines 80--80
+\OT1/ptm/m/n/10 Development
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
+\OT1/ptm/m/n/10 Soft-ware
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 soft-ware func-tion-al-ity and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 col-lab-o-rat-ing with other
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 to ful-fill and push re-quired
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+
+ []
+
+
+Underfull \hbox (badness 7869) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 and mak-ing sure that the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 They are also re-spon-si-ble
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 for com-mu-ni-cat-ing with the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 81--84
+\OT1/ptm/m/n/10 for main-tain-ing code and
+ []
+
+
+Overfull \hbox (3.0861pt too wide) in paragraph at lines 71--87
+ [] 
+ []
+
+[1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+
+Underfull \hbox (badness 1655) in paragraph at lines 101--102
+[]\OT1/ptm/m/n/10 In the case of apart-ment, com-mu-nal liv-ing fa-cil-i-ties,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+
+Underfull \hbox (badness 1668) in paragraph at lines 112--114
+\OT1/ptm/m/n/10 con-ve-nience of be-ing able to quickly con-sult with the
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 112--114
+\OT1/ptm/m/n/10 ap-pli-ca-tion and re-ceive feed-back on how an ob-ject is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 126--128
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
+[]\OT1/ptm/m/n/8 "World Waste Plat-form." Let's Do It AI Project,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 165--166
+[]\OT1/ptm/m/n/8 "Greyparrot AI." Grey-par-rot, https://www.greyparrot.ai/waste-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+[]\OT1/ptm/m/n/8 "Trash-Talking Re-cy-cling AI." Nvidia Blogs,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
+\OT1/ptm/m/n/8 https://blogs.nvidia.com/blog/2020/02/03/intuitive-ai-schools-you-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--182
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
+
+ []
+
+
+Underfull \hbox (badness 3449) in paragraph at lines 199--201
+[]\OT1/ptm/m/n/10 The ap-pli-ca-tion should be able to han-dle real-time
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--205
+
+ []
+
+[3]
+Underfull \hbox (badness 4168) in paragraph at lines 207--209
+\OT1/ptm/m/n/10 re-ceive tex-tual feed-back on what the de-tected item's
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--227
+
+ []
+
+
+Underfull \hbox (badness 1874) in paragraph at lines 237--237
+[]\OT1/ptm/m/n/8 Doo Woong
+ []
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:238: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238 \newline
+               Handling of the Input/Output system\newline- Implementation o...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
+\OT1/ptm/m/n/8 - Im-ple-men-ta-tion of OpenCV into
+ []
+
+
+Underfull \hbox (badness 2393) in paragraph at lines 238--244
+\OT1/ptm/m/n/8 the ap-pli-ca-tion, as well as han-dling
+ []
+
+
+Underfull \hbox (badness 4981) in paragraph at lines 238--244
+\OT1/ptm/m/n/8 the out-put pro-cess-ing such as text
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--244
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+[]\OT1/ptm/m/n/8 Kim
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 246--246
+[]\OT1/ptm/m/n/8 User/Front-
+ []
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:247: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.247 \newline
+               User Interface System\newline- Analysis pertaining to User Ex...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--254
+
+ []
+
+
+Underfull \hbox (badness 1590) in paragraph at lines 247--254
+\OT1/ptm/m/n/8 - Mon-i-tor-ing over-all progress of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--254
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--256
+[]\OT1/ptm/m/n/8 Lim
+ []
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:257: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.257 \newline
+               Handling of the Database and Model related system\newline- Im...
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
+\OT1/ptm/m/n/8 Model Train-ing, Pro-to-typ-ing and
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 257--264
+\OT1/ptm/m/n/8 - Pro-to-typ-ing the Model, along-side
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--264
+
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 257--264
+\OT1/ptm/m/n/8 - Gen-eral Qual-ity As-sur-ance Test-ing,
+ []
+
+
+Overfull \hbox (3.0861pt too wide) in paragraph at lines 234--266
+[][] 
+ []
+
+[4]
+Underfull \hbox (badness 3930) in paragraph at lines 271--272
+\OT1/ptm/m/n/10 in-put through ei-ther con-nected net-work cam-era, or a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 283--283
+[]\OT1/ptm/m/n/8 Detected Ob-ject, Cat-e-
+ []
+
+
+Overfull \hbox (5.93114pt too wide) in paragraph at lines 280--285
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 287--288
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--296
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
+
+ []
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:306: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.306 \end{quote}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:310: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.310 \end{quote}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:314: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.314 \end{quote}
+                 ~\\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 314--315
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 338--339
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--345
+
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 347--348
+\OT1/ptm/m/n/10 Linux as a base plat-form, there are vir-tu-ally no costs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--348
+
+ []
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 351.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 363--367
+
+ []
+
+
+Underfull \hbox (badness 1412) in paragraph at lines 367--370
+\OT1/ptm/m/n/10 EFS(Elastic File Sys-tem) is a cloud stor-age ser-vice of
+ []
+
+
+Underfull \hbox (badness 2229) in paragraph at lines 367--370
+\OT1/ptm/m/n/10 con-sumed with-out any con-cur-rent prob-lem, which EFS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--370
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]\OT1/ptm/m/n/10 Mask-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+\OT1/ptm/m/n/10 RCNN
+ []
+
+
+Overfull \hbox (5.92061pt too wide) in paragraph at lines 380--380
+\OT1/ptm/m/n/10 Tensorflow$[]$| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]\OT1/ptm/m/n/10 Apache-
+ []
+
+
+Underfull \hbox (badness 7981) in paragraph at lines 381--382
+[]\OT1/ptm/m/n/10 Mask R-CNN is an ob-ject
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+\OT1/ptm/m/n/10 recog-ni-tion al-go-rithm with
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+\OT1/ptm/m/n/10 seg-ment-ing and mask-ing of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
+[]\OT1/ptm/m/n/10 Apache-
+ []
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 386--387
+\OT1/ptm/m/n/10 It con-tains sup-port for ML
+ []
+
+
+Underfull \hbox (badness 3568) in paragraph at lines 386--387
+\OT1/ptm/m/n/10 model ex-e-cu-tion, as well as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+\OT1/ptm/m/n/10 var-i-ous im-age ma-nip-u-la-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--387
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+[]\OT1/ptm/m/n/10 A lot of the in-ter-nal UI
+ []
+
+
+Underfull \hbox (badness 3240) in paragraph at lines 388--389
+\OT1/ptm/m/n/10 fea-tures will be im-ple-mented
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
+\OT1/ptm/m/n/10 via OpenCV (ie. bound-ing
+ []
+
+
+Underfull \hbox (badness 7451) in paragraph at lines 388--389
+\OT1/ptm/m/n/10 boxes, dis-play-ing of re-sults,
+ []
+
+
+Underfull \hbox (badness 2547) in paragraph at lines 388--389
+\OT1/ptm/m/n/10 etc), and the model will be
+ []
+
+
+Overfull \hbox (3.0861pt too wide) in paragraph at lines 376--392
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 401--401
+[]\OT1/ptm/m/n/10 GPL,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
+[]\OT1/ptm/m/n/10 Qt is de-scribed as a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
+\OT1/ptm/m/n/10 "cross-platform ap-pli-ca-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
+\OT1/ptm/m/n/10 de-vel-op-ment frame-work for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
+
+ []
+
+
+Underfull \hbox (badness 1609) in paragraph at lines 402--404
+\OT1/ptm/m/n/10 Qt will be used in or-der to
+ []
+
+
+Overfull \hbox (6.21039pt too wide) in paragraph at lines 405--405
+[]\OT1/ptm/m/n/10 PostgreSQL
+ []
+
+
+Overfull \hbox (6.21039pt too wide) in paragraph at lines 405--405
+[]\OT1/ptm/m/n/10 PostgreSQL
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+\OT1/ptm/m/n/10 Li-cense
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+\OT1/ptm/m/n/10 man-age-ment sys-tem, that
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+\OT1/ptm/m/n/10 PostgreSQL would mainly
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
+\OT1/ptm/m/n/10 be used for our database
+ []
+
+
+Underfull \hbox (badness 2213) in paragraph at lines 410--412
+[]\OT1/ptm/m/n/10 libpqxx is the C++ API for
+ []
+
+
+Underfull \hbox (badness 4266) in paragraph at lines 410--412
+\OT1/ptm/m/n/10 Post-greSQL, as a con-ve-nient
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 410--412
+\OT1/ptm/m/n/10 It is a C++ wrap-per for
+ []
+
+
+Underfull \hbox (badness 4673) in paragraph at lines 410--412
+\OT1/ptm/m/n/10 the built-in wrap-per for the
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 410--412
+\OT1/ptm/m/n/10 (libpq) - it will be used in
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 410--412
+\OT1/ptm/m/n/10 or-der to in-sert data into the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--413
+[]\OT1/ptm/m/n/10 rapidjson
+ []
+
+
+Overfull \hbox (2.32037pt too wide) in paragraph at lines 413--413
+[]\OT1/ptm/m/n/10 MIT/JSON
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 414--416
+\OT1/ptm/m/n/10 JSON parser writ-ten in C++,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
+\OT1/ptm/m/n/10 with two main styles of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--416
+
+ []
+
+
+Underfull \hbox (badness 1466) in paragraph at lines 414--416
+\OT1/ptm/m/n/10 to han-dle (read/write) set-tings
+ []
+
+
+Overfull \hbox (3.0861pt too wide) in paragraph at lines 397--419
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+[]\OT1/ptm/m/n/8 \Mask-RCNN-Tensorflow" AWS, https://github.com/aws-
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--438
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--457
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+Package epstopdf Info: Source file: <images/start.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 31289 bytes
+(epstopdf)             Output file: <images/start-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:53
+(epstopdf)                    size: 28077 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/start-eps-converted-to.pdf images/start.eps>
+(epstopdf)             \includegraphics on input line 465.
+Package epstopdf Info: Output file is already uptodate.
+<images/start-eps-converted-to.pdf, id=30, 641.39626pt x 385.44pt>
+File: images/start-eps-converted-to.pdf Graphic file (type pdf)
+<use images/start-eps-converted-to.pdf>
+Package pdftex.def Info: images/start-eps-converted-to.pdf  used on input line 465.
+(pdftex.def)             Requested size: 247.6778pt x 148.8389pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 472--473
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
+
+ []
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:494: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.494 \end{quote}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:499: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.499 \end{quote}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:504: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.504 \end{quote}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:509: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.509 \end{quote}
+                 
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:514: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.514 \end{quote}
+                 ~\\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
+
+ []
+
+Package epstopdf Info: Source file: <images/settings_alert.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 34284 bytes
+(epstopdf)             Output file: <images/settings_alert-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:54
+(epstopdf)                    size: 30400 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/settings_alert-eps-converted-to.pdf images/settings_alert.eps>
+(epstopdf)             \includegraphics on input line 525.
+Package epstopdf Info: Output file is already uptodate.
+<images/settings_alert-eps-converted-to.pdf, id=31, 641.39626pt x 387.4475pt>
+File: images/settings_alert-eps-converted-to.pdf Graphic file (type pdf)
+<use images/settings_alert-eps-converted-to.pdf>
+Package pdftex.def Info: images/settings_alert-eps-converted-to.pdf  used on input line 525.
+(pdftex.def)             Requested size: 247.6778pt x 149.61409pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--528
+
+ []
+
+[8 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/start-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+Package epstopdf Info: Source file: <images/camera_source_error.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 33373 bytes
+(epstopdf)             Output file: <images/camera_source_error-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:54
+(epstopdf)                    size: 29702 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/camera_source_error-eps-converted-to.pdf images/camera_source_error.eps>
+(epstopdf)             \includegraphics on input line 537.
+Package epstopdf Info: Output file is already uptodate.
+<images/camera_source_error-eps-converted-to.pdf, id=37, 641.39626pt x 388.45125pt>
+File: images/camera_source_error-eps-converted-to.pdf Graphic file (type pdf)
+<use images/camera_source_error-eps-converted-to.pdf>
+Package pdftex.def Info: images/camera_source_error-eps-converted-to.pdf  used on input line 537.
+(pdftex.def)             Requested size: 247.6778pt x 150.0017pt.
+Package epstopdf Info: Source file: <images/camera_source_error_2.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 27250 bytes
+(epstopdf)             Output file: <images/camera_source_error_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:54
+(epstopdf)                    size: 24931 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/camera_source_error_2-eps-converted-to.pdf images/camera_source_error_2.eps>
+(epstopdf)             \includegraphics on input line 542.
+Package epstopdf Info: Output file is already uptodate.
+<images/camera_source_error_2-eps-converted-to.pdf, id=38, 640.3925pt x 388.45125pt>
+File: images/camera_source_error_2-eps-converted-to.pdf Graphic file (type pdf)
+<use images/camera_source_error_2-eps-converted-to.pdf>
+Package pdftex.def Info: images/camera_source_error_2-eps-converted-to.pdf  used on input line 542.
+(pdftex.def)             Requested size: 247.6778pt x 150.23285pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--546
+
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
+
+ []
+
+Package epstopdf Info: Source file: <images/scanner.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 50404 bytes
+(epstopdf)             Output file: <images/scanner-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:54
+(epstopdf)                    size: 42945 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/scanner-eps-converted-to.pdf images/scanner.eps>
+(epstopdf)             \includegraphics on input line 557.
+Package epstopdf Info: Output file is already uptodate.
+<images/scanner-eps-converted-to.pdf, id=39, 640.3925pt x 388.45125pt>
+File: images/scanner-eps-converted-to.pdf Graphic file (type pdf)
+<use images/scanner-eps-converted-to.pdf>
+Package pdftex.def Info: images/scanner-eps-converted-to.pdf  used on input line 557.
+(pdftex.def)             Requested size: 247.6778pt x 150.23285pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
+
+ []
+
+[9 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_alert-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/camera_source_error-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/camera_source_error_2-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/scanner-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <images/object_detected.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 84892 bytes
+(epstopdf)             Output file: <images/object_detected-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:55
+(epstopdf)                    size: 69781 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/object_detected-eps-converted-to.pdf images/object_detected.eps>
+(epstopdf)             \includegraphics on input line 566.
+Package epstopdf Info: Output file is already uptodate.
+<images/object_detected-eps-converted-to.pdf, id=51, 640.3925pt x 388.45125pt>
+File: images/object_detected-eps-converted-to.pdf Graphic file (type pdf)
+<use images/object_detected-eps-converted-to.pdf>
+Package pdftex.def Info: images/object_detected-eps-converted-to.pdf  used on input line 566.
+(pdftex.def)             Requested size: 247.6778pt x 150.23285pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 568--569
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--572
+
+ []
+
+Package epstopdf Info: Source file: <images/settings_context_menu.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 27559 bytes
+(epstopdf)             Output file: <images/settings_context_menu-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:55
+(epstopdf)                    size: 25168 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/settings_context_menu-eps-converted-to.pdf images/settings_context_menu.eps>
+(epstopdf)             \includegraphics on input line 575.
+Package epstopdf Info: Output file is already uptodate.
+<images/settings_context_menu-eps-converted-to.pdf, id=52, 639.38875pt x 385.44pt>
+File: images/settings_context_menu-eps-converted-to.pdf Graphic file (type pdf)
+<use images/settings_context_menu-eps-converted-to.pdf>
+Package pdftex.def Info: images/settings_context_menu-eps-converted-to.pdf  used on input line 575.
+(pdftex.def)             Requested size: 247.6778pt x 149.30351pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 580--581
+
+ []
+
+Package epstopdf Info: Source file: <images/settings_1.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 32228 bytes
+(epstopdf)             Output file: <images/settings_1-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:55
+(epstopdf)                    size: 28811 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/settings_1-eps-converted-to.pdf images/settings_1.eps>
+(epstopdf)             \includegraphics on input line 584.
+Package epstopdf Info: Output file is already uptodate.
+<images/settings_1-eps-converted-to.pdf, id=53, 359.3425pt x 246.9225pt>
+File: images/settings_1-eps-converted-to.pdf Graphic file (type pdf)
+<use images/settings_1-eps-converted-to.pdf>
+Package pdftex.def Info: images/settings_1-eps-converted-to.pdf  used on input line 584.
+(pdftex.def)             Requested size: 247.6778pt x 170.19583pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--592
+
+ []
+
+Package epstopdf Info: Source file: <images/settings_2.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 28622 bytes
+(epstopdf)             Output file: <images/settings_2-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:55
+(epstopdf)                    size: 25998 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/settings_2-eps-converted-to.pdf images/settings_2.eps>
+(epstopdf)             \includegraphics on input line 595.
+Package epstopdf Info: Output file is already uptodate.
+<images/settings_2-eps-converted-to.pdf, id=54, 359.3425pt x 243.91125pt>
+File: images/settings_2-eps-converted-to.pdf Graphic file (type pdf)
+<use images/settings_2-eps-converted-to.pdf>
+Package pdftex.def Info: images/settings_2-eps-converted-to.pdf  used on input line 595.
+(pdftex.def)             Requested size: 247.6778pt x 168.12029pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 597--598
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 602--603
+
+ []
+
+Package epstopdf Info: Source file: <images/settings_3.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 24800 bytes
+(epstopdf)             Output file: <images/settings_3-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:55
+(epstopdf)                    size: 23024 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/settings_3-eps-converted-to.pdf images/settings_3.eps>
+(epstopdf)             \includegraphics on input line 606.
+Package epstopdf Info: Output file is already uptodate.
+<images/settings_3-eps-converted-to.pdf, id=55, 358.33875pt x 245.91875pt>
+File: images/settings_3-eps-converted-to.pdf Graphic file (type pdf)
+<use images/settings_3-eps-converted-to.pdf>
+Package pdftex.def Info: images/settings_3-eps-converted-to.pdf  used on input line 606.
+(pdftex.def)             Requested size: 247.6778pt x 169.97679pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
+
+ []
+
+[10 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/object_detected-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_context_menu-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_1-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_2-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
+
+ []
+
+Package epstopdf Info: Source file: <images/stats_context_menu.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 28144 bytes
+(epstopdf)             Output file: <images/stats_context_menu-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:56
+(epstopdf)                    size: 25623 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/stats_context_menu-eps-converted-to.pdf images/stats_context_menu.eps>
+(epstopdf)             \includegraphics on input line 615.
+Package epstopdf Info: Output file is already uptodate.
+<images/stats_context_menu-eps-converted-to.pdf, id=67, 639.38875pt x 385.44pt>
+File: images/stats_context_menu-eps-converted-to.pdf Graphic file (type pdf)
+<use images/stats_context_menu-eps-converted-to.pdf>
+Package pdftex.def Info: images/stats_context_menu-eps-converted-to.pdf  used on input line 615.
+(pdftex.def)             Requested size: 247.6778pt x 149.30351pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 617--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+
+ []
+
+Package epstopdf Info: Source file: <images/statistics_session.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 31019 bytes
+(epstopdf)             Output file: <images/statistics_session-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:56
+(epstopdf)                    size: 27872 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/statistics_session-eps-converted-to.pdf images/statistics_session.eps>
+(epstopdf)             \includegraphics on input line 624.
+Package epstopdf Info: Output file is already uptodate.
+<images/statistics_session-eps-converted-to.pdf, id=68, 216.81pt x 286.06876pt>
+File: images/statistics_session-eps-converted-to.pdf Graphic file (type pdf)
+<use images/statistics_session-eps-converted-to.pdf>
+Package pdftex.def Info: images/statistics_session-eps-converted-to.pdf  used on input line 624.
+(pdftex.def)             Requested size: 247.6778pt x 326.81581pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 626--627
+
+ []
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 629--630
+[]\OT1/ptm/m/n/10 Similarly to the Ses-sion Statis-tics, the user will see
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+
+ []
+
+Package epstopdf Info: Source file: <images/statistics_overall.eps>
+(epstopdf)                    date: 2021-11-26 09:15:22
+(epstopdf)                    size: 30235 bytes
+(epstopdf)             Output file: <images/statistics_overall-eps-converted-to.pdf>
+(epstopdf)                    date: 2021-11-28 17:48:56
+(epstopdf)                    size: 27255 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/statistics_overall-eps-converted-to.pdf images/statistics_overall.eps>
+(epstopdf)             \includegraphics on input line 633.
+Package epstopdf Info: Output file is already uptodate.
+<images/statistics_overall-eps-converted-to.pdf, id=69, 219.82124pt x 290.08376pt>
+File: images/statistics_overall-eps-converted-to.pdf Graphic file (type pdf)
+<use images/statistics_overall-eps-converted-to.pdf>
+Package pdftex.def Info: images/statistics_overall-eps-converted-to.pdf  used on input line 633.
+(pdftex.def)             Requested size: 247.6778pt x 326.85243pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+
+ []
+
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[11 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_3-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/stats_context_menu-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_session-eps-converted-to.pdf>] [12
+
+ </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_overall-eps-converted-to.pdf>] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4008 strings out of 478994
+ 61114 string characters out of 5858183
+ 368038 words of memory out of 5000000
+ 21442 multiletter control sequences out of 15000+600000
+ 443941 words of font info for 102 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,14n,74p,638b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.pdf (12 pages, 485929 bytes).
+PDF statistics:
+ 103 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
+
