@@ -8,6 +8,11 @@ permalink: /ai/
 
 Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
 
+**Table of Content**
+{% comment %}
+TODO
+{% endcomment %}
+
 **Members**
 
 * Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
@@ -46,6 +51,23 @@ Character-level Convolutional Networks for Text Classification. Advances in Neur
 "The Amazon reviews full score dataset is constructed by randomly taking 600,000 training samples and 130,000 testing samples for each review score from 1 to 5. 
 In total there are 3,000,000 trainig samples and 650,000 testing samples."
 
+**Dataset Inspection**
+
+GitHub Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Data_Inspection.ipynb)
+
+In this dataset, after parsing texts into words with categorized labels,
+positive, neutral and negative labeling ratio were calculated for a same word.
+(e.g. word of 'absurd' : negative(0.66), neutral(0.14), positive(0.20))
+While the distribution of neutral ratio's median is around 0.21, the others' distribution are 0.39,
+which indicates that most of words can be classified in negative and positive, rather than neutral sentiment.
+
+![density_of_words](https://user-images.githubusercontent.com/59322692/143865891-7c6e3142-7aed-4cf6-b291-bf9542ca9b7d.png)
+
+To be specific, while see the most frequently used words to represent the positive/negative meanings,
+those words clearly lean to the 1 or 5 scores. That is, it might be a huge clue to distinguish the sentiment.
+
+![freq_words_pos](https://user-images.githubusercontent.com/59322692/143865898-7f677caa-02c2-4b71-be77-882294cc26a5.png)
+![freq_words_neg](https://user-images.githubusercontent.com/59322692/143865896-3b6bffcb-1c0e-42fa-ad1c-dff7ff1e5268.png)
 
 {% comment %}
 Describing your dataset
