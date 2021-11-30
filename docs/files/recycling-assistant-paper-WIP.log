@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.17)  28 NOV 2021 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.17)  30 NOV 2021 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -624,12 +624,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--201
 
  []
 
-
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 203--205
 
  []
 
-[3]
+
 Underfull \hbox (badness 4168) in paragraph at lines 207--209
 \OT1/ptm/m/n/10 re-ceive tex-tual feed-back on what the de-tected item's
  []
@@ -659,7 +659,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--227
 
  []
 
-
+[4]
 Underfull \hbox (badness 1874) in paragraph at lines 237--237
 []\OT1/ptm/m/n/8 Doo Woong
  []
@@ -803,7 +803,7 @@ Overfull \hbox (3.0861pt too wide) in paragraph at lines 234--266
 [][] 
  []
 
-[4]
+
 Underfull \hbox (badness 3930) in paragraph at lines 271--272
 \OT1/ptm/m/n/10 in-put through ei-ther con-nected net-work cam-era, or a
  []
@@ -838,7 +838,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--288
 
  []
 
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 294--296
 
  []
@@ -899,7 +899,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
-[5]
+
 Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
@@ -947,7 +947,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 367--370
 
  []
 
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
@@ -1187,7 +1187,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--424
 []\OT1/ptm/m/n/8 \Mask-RCNN-Tensorflow" AWS, https://github.com/aws-
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
@@ -1212,7 +1212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 450--457
 
  []
 
-[7]
+
 Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
@@ -1261,6 +1261,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
+[8 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/start-eps-converted-to.pdf>]
 
 /Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.tex:494: LaTeX Error: Something's wrong--perhaps a missing \item.
 
@@ -1345,7 +1346,7 @@ Package epstopdf Info: Source file: <images/settings_alert.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/settings_alert-eps-converted-to.pdf images/settings_alert.eps>
 (epstopdf)             \includegraphics on input line 525.
 Package epstopdf Info: Output file is already uptodate.
-<images/settings_alert-eps-converted-to.pdf, id=31, 641.39626pt x 387.4475pt>
+<images/settings_alert-eps-converted-to.pdf, id=36, 641.39626pt x 387.4475pt>
 File: images/settings_alert-eps-converted-to.pdf Graphic file (type pdf)
 <use images/settings_alert-eps-converted-to.pdf>
 Package pdftex.def Info: images/settings_alert-eps-converted-to.pdf  used on input line 525.
@@ -1358,7 +1359,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
 
-[8 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/start-eps-converted-to.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 533--534
 
  []
@@ -1399,7 +1400,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 539--546
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
+[9 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_alert-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/camera_source_error-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
@@ -1418,7 +1419,7 @@ Package epstopdf Info: Source file: <images/scanner.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/scanner-eps-converted-to.pdf images/scanner.eps>
 (epstopdf)             \includegraphics on input line 557.
 Package epstopdf Info: Output file is already uptodate.
-<images/scanner-eps-converted-to.pdf, id=39, 640.3925pt x 388.45125pt>
+<images/scanner-eps-converted-to.pdf, id=46, 640.3925pt x 388.45125pt>
 File: images/scanner-eps-converted-to.pdf Graphic file (type pdf)
 <use images/scanner-eps-converted-to.pdf>
 Package pdftex.def Info: images/scanner-eps-converted-to.pdf  used on input line 557.
@@ -1433,7 +1434,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 562--563
 
  []
 
-[9 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_alert-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/camera_source_error-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/camera_source_error_2-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/scanner-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/object_detected.eps>
 (epstopdf)                    date: 2021-11-26 09:15:22
 (epstopdf)                    size: 84892 bytes
@@ -1443,7 +1443,7 @@ Package epstopdf Info: Source file: <images/object_detected.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/object_detected-eps-converted-to.pdf images/object_detected.eps>
 (epstopdf)             \includegraphics on input line 566.
 Package epstopdf Info: Output file is already uptodate.
-<images/object_detected-eps-converted-to.pdf, id=51, 640.3925pt x 388.45125pt>
+<images/object_detected-eps-converted-to.pdf, id=47, 640.3925pt x 388.45125pt>
 File: images/object_detected-eps-converted-to.pdf Graphic file (type pdf)
 <use images/object_detected-eps-converted-to.pdf>
 Package pdftex.def Info: images/object_detected-eps-converted-to.pdf  used on input line 566.
@@ -1467,7 +1467,7 @@ Package epstopdf Info: Source file: <images/settings_context_menu.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/settings_context_menu-eps-converted-to.pdf images/settings_context_menu.eps>
 (epstopdf)             \includegraphics on input line 575.
 Package epstopdf Info: Output file is already uptodate.
-<images/settings_context_menu-eps-converted-to.pdf, id=52, 639.38875pt x 385.44pt>
+<images/settings_context_menu-eps-converted-to.pdf, id=48, 639.38875pt x 385.44pt>
 File: images/settings_context_menu-eps-converted-to.pdf Graphic file (type pdf)
 <use images/settings_context_menu-eps-converted-to.pdf>
 Package pdftex.def Info: images/settings_context_menu-eps-converted-to.pdf  used on input line 575.
@@ -1491,7 +1491,7 @@ Package epstopdf Info: Source file: <images/settings_1.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/settings_1-eps-converted-to.pdf images/settings_1.eps>
 (epstopdf)             \includegraphics on input line 584.
 Package epstopdf Info: Output file is already uptodate.
-<images/settings_1-eps-converted-to.pdf, id=53, 359.3425pt x 246.9225pt>
+<images/settings_1-eps-converted-to.pdf, id=49, 359.3425pt x 246.9225pt>
 File: images/settings_1-eps-converted-to.pdf Graphic file (type pdf)
 <use images/settings_1-eps-converted-to.pdf>
 Package pdftex.def Info: images/settings_1-eps-converted-to.pdf  used on input line 584.
@@ -1504,7 +1504,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 586--587
 
  []
 
-
+[10 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/camera_source_error_2-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/scanner-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/object_detected-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_context_menu-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 591--592
 
  []
@@ -1518,7 +1518,7 @@ Package epstopdf Info: Source file: <images/settings_2.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/settings_2-eps-converted-to.pdf images/settings_2.eps>
 (epstopdf)             \includegraphics on input line 595.
 Package epstopdf Info: Output file is already uptodate.
-<images/settings_2-eps-converted-to.pdf, id=54, 359.3425pt x 243.91125pt>
+<images/settings_2-eps-converted-to.pdf, id=61, 359.3425pt x 243.91125pt>
 File: images/settings_2-eps-converted-to.pdf Graphic file (type pdf)
 <use images/settings_2-eps-converted-to.pdf>
 Package pdftex.def Info: images/settings_2-eps-converted-to.pdf  used on input line 595.
@@ -1542,7 +1542,7 @@ Package epstopdf Info: Source file: <images/settings_3.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/settings_3-eps-converted-to.pdf images/settings_3.eps>
 (epstopdf)             \includegraphics on input line 606.
 Package epstopdf Info: Output file is already uptodate.
-<images/settings_3-eps-converted-to.pdf, id=55, 358.33875pt x 245.91875pt>
+<images/settings_3-eps-converted-to.pdf, id=62, 358.33875pt x 245.91875pt>
 File: images/settings_3-eps-converted-to.pdf Graphic file (type pdf)
 <use images/settings_3-eps-converted-to.pdf>
 Package pdftex.def Info: images/settings_3-eps-converted-to.pdf  used on input line 606.
@@ -1555,7 +1555,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 608--609
 
  []
 
-[10 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/object_detected-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_context_menu-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_1-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_2-eps-converted-to.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 611--612
 
  []
@@ -1569,7 +1569,7 @@ Package epstopdf Info: Source file: <images/stats_context_menu.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/stats_context_menu-eps-converted-to.pdf images/stats_context_menu.eps>
 (epstopdf)             \includegraphics on input line 615.
 Package epstopdf Info: Output file is already uptodate.
-<images/stats_context_menu-eps-converted-to.pdf, id=67, 639.38875pt x 385.44pt>
+<images/stats_context_menu-eps-converted-to.pdf, id=63, 639.38875pt x 385.44pt>
 File: images/stats_context_menu-eps-converted-to.pdf Graphic file (type pdf)
 <use images/stats_context_menu-eps-converted-to.pdf>
 Package pdftex.def Info: images/stats_context_menu-eps-converted-to.pdf  used on input line 615.
@@ -1593,7 +1593,7 @@ Package epstopdf Info: Source file: <images/statistics_session.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/statistics_session-eps-converted-to.pdf images/statistics_session.eps>
 (epstopdf)             \includegraphics on input line 624.
 Package epstopdf Info: Output file is already uptodate.
-<images/statistics_session-eps-converted-to.pdf, id=68, 216.81pt x 286.06876pt>
+<images/statistics_session-eps-converted-to.pdf, id=64, 216.81pt x 286.06876pt>
 File: images/statistics_session-eps-converted-to.pdf Graphic file (type pdf)
 <use images/statistics_session-eps-converted-to.pdf>
 Package pdftex.def Info: images/statistics_session-eps-converted-to.pdf  used on input line 624.
@@ -1606,7 +1606,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 626--627
 
  []
 
-
+[11 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_1-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_2-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_3-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/stats_context_menu-eps-converted-to.pdf>]
 Underfull \hbox (badness 1622) in paragraph at lines 629--630
 []\OT1/ptm/m/n/10 Similarly to the Ses-sion Statis-tics, the user will see
  []
@@ -1625,7 +1625,7 @@ Package epstopdf Info: Source file: <images/statistics_overall.eps>
 (epstopdf)             Command: <repstopdf --outfile=images/statistics_overall-eps-converted-to.pdf images/statistics_overall.eps>
 (epstopdf)             \includegraphics on input line 633.
 Package epstopdf Info: Output file is already uptodate.
-<images/statistics_overall-eps-converted-to.pdf, id=69, 219.82124pt x 290.08376pt>
+<images/statistics_overall-eps-converted-to.pdf, id=76, 219.82124pt x 290.08376pt>
 File: images/statistics_overall-eps-converted-to.pdf Graphic file (type pdf)
 <use images/statistics_overall-eps-converted-to.pdf>
 Package pdftex.def Info: images/statistics_overall-eps-converted-to.pdf  used on input line 633.
@@ -1649,9 +1649,7 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[11 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_3-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/stats_context_menu-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_session-eps-converted-to.pdf>] [12
-
- </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_overall-eps-converted-to.pdf>] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.aux)
+[12 </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_session-eps-converted-to.pdf> </Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_overall-eps-converted-to.pdf>] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.aux)
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
@@ -1659,13 +1657,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Here is how much of TeX's memory you used:
  4008 strings out of 478994
  61114 string characters out of 5858183
- 368038 words of memory out of 5000000
+ 365038 words of memory out of 5000000
  21442 multiletter control sequences out of 15000+600000
  443941 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,14n,74p,638b,288s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.pdf (12 pages, 485929 bytes).
+Output written on /Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/recycling-assistant-paper-WIP.pdf (12 pages, 486060 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  57 compressed objects within 1 object stream
