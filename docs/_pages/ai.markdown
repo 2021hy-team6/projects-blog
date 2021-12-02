@@ -110,7 +110,8 @@ applying the standardization function we defined above.
 ![convert-into-tokens](https://i.imgur.com/jROK6MJ.jpg)
 
 A max vocabulary count was then implemented, with only the top N words being kept, so as to minimize niche vocabulary affecting the training.
-Then, the text was converted into a list so that tensorflow could sequence the text. In this part, words get mapped into numbers (you can basically think of the most_frequent_vocab),
+Then, the text was converted into a list so that tensorflow could sequence the text. In this part, words get mapped into numbers (you can basically think of the most_frequent_vocab 
+being mapped),
 with niche words being converted into an "<unk>"(unknown) token. It was then padded (cut or truncated based on length) to standardize review length, which is also required in order 
 to convert it into a tensor. 
 
@@ -130,6 +131,8 @@ As a result, they are converted into 3 - Negative, Neutral, Positive, where 1, 2
 and 4, 5 star reviews fall into the positive category.
 
 ![pre-tf-processing-one](https://i.imgur.com/bkrnO6G.jpg)
+
+
 ![pre-tf-processing-two](https://i.imgur.com/03JcQVY.jpg)
 
 Before we shove this data into the Tensorflow model, we need to process it into a compatible format. We convert our data into a numpy list format, and then set a max length.
@@ -183,13 +186,20 @@ Graphs, tables, any statistics (if any)
 We referred to several blogs, datasets and libraries in order to create the model and its training notebook.
 
 https://kaggle.com/bittlingmayer/amazonreviews
+
 https://kaggle.com/paoloripamonti/twitter-sentiment-analysis
+
 https://github.com/bentrevett/pytorch-sentiment-analysis
+
 https://towardsdatascience.com/how-to-train-a-deep-learning-sentiment-analysis-model-4716c946c2ea
+
 https://towardsdatascience.com/a-complete-step-by-step-tutorial-on-sentiment-analysis-in-keras-and-tensorflow-ea420cc8913f
+
 https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6
 
+
 https://github.com/tensorflow/tensorflow
+
 https://tensorflow.org/text/guide/word_embeddings
 
 {% comment %}
