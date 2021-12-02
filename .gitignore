@@ -1,2 +1,7 @@
 .DS_Store
-
+docs/files/*.aux
+docs/files/*.fdb_latexmk
+docs/files/*.fls
+docs/files/*.log
+docs/files/*.synctex.gz
+docs/files/images/*.pdf
