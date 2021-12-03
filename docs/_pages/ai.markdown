@@ -185,6 +185,31 @@ An easy way to increase our accuracy would be to drop it from multi-class to bin
 Graphs, tables, any statistics (if any)
 -->
 
+**Summary**
+
+By developing a model using Amazon's dataset, it was possible to conduct sentiment analysis of words in various sentences as much as possible. After that sentences in the Amazon data set were analyzed to increase the accuracy of emotional analysis by excluding unnecessary words from each sentence.
+
+For sentiment analysis, the degree of positive/negative of each word was divided by score. To organize the data, we read the csv file by using pandas module. For the model training, the word was returned to the most basic unit and tokenized. Training a multiclass classification system with all 5 classes resulted in low validation accuracy. Therefore we devide the result into three classses; Negative, Positive, and Neutral.
+
+
+To use multiclass training we converted the data into array value by using 'hot encoding'. It is a vector representation method of a word that uses the size of a set of words as a vector, gives the index of the word you want to represent, and gives the other index zero.
+
+Out model consists of several layers. Keras Embedding layer, Dropout layer, Avarage Pooling layer, ReLU activated layers, softwmax activated layer. Each layer balances data, removes deflection, and adusts weights during training. 
+
+As a result, we have developed a model that has 65% accuracy. To increase the accuracy, we can shift the multi-classification to a binary classification which can increase the accuracy; 15-20% percent.
+
+
+**Limitation & Further Research Direction**
+
+After the efficacy of sentiment transcriber has been proven, models can be developed for smooth communication of people from different cultures. Since our model was trained by using Amazon's review data set in English, there are some limitations to state other country people's sentiment. Other sentiment transcriber models can be developed by using the most popular website's data set in that country.
+
+When negotiating, operating, or trading with a business partner company, the percentage of positive or negative emotions can be analyzed to investigate the probability of closing a transaction after the meeting and develop it as a model for generating profits.
+
+<!--
+Discussion
+-->
+
+
 **Related Work**
 
 We referred to several blogs, datasets and libraries in order to create the model and its training notebook.
@@ -209,29 +234,4 @@ https://tensorflow.org/text/guide/word_embeddings
 <!--
 (e.g., existing studies)
 Tools, libraries, blogs, or any documentation that you have used to do this project.
--->
-
-
-**Summary**
-
-By developing a model using Amazon's dataset, it was possible to conduct sentiment analysis of words in various sentences as much as possible. After that sentences in the Amazon data set were analyzed to increase the accuracy of emotional analysis by excluding unnecessary words from each sentence.
-
-For sentiment analysis, the degree of positive/negative of each word was divided by score. To organize the data, we read the csv file by using pandas module. For the model training, the word was returned to the most basic unit and tokenized. Training a multiclass classification system with all 5 classes resulted in low validation accuracy. Therefore we devide the result into three classses; Negative, Positive, and Neutral.
-
-
-To use multiclass training we converted the data into array value by using 'hot encoding'. It is a vector representation method of a word that uses the size of a set of words as a vector, gives the index of the word you want to represent, and gives the other index zero.
-
-Out model consists of several layers. Keras Embedding layer, Dropout layer, Avarage Pooling layer, ReLU activated layers, softwmax activated layer. Each layer balances data, removes deflection, and adusts weights during training. 
-
-As a result, we have developed a model that has 65% accuracy. To increase the accuracy, we can shift the multi-classification to a binary classification which can increase the accuracy; 15-20% percent.
-
-
-**Limitation & Further Research Direction**
-
-After the efficacy of sentiment transcriber has been proven, models can be developed for smooth communication of people from different cultures. Since our model was trained by using Amazon's review data set in English, there are some limitations to state other country people's sentiment. Other sentiment transcriber models can be developed by using the most popular website's data set in that country.
-
-When negotiating, operating, or trading with a business partner company, the percentage of positive or negative emotions can be analyzed to investigate the probability of closing a transaction after the meeting and develop it as a model for generating profits.
-
-<!--
-Discussion
 -->
