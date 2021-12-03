@@ -6,9 +6,14 @@ permalink: /se/
 
 > Identifying and Categorizing Objects based on Recyclability
 
+**Repositories**
+
 - Github Repository : [link](https://github.com/2021hy-team6/recycle-mate) 
-- Document : [pdf](https://github.com/2021hy-team6/projects-blog/blob/gh-pages/docs/files/recycling-assistant-paper-WIP.pdf)
-  , [latex](https://github.com/2021hy-team6/projects-blog/blob/gh-pages/docs/files/recycling-assistant-paper-WIP.tex) 
+
+**Paper**
+
+- View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/recycling-assistant-paper-WIP.pdf)
+- Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/recycling-assistant-paper-WIP.pdf)
 
 **Members**
 
