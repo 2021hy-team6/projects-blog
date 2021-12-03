@@ -9,9 +9,9 @@ permalink: /ai/
 Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
 
 **Table of Content**
-{% comment %}
+<!--
 TODO
-{% endcomment %}
+-->
 
 **Members**
 
@@ -21,10 +21,10 @@ TODO
 
 **Introduction**
 
-{% comment %}
+<!--
 Motivation: Why are you doing this?
 What do you want to see at the end
-{% endcomment %}
+-->
 
 The objective of the project is to portray the sentiment of a conversation,
 while providing a transcription of the audio. While the software transcribes the conversation, 
@@ -33,7 +33,11 @@ the application will estimate the speakers' underlying emotion, or sentiment.
 An example of where it could be used is a group meeting. The conversation would be transcribed,
 and sentiment classified per the speaker's spoken words. The transcribed texts and result
 of sentiment analysis would be available in a text format after the meeting is over, but also
-ebe available on the screen in real-time.
+be available on the screen in real-time.
+
+When a meeting is held on video in a business situation, it may be difficult to accurately convey opinions. This can help you understand each other's intentions accurately by recording your remarks and help convey your opinions even in a video communication environment where communication is not smooth.
+
+Sentiment transcriber can also help those people's lives in that they can deliver accurate opinions and emotions at the same time to people with hearing impairment or speech impairment who have difficulty in communicating. In addition, sentimental transceiver can be helpful for those who have difficulty empathizing or recognizing other people's emotions. By recognizing positive and negative emotions, they can lead their communication in a better direction.
 
 **Dataset**
 
@@ -69,18 +73,18 @@ these words clearly lean to the 1 or 5 scores - which might be a huge clue to di
 ![freq_words_pos](https://user-images.githubusercontent.com/59322692/143865898-7f677caa-02c2-4b71-be77-882294cc26a5.png)
 ![freq_words_neg](https://user-images.githubusercontent.com/59322692/143865896-3b6bffcb-1c0e-42fa-ad1c-dff7ff1e5268.png)
 
-{% comment %}
+<!--
 Describing your dataset
-{% endcomment %}
+-->
 
 **Methodology**
 
 GitHub Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
 
-{% comment %}
+<!--
 Explaining your choice of algorithms (methods)\
 Explaining features or code (if any)
-{% endcomment %}
+-->
 
 First, we have to have Pandas read from our dataset. It's in a CSV format, so we can just use the read_csv function, and then check how the data looks with
 data.head(). Here, we only pull 100,000 rows.
@@ -177,9 +181,9 @@ went up significantly more compared to validation accuracy).
 An easy way to increase our accuracy would be to drop it from multi-class to binary classification - the reduction in classes, from testing, yields a noticeable increase in accuracy (something like 
 15 to 20 percent).
 
-{% comment %}
+<!--
 Graphs, tables, any statistics (if any)
-{% endcomment %}
+-->
 
 **Related Work**
 
@@ -202,15 +206,32 @@ https://github.com/tensorflow/tensorflow
 
 https://tensorflow.org/text/guide/word_embeddings
 
-{% comment %}
+<!--
 (e.g., existing studies)
 Tools, libraries, blogs, or any documentation that you have used to do this project.
-{% endcomment %}
-
-**Conclusion**
+-->
 
 
+**Summary**
 
-{% comment %}
+By developing a model using Amazon's dataset, it was possible to conduct sentiment analysis of words in various sentences as much as possible. After that sentences in the Amazon data set were analyzed to increase the accuracy of emotional analysis by excluding unnecessary words from each sentence.
+
+For sentiment analysis, the degree of positive/negative of each word was divided by score. To organize the data, we read the csv file by using pandas module. For the model training, the word was returned to the most basic unit and tokenized. Training a multiclass classification system with all 5 classes resulted in low validation accuracy. Therefore we devide the result into three classses; Negative, Positive, and Neutral.
+
+
+To use multiclass training we converted the data into array value by using 'hot encoding'. It is a vector representation method of a word that uses the size of a set of words as a vector, gives the index of the word you want to represent, and gives the other index zero.
+
+Out model consists of several layers. Keras Embedding layer, Dropout layer, Avarage Pooling layer, ReLU activated layers, softwmax activated layer. Each layer balances data, removes deflection, and adusts weights during training. 
+
+As a result, we have developed a model that has 65% accuracy. To increase the accuracy, we can shift the multi-classification to a binary classification which can increase the accuracy; 15-20% percent.
+
+
+**Limitation & Further Research Direction**
+
+After the efficacy of sentiment transcriber has been proven, models can be developed for smooth communication of people from different cultures. Since our model was trained by using Amazon's review data set in English, there are some limitations to state other country people's sentiment. Other sentiment transcriber models can be developed by using the most popular website's data set in that country.
+
+When negotiating, operating, or trading with a business partner company, the percentage of positive or negative emotions can be analyzed to investigate the probability of closing a transaction after the meeting and develop it as a model for generating profits.
+
+<!--
 Discussion
-{% endcomment %}
+-->
