@@ -41,6 +41,11 @@ Sentiment transcriber can also help those people's lives in that they can delive
 
 **Dataset**
 
+```sh
+$ wget https://s3.amazonaws.com/fast-ai-nlp/amazon_review_full_csv.tgz
+$ tar -xvzf amazon_review_full_csv.tgz
+```
+
 For our dataset, we will be using a data from Amazon's reviews, due to their variance in vocabulary,
 and phrasing. 
 
@@ -89,11 +94,31 @@ Explaining features or code (if any)
 First, we have to have Pandas read from our dataset. It's in a CSV format, so we can just use the read_csv function, and then check how the data looks with
 data.head(). Here, we only pull 100,000 rows.
 
-![reading-dataset](https://i.imgur.com/U5u5rg5.jpg)
+<!--![reading-dataset](https://i.imgur.com/U5u5rg5.jpg)-->
+```python
+import pandas
+
+# Read Dataset
+data = pandas.read_csv('amazon_review_full_csv/train.csv', nrows=100000)
+
+# Assigning Column Names
+data.columns = ["score", "title", "text"]
+
+data.head()
+```
+<table class="dataframe" border="1"> <thead> <tr> <th></th> <th>score</th> <th>title</th> <th>text</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>5</td> <td>Inspiring</td> <td>I hope a lot of people hear this cd. We need m...</td> </tr> <tr> <th>1</th> <td>5</td> <td>The best soundtrack ever to anything.</td> <td>I'm reading a lot of reviews saying that this ...</td> </tr> <tr> <th>2</th> <td>4</td> <td>Chrono Cross OST</td> <td>The music of Yasunori Misuda is without questi...</td> </tr> <tr> <th>3</th> <td>5</td> <td>Too good to be true</td> <td>Probably the greatest soundtrack in history! U...</td> </tr> <tr> <th>4</th> <td>5</td> <td>There's a reason for the price</td> <td>There's a reason this CD is so expensive, even...</td> </tr> </tbody></table>
 
 Then, we have to assign column names so that we can manipulate the dataset easier in the future, and then use Pandas to change the text to lower case.
 
-![processing-pt1](https://i.imgur.com/jQLnS73.jpg)
+<!--![processing-pt1](https://i.imgur.com/jQLnS73.jpg)-->
+```python
+# Lower Casing
+data["title"] = data["title"].str.lower()
+data["text"] = data["text"].str.lower()
+
+data.head()
+```
+<table class="dataframe" border="1"> <thead> <tr> <th></th> <th>score</th> <th>title</th> <th>text</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>5</td> <td>inspiring</td> <td>i hope a lot of people hear this cd. we need m...</td> </tr> <tr> <th>1</th> <td>5</td> <td>the best soundtrack ever to anything.</td> <td>i'm reading a lot of reviews saying that this ...</td> </tr> <tr> <th>2</th> <td>4</td> <td>chrono cross ost</td> <td>the music of yasunori misuda is without questi...</td> </tr> <tr> <th>3</th> <td>5</td> <td>too good to be true</td> <td>probably the greatest soundtrack in history! u...</td> </tr> <tr> <th>4</th> <td>5</td> <td>there's a reason for the price</td> <td>there's a reason this cd is so expensive, even...</td> </tr> </tbody></table>
 
 Standardization of the text is necessary, which is why we lower-cased the text.
 
@@ -106,12 +131,51 @@ handling the filtering of stopwords.
 Stopwords (ie. the, a, an) were removed, as stopwords are not required for our usage (stopwords don't *really* signal sentiment), alongside some frequently
 appearing words were filtered (ie. "book", "film"), that did not seem appropriate for our usage.
 
-![tokenize](https://i.imgur.com/Fv0T3WK.jpg)
+<!--![tokenize](https://i.imgur.com/Fv0T3WK.jpg)-->
+```python
+# Define Tokenize & Lemma-ize Function & Basic Filtering + Remove Stopwords
+import re
+import spacy
+
+nlp = spacy.load("en_core_web_sm")
+tokenizer = nlp.tokenizer
+nlp.Defaults.stop_words |= { "book", "movie", "film" }
+
+def tokenize(text):
+  text = re.sub(r'\b(\d+)\b', '', str(text))
+  tokenized_text = tokenizer(text)
+  based_text = [token.lemma_ for token in tokenized_text if not token.is_punct and not token.is_stop]
+
+  return based_text
+```
+
+```python
+# Merge Title & Text Columns, Tokenize/Lemma-ize
+data.text = data.title + " " + data.text
+data.drop(columns='title', inplace=True)
+
+data.text = data.text.apply(tokenize)
+data.head()
+```
+<table class="dataframe" border="1"> <thead> <tr> <th></th> <th>score</th> <th>text</th> </tr> </thead> <tbody> <tr> <th>0</th> <td>5</td> <td>[inspire, hope, lot, people, hear, cd, need, s...</td> </tr> <tr> <th>1</th> <td>5</td> <td>[well, soundtrack, read, lot, review, say, wel...</td> </tr> <tr> <th>2</th> <td>4</td> <td>[chrono, cross, ost, music, yasunori, misuda, ...</td> </tr> <tr> <th>3</th> <td>5</td> <td>[good, true, probably, great, soundtrack, hist...</td> </tr> <tr> <th>4</th> <td>5</td> <td>[reason, price, reason, cd, expensive, version...</td> </tr> </tbody></table>
 
 We also merge the title and text columns, as we are only interested in how certain vocabulary and sentence structure can affect the sentiment of a sentence, before finally
 applying the standardization function we defined above.
 
-![convert-into-tokens](https://i.imgur.com/jROK6MJ.jpg)
+<!--![convert-into-tokens](https://i.imgur.com/jROK6MJ.jpg)-->
+```python
+from tensorflow.keras.preprocessing.text import Tokenizer
+
+MAX_VOCAB_COUNT = 700
+
+data["liststring"] = data.text.apply(lambda x: ' '.join(map(str, x)))
+tf_tokenizer = Tokenizer(num_words=MAX_VOCAB_COUNT, oov_token="<unk>")
+tf_tokenizer.fit_on_texts(data.liststring.to_list())
+word_index = tf_tokenizer.word_index
+
+print(list(word_index)[:10])
+```
+<pre>['&lt;unk&gt;', 'like', 'good', 'read', 'great', 'well', 'time', 'buy', 'think', 'love']</pre>
 
 A max vocabulary count was then implemented, with only the top N words being kept, so as to minimize niche vocabulary affecting the training.
 Then, the text was converted into a list so that tensorflow could sequence the text. In this part, words get mapped into numbers (you can basically think of the most_frequent_vocab 
@@ -119,40 +183,143 @@ being mapped),
 with niche words being converted into an "<unk>"(unknown) token. It was then padded (cut or truncated based on length) to standardize review length, which is also required in order 
 to convert it into a tensor. 
 
+```python
+most_frequent_vocab = pandas.Series(" ".join(data.liststring).split()).value_counts()[:MAX_VOCAB_COUNT]
+print(most_frequent_vocab[:5].to_dict())
+```
+<pre>{'like': 36091, 'good': 35665, 'read': 34349, 'great': 30606, 'well': 25881}</pre>
+
 We create a separate column to see the post-processed text, re-merged into a single string, for further data handling down the line, as well as using it for some easier 
 graphing.
 
 After this processing, our wordcloud looked like the following: 
 
-![wordcloud](https://i.imgur.com/Uxoz9m0.png)
+![word_cloud_common](https://user-images.githubusercontent.com/59322692/144555947-77a52c16-18e0-4ffe-9447-d7a261e502f9.png)
 
-
-![multiclass-classification](https://i.imgur.com/h0IkRXX.jpg)
+<!--![multiclass-classification](https://i.imgur.com/h0IkRXX.jpg)-->
+```python
+# Labeling
+data['score'] = data.score.apply(lambda x: 0 if x in [1, 2] else x)
+data['score'] = data.score.apply(lambda x: 1 if x in [3] else x)
+data['score'] = data.score.apply(lambda x: 2 if x in [4, 5] else x)
+```
 
 Then came the decision on whether to go with a multiclass classification system, or with a binary system. 
 Training a multiclass classification system with all 5 classes (1, 2, 3, 4, 5 star reviews) resulted in fairly low validation accuracy (>40% or lower).
 As a result, they are converted into 3 - Negative, Neutral, Positive, where 1, 2 star reviews fall into the negative category, 3 star reviews fall into the neutral category,
 and 4, 5 star reviews fall into the positive category.
 
-![pre-tf-processing-one](https://i.imgur.com/bkrnO6G.jpg)
+<!--![pre-tf-processing-one](https://i.imgur.com/bkrnO6G.jpg)-->
+<!--![pre-tf-processing-two](https://i.imgur.com/03JcQVY.jpg)-->
+```python
+import numpy
 
+text_list = data.text.to_list()
+label_list = numpy.asarray(data.score.to_list())
 
-![pre-tf-processing-two](https://i.imgur.com/03JcQVY.jpg)
+print('sample text :', text_list[:1][0])
+print('sample label :', label_list[:1][0])
+```
+
+<pre>
+sample text : ['inspire', 'hope', 'lot', 'people', 'hear', 'cd', 'need', 'strong', 'positive', 'vibes', 'like', 'great', 'vocal', 'fresh', 'tune', 'cross', 'cultural', 'happiness', 'blue', 'gut', 'pop', 'sound', 'catchy', 'mature']
+sample label : 1</pre>
+
+```python
+import tensorflow
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
+max_length = 50
+
+indexed_text = tf_tokenizer.texts_to_sequences(text_list)
+rectangularized = pad_sequences(indexed_text, maxlen=max_length, truncating='post')
+
+tf_text = tensorflow.convert_to_tensor(rectangularized)
+print(tf_text)
+```
+<pre>tf.Tensor(
+[[  0   0   0 ...  45   1   1]
+ [  0   0   0 ...  38  67   1]
+ [  0   0   0 ...   1  49 101]
+ ...
+ [  0   0   0 ... 208 688   1]
+ [ 44   1 320 ...   1   1   1]
+ [  0   0   0 ... 186 116   1]], shape=(100000, 50), dtype=int32)</pre>
 
 Before we shove this data into the Tensorflow model, we need to process it into a compatible format. We convert our data into a numpy list format, and then set a max length.
 This max length represents the length of a sentence - anything exceeding that limit will be truncated, anything under, will be padded. The length needs to be uniform, 
 in order to be able to be converted into a Tensor.
 
+```python
+split = round(len(data)*0.7)
+
+training_texts = tf_text[:split]
+training_labels = label_list[:split]
+
+validation_texts = tf_text[split:]
+validation_labels = label_list[split:]
+
+print('test:', len(training_texts), 'validation :', len(validation_texts)
+```
+<pre>test: 70000 validation: 30000</pre>
+
 The data is then split 70/30 for training/validation datasets respectively. This will allow us to monitor the fitting of the models as the training occurs. What we want to see is
 the loss for both to go down, with the accuracy for both going up, and what we want to avoid is seeing the accuracy for the training dataset going up, while the validation accuracy
 falls or stays stagnant, as that means that overfitting is occurring.
 
-![hot-encoding](https://i.imgur.com/qzt1NLb.jpg)
+<!--![hot-encoding](https://i.imgur.com/qzt1NLb.jpg)-->
+```python
+hot_encoded = tensorflow.keras.utils.to_categorical(training_labels)
+validation_hot_encoded = tensorflow.keras.utils.to_categorical(validation_labels)
 
+print(hot_encoded[:5])
+```
+<pre>[[0. 0. 1.]
+ [0. 0. 1.]
+ [0. 0. 1.]
+ [0. 0. 1.]
+ [0. 0. 1.]]</pre>
+ 
 For multiclass training, the values of the labels/categories need to be "hot encoded" - that is, it needs to be turned into a type of array value. For example, if it is a positive review,
 it becomes [0, 0, 1], negative reviews being [1, 0, 0] and neutral being [0, 0, 0].
 
-![define-model](https://i.imgur.com/WeiZBJD.jpg)
+<!--![define-model](https://i.imgur.com/WeiZBJD.jpg)-->
+```python
+tensorflow.keras.backend.clear_session()
+
+model = tensorflow.keras.models.Sequential()
+model.add(tensorflow.keras.layers.Embedding(MAX_VOCAB_COUNT, 16, input_length=max_length))
+model.add(tensorflow.keras.layers.Conv1D(128, 5, activation='relu'))
+model.add(tensorflow.keras.layers.GlobalAveragePooling1D())
+model.add(tensorflow.keras.layers.Dense(64, activation=tensorflow.nn.relu))
+model.add(tensorflow.keras.layers.Dense(32, activation=tensorflow.nn.relu))
+model.add(tensorflow.keras.layers.Dense(3, activation=tensorflow.nn.softmax))
+
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.summary()
+```
+<pre>Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ embedding (Embedding)       (None, 50, 16)            11200     
+                                                                 
+ conv1d (Conv1D)             (None, 46, 128)           10368     
+                                                                 
+ global_average_pooling1d (G  (None, 128)              0         
+ lobalAveragePooling1D)                                          
+                                                                 
+ dense (Dense)               (None, 64)                8256      
+                                                                 
+ dense_1 (Dense)             (None, 32)                2080      
+                                                                 
+ dense_2 (Dense)             (None, 3)                 99        
+                                                                 
+=================================================================
+Total params: 32,003
+Trainable params: 32,003
+Non-trainable params: 0
+_________________________________________________________________</pre>
 
 Then we define our model. The first layer is an Keras Embedding layer. It requires that our data is integer encoded, which we did previously. This layer does something similar to hot-encoding, 
 but the values are weighted, and the value changes during training. We define our input dimension as our max word count we defined earlier, and set our output dimension here at 16.
@@ -171,19 +338,73 @@ The final layer is a softmax activated layer. Softmax is identical to Sigmoid, e
 If it sees a value that is unexpected, the area on the graph hits close to 0, where the slope is more exaggerated, which tells model that it needs to adjust the weights a fair amount. On the 
 other hand, if it sees a value that is expected, then the slope is relatively flat, meaning that the weights do not need to be adjusted very much.
 
+**Decision of the parameters**
+
+When we preprocess the input layer, we have used two constants; `MAX_VOCAB_COUNT` and `MAX_WORD_COUNT`.
+We used arbitrary numbers for those constants until we built the model. Before the actual training,
+we have tried two types of inspections; varying either `MAX_VOCAB_COUNT` or `MAX_WORD_COUNT` while controlling the other variables.
+The test results are followings.
+
+<div style="display: inline-block">
+    <img src="https://user-images.githubusercontent.com/59322692/144569268-51d1c0bc-7a6f-474f-9fe3-d02a64f47297.png"
+            alt="word_count_opt" style="width: calc(50% - 10px)" />
+    <img src="https://user-images.githubusercontent.com/59322692/144569245-9807b6e3-44b7-446b-aed8-ecddefb5504d.png"
+            alt="vocab_count_opt" style="width: calc(50% - 10px)" />
+</div>
+
+On the left side graph that inspected `MAX_WORD_COUNT`, it suggested that the maximum word count should be more than 80.
+However, the another graph (`MAX_VOCAB_COUNT`) had no clear regressions of the loss and accuracy, so we couldn't derive the meaningful
+number of `MAX_VOCAB_COUNT`.
+
 **Evaluation & Analysis**
-
-![training](https://i.imgur.com/fRsb7nO.jpg)
-
-~65% is definitely not the best in terms of accuracy, but validation accuracy is keeping up with training accuracy, and does not seem to be overfitting (which would be noticeable if training accuracy 
-went up significantly more compared to validation accuracy).
-
-An easy way to increase our accuracy would be to drop it from multi-class to binary classification - the reduction in classes, from testing, yields a noticeable increase in accuracy (something like 
-15 to 20 percent).
 
 <!--
 Graphs, tables, any statistics (if any)
 -->
+
+
+<!--![training](https://i.imgur.com/fRsb7nO.jpg)-->
+```python
+history = model.fit(training_texts, hot_encoded, validation_data=(validation_texts, validation_hot_encoded), epochs=100)
+```
+![training_statistics](https://user-images.githubusercontent.com/59322692/144564041-df476be1-be3d-4360-a293-9d94c0c8e29d.png)
+
+During the 100 epoches of training, the minimum validation loss (`0.76578`, red line) was found at 46 epochs, and the maximum validation accuracy (`0.66642`, blue line) appeared at 93 epochs. As considering what the training history shows above, setting the epochs around 40 ~ 50 might be enough to fit a model.
+
+~66% is definitely not the best in terms of accuracy, but validation accuracy is keeping up with training accuracy, and does not seem to be overfitting (which would be noticeable if training accuracy 
+went up significantly more compared to validation accuracy).
+
+**Confusion Matrix**
+
+![Confusion_Matrix_of_Validation_dataset](https://user-images.githubusercontent.com/59322692/144565938-7adeca78-c675-41bb-ad12-8c795e88735c.png)
+![Confusion_Matrix_of_Test_dataset](https://user-images.githubusercontent.com/59322692/144566625-b9ed3e60-fc6c-4dba-b92a-912069e36126.png)
+
+To evaluate the model, we made an confusion matrix for the validation dataset. Furthermore, to confirm the validity of the evaludation,
+we applied this type of confusion matrix with the pure dataset which haven't be used during the model training. According to those matrices,
+the precision of `Negative - Negative` and `Positive - Positive` classification is clearly higher than other combinations. Although it is disappointing
+that the number of classified neutral sentences correctly is quite low, this phenomenon made us to remind the fact that the ratio of neutral words is
+lower than negative and positive words. (see the above Dataset Inspection section)
+
+**Performance measurement**
+
+We calculated the precision and recall scores for each target with the `scikit learn`. 
+
+```python
+from sklearn.metrics import classification_report
+print(classification_report(val_y, val_p, target_names=['Negative', 'Neutral', 'Positive']))
+```
+<pre>              precision    recall  f1-score   support
+
+    Negative       0.68      0.78      0.73    159078
+     Neutral       0.51      0.16      0.24     80495
+    Positive       0.68      0.81      0.74    160427
+
+    accuracy                           0.67    400000
+   macro avg       0.62      0.58      0.57    400000
+weighted avg       0.64      0.67      0.63    400000</pre>
+
+An easy way to increase our accuracy would be to drop it from multi-class to binary classification - the reduction in classes, from testing, yields a noticeable increase in accuracy (something like 
+15 to 20 percent).
 
 **Summary**
 
