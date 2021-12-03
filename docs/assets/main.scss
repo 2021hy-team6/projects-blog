@@ -1,0 +1,31 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+pre {
+    padding: 6px 10px;
+}
+
+pre, code {
+    font-size: 13px;
+    line-height: 125%;
+}
+
+pre:not(.highlight) {
+    background: none;
+}
+
+div.highlighter-rouge .highlight {
+    margin-bottom: 5px;
+}
+
+table.dataframe{
+    font-size: 12px;
+    width: unset;
+
+    th, td {
+        padding: 5px;
+    }
+}
