@@ -422,13 +422,13 @@ As a result, we have developed a model that has 65% accuracy. To increase the ac
 
 **Limitation & Further Research Direction**
 
-After the efficacy of sentiment transcriber has been proven, models can be developed for smooth communication of people from different cultures. Since our model was trained by using Amazon's review data set in English, there are some limitations to state other country people's sentiment. Other sentiment transcriber models can be developed by using the most popular website's data set in that country.
+A limitation with our model is that it is not fully intended for our type of usage, which may cause further inaccuracies in our results. However, during our dataset evaluation/processing, we noticed that despite the dataset being sourced from Amazon Reviews, it is more applicable for our use-case than we initially considered. For example, our wordcloud shows words that are clearly negative or positive in a global context. 
 
-When negotiating, operating, or trading with a business partner company, the percentage of positive or negative emotions can be analyzed to investigate the probability of closing a transaction after the meeting and develop it as a model for generating profits.
+Some of the hardware limitations we encounter slow down the execution of our training. The dataset is much larger (~2 million rows), we're somewhat restricted to only using the first 100,000 rows due to execution and training time. For example, the function application of some parts of our pre-processing can take a significant amount of time when applied to an entire column. 
 
-<!--
-Discussion
--->
+In addition, some of the limitations we encounter with the format of this model is that the input must be formatted in a certain way. One of the further research directions would be to try and simplify this so that it would be less computationally expensive on the host application (especially when inference is run on a frozen graph).
+
+Our next step would be to freeze or convert this into a inference graph for usage in the final product - in order to better slot it into the transcribing application, which is written in C++. We're also adjusting certain parameters and looking into ways to better our accuracy.
 
 
 **Related Work**
@@ -446,7 +446,6 @@ https://towardsdatascience.com/how-to-train-a-deep-learning-sentiment-analysis-m
 https://towardsdatascience.com/a-complete-step-by-step-tutorial-on-sentiment-analysis-in-keras-and-tensorflow-ea420cc8913f
 
 https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6
-
 
 https://github.com/tensorflow/tensorflow
 
