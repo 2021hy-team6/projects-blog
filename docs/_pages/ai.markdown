@@ -8,18 +8,27 @@ permalink: /ai/
 
 Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
 
-**Table of Content**
-<!--
-TODO
--->
+### Table of Content
 
-**Members**
+* [Member](#member)
+* [Introduction](#introduction)
+* [Dataset](#dataset)
+* [Dataset Inspection](#dataset-inspection)
+* [Methodology](#methodology)
+* [Decision of the parameters](#decision-of-the-parameters)
+* [Evaluation & Analysis](#evaluation--analysis)
+* [Performance measurement](#performance-measurement)
+* [Summary](#summary)
+* [Limitation & Further Research Direction](#limitation--further-research-direction)
+* [Related Work](#related-work)
+
+### Member
 
 * Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
 * Kim Soohyun, Dept. Information Systems, soowithwoo@gmail.com
 * Lim Hongrok, Dept. Information Systems, hongrr123@gmail.com
 
-**Introduction**
+### Introduction
 
 <!--
 Motivation: Why are you doing this?
@@ -39,7 +48,7 @@ When a meeting is held on video in a business situation, it may be difficult to 
 
 Sentiment transcriber can also help those people's lives in that they can deliver accurate opinions and emotions at the same time to people with hearing impairment or speech impairment who have difficulty in communicating. In addition, sentimental transceiver can be helpful for those who have difficulty empathizing or recognizing other people's emotions. By recognizing positive and negative emotions, they can lead their communication in a better direction.
 
-**Dataset**
+### Dataset
 
 ```sh
 $ wget https://s3.amazonaws.com/fast-ai-nlp/amazon_review_full_csv.tgz
@@ -60,7 +69,7 @@ Character-level Convolutional Networks for Text Classification. Advances in Neur
 "The Amazon reviews full score dataset is constructed by randomly taking 600,000 training samples and 130,000 testing samples for each review score from 1 to 5. 
 In total there are 3,000,000 trainig samples and 650,000 testing samples."
 
-**Dataset Inspection**
+### Dataset Inspection
 
 GitHub Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Data_Inspection.ipynb)
 
@@ -82,7 +91,7 @@ these words clearly lean to the 1 or 5 scores - which might be a huge clue to di
 Describing your dataset
 -->
 
-**Methodology**
+### Methodology
 
 GitHub Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
 
@@ -164,6 +173,7 @@ applying the standardization function we defined above.
 
 <!--![convert-into-tokens](https://i.imgur.com/jROK6MJ.jpg)-->
 ```python
+# Tokenize the texts
 from tensorflow.keras.preprocessing.text import Tokenizer
 
 MAX_VOCAB_COUNT = 700
@@ -184,6 +194,7 @@ with niche words being converted into an "<unk>"(unknown) token. It was then pad
 to convert it into a tensor. 
 
 ```python
+# Get most frequent vocabularies
 most_frequent_vocab = pandas.Series(" ".join(data.liststring).split()).value_counts()[:MAX_VOCAB_COUNT]
 print(most_frequent_vocab[:5].to_dict())
 ```
@@ -212,6 +223,7 @@ and 4, 5 star reviews fall into the positive category.
 <!--![pre-tf-processing-one](https://i.imgur.com/bkrnO6G.jpg)-->
 <!--![pre-tf-processing-two](https://i.imgur.com/03JcQVY.jpg)-->
 ```python
+# parse dataset into list type
 import numpy
 
 text_list = data.text.to_list()
@@ -226,6 +238,7 @@ sample text : ['inspire', 'hope', 'lot', 'people', 'hear', 'cd', 'need', 'strong
 sample label : 1</pre>
 
 ```python
+# Generate arrays of sequences
 import tensorflow
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -251,6 +264,7 @@ This max length represents the length of a sentence - anything exceeding that li
 in order to be able to be converted into a Tensor.
 
 ```python
+# Split the dataset
 split = round(len(data)*0.7)
 
 training_texts = tf_text[:split]
@@ -269,6 +283,7 @@ falls or stays stagnant, as that means that overfitting is occurring.
 
 <!--![hot-encoding](https://i.imgur.com/qzt1NLb.jpg)-->
 ```python
+# One Hot Encoding
 hot_encoded = tensorflow.keras.utils.to_categorical(training_labels)
 validation_hot_encoded = tensorflow.keras.utils.to_categorical(validation_labels)
 
@@ -285,6 +300,7 @@ it becomes [0, 0, 1], negative reviews being [1, 0, 0] and neutral being [0, 0, 
 
 <!--![define-model](https://i.imgur.com/WeiZBJD.jpg)-->
 ```python
+# Create an model
 tensorflow.keras.backend.clear_session()
 
 model = tensorflow.keras.models.Sequential()
@@ -338,12 +354,19 @@ The final layer is a softmax activated layer. Softmax is identical to Sigmoid, e
 If it sees a value that is unexpected, the area on the graph hits close to 0, where the slope is more exaggerated, which tells model that it needs to adjust the weights a fair amount. On the 
 other hand, if it sees a value that is expected, then the slope is relatively flat, meaning that the weights do not need to be adjusted very much.
 
-**Decision of the parameters**
+<!--![training](https://i.imgur.com/fRsb7nO.jpg)-->
+```python
+# Execute Training
+epoch_count = 100
+history = model.fit(training_texts, hot_encoded, validation_data=(validation_texts, validation_hot_encoded), epochs=epoch_count)
+```
+
+### Decision of the parameters
 
 When we preprocess the input layer, we have used two constants; `MAX_VOCAB_COUNT` and `MAX_WORD_COUNT`.
 We used arbitrary numbers for those constants until we built the model. Before the actual training,
-we have tried two types of inspections; varying either `MAX_VOCAB_COUNT` or `MAX_WORD_COUNT` while controlling the other variables.
-The test results are followings.
+we have tried two types of inspections; varying either `MAX_VOCAB_COUNT` or `MAX_WORD_COUNT`, without changing others.
+The test training results are followings.
 
 <div style="display: inline-block">
     <img src="https://user-images.githubusercontent.com/59322692/144569268-51d1c0bc-7a6f-474f-9fe3-d02a64f47297.png"
@@ -353,28 +376,23 @@ The test results are followings.
 </div>
 
 On the left side graph that inspected `MAX_WORD_COUNT`, it suggested that the maximum word count should be more than 80.
-However, the another graph (`MAX_VOCAB_COUNT`) had no clear regressions of the loss and accuracy, so we couldn't derive the meaningful
-number of `MAX_VOCAB_COUNT`.
+However, the another graph (`MAX_VOCAB_COUNT`) had no clear regressions of the loss and accuracy, so we couldn't figure out the meaningful
+number of `MAX_VOCAB_COUNT` within our trials.
 
-**Evaluation & Analysis**
+### Evaluation & Analysis
 
 <!--
 Graphs, tables, any statistics (if any)
 -->
 
-
-<!--![training](https://i.imgur.com/fRsb7nO.jpg)-->
-```python
-history = model.fit(training_texts, hot_encoded, validation_data=(validation_texts, validation_hot_encoded), epochs=100)
-```
 ![training_statistics](https://user-images.githubusercontent.com/59322692/144564041-df476be1-be3d-4360-a293-9d94c0c8e29d.png)
 
-During the 100 epoches of training, the minimum validation loss (`0.76578`, red line) was found at 46 epochs, and the maximum validation accuracy (`0.66642`, blue line) appeared at 93 epochs. As considering what the training history shows above, setting the epochs around 40 ~ 50 might be enough to fit a model.
+During the 100 epochs of training, the minimum validation loss (`0.76578`, red line) was found at 46 epochs, and the maximum validation accuracy (`0.66642`, blue line) appeared at 93 epochs. As considering what the training history shows above, setting the epochs around 40 ~ 50 might be enough to fit a model.
 
 ~66% is definitely not the best in terms of accuracy, but validation accuracy is keeping up with training accuracy, and does not seem to be overfitting (which would be noticeable if training accuracy 
 went up significantly more compared to validation accuracy).
 
-**Confusion Matrix**
+### Confusion Matrix
 
 ![Confusion_Matrix_of_Validation_dataset](https://user-images.githubusercontent.com/59322692/144565938-7adeca78-c675-41bb-ad12-8c795e88735c.png)
 ![Confusion_Matrix_of_Test_dataset](https://user-images.githubusercontent.com/59322692/144566625-b9ed3e60-fc6c-4dba-b92a-912069e36126.png)
@@ -383,30 +401,38 @@ To evaluate the model, we made an confusion matrix for the validation dataset. F
 we applied this type of confusion matrix with the pure dataset which haven't be used during the model training. According to those matrices,
 the precision of `Negative - Negative` and `Positive - Positive` classification is clearly higher than other combinations. Although it is disappointing
 that the number of classified neutral sentences correctly is quite low, this phenomenon made us to remind the fact that the ratio of neutral words is
-lower than negative and positive words. (see the above Dataset Inspection section)
+lower than negative and positive words' ratio. (see the above Dataset Inspection section)
 
-**Performance measurement**
+### Performance measurement
 
-We calculated the precision and recall scores for each target with the `scikit learn`. 
+We calculated the precision and recall scores for each target labels.
 
 ```python
+# Analyze the result
 from sklearn.metrics import classification_report
 print(classification_report(val_y, val_p, target_names=['Negative', 'Neutral', 'Positive']))
 ```
-<pre>              precision    recall  f1-score   support
+<table class="dataframe" style="text-align: right;">
+    <thead>
+        <tr><th></th><th>precision</th><th>&emsp;recall</th><th>f1-score</th><th>&nbsp;support</th></tr>
+    </thead>
+    <tbody>
+        <tr><th>Negative</th><td>0.68</td><td>0.78</td><td>0.73</td><td>159078</td></tr>
+        <tr><th>Neutral</th><td>0.51</td><td>0.16</td><td>0.24</td><td>80495</td></tr>
+        <tr><th>Positive</th><td>0.68</td><td>0.81</td><td>0.74</td><td>160427</td></tr>
+        <tr><th>accuracy</th><td></td><td></td><td>0.67</td><td>400000</td></tr>
+        <tr><th>macro avg</th><td>0.62</td><td>0.58</td><td>0.57</td><td>400000</td></tr>
+        <tr><th>weighted avg</th><td>0.64</td><td>0.67</td><td>0.63</td><td>400000</td></tr>
+    </tbody>
+</table>
 
-    Negative       0.68      0.78      0.73    159078
-     Neutral       0.51      0.16      0.24     80495
-    Positive       0.68      0.81      0.74    160427
+Inside of the overall 67% accuracy, the Negative and Positive f1-scores are close to ~74%. It also revealed the fact that
+the number of samples labeled with Neutral was almost half of other labels.
 
-    accuracy                           0.67    400000
-   macro avg       0.62      0.58      0.57    400000
-weighted avg       0.64      0.67      0.63    400000</pre>
-
-An easy way to increase our accuracy would be to drop it from multi-class to binary classification - the reduction in classes, from testing, yields a noticeable increase in accuracy (something like 
+As we have seen, an easy way to increase our accuracy would be to drop it from multi-class to binary classification - the reduction in classes, from testing, yields a noticeable increase in accuracy (something like 
 15 to 20 percent).
 
-**Summary**
+### Summary
 
 By developing a model using Amazon's dataset, it was possible to conduct sentiment analysis of words in various sentences as much as possible. After that sentences in the Amazon data set were analyzed to increase the accuracy of emotional analysis by excluding unnecessary words from each sentence.
 
@@ -419,8 +445,7 @@ Out model consists of several layers. Keras Embedding layer, Dropout layer, Avar
 
 As a result, we have developed a model that has 65% accuracy. To increase the accuracy, we can shift the multi-classification to a binary classification which can increase the accuracy; 15-20% percent.
 
-
-**Limitation & Further Research Direction**
+### Limitation & Further Research Direction
 
 A limitation with our model is that it is not fully intended for our type of usage, which may cause further inaccuracies in our results. However, during our dataset evaluation/processing, we noticed that despite the dataset being sourced from Amazon Reviews, it is more applicable for our use-case than we initially considered. For example, our wordcloud shows words that are clearly negative or positive in a global context. 
 
@@ -431,7 +456,7 @@ In addition, some of the limitations we encounter with the format of this model 
 Our next step would be to freeze or convert this into a inference graph for usage in the final product - in order to better slot it into the transcribing application, which is written in C++. We're also adjusting certain parameters and looking into ways to better our accuracy.
 
 
-**Related Work**
+### Related Work
 
 We referred to several blogs, datasets and libraries in order to create the model and its training notebook.
 
