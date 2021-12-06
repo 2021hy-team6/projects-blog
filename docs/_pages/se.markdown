@@ -8,7 +8,7 @@ permalink: /se/
 
 **Repositories**
 
-- Github Repository : [link](https://github.com/2021hy-team6/recycle-mate) 
+- C++ Application Repository : [RecycleM8 Github Repository](https://github.com/2021hy-team6/projects-blog) 
 
 **Paper**
 
