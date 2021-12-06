@@ -23,13 +23,13 @@ permalink: /se/
 
 **Objectives**
 
-The purpose of our project is to design an artificial intelligence model that helps people separate recycling in real time. If you show the camera the trash to recycle in real time, it tells you how to recycle it.
+The purpose of our project is to design an artificial intelligence application that can help people separate recycling in real-time. If you present the application's linked camera with an object, it should return some feedback on how to recycle it.
 
 **Applications**
 
-This model can be placed in recycling grounds used by many people, including apartments, share houses, and companies. If many people throw away trash, it can cause confusion because the garbage is not properly classified.
-Our model can prevent those confusion and present an accurate recycling method for the environment.
+An example of an application for this would be to place it in a recycling area, to help reduce confusion on certain recyclable objects, as well as presenting some educational benefit. In addition, statistics would be supported by the application, allowing users to see the overall recycling load.
 
 |Input|Modules that help Classification|Using AI Technology|Output|
 |:-------------------:|:-------------------:|:----------------:|:--------------------:|
-|An object to the camera in real-time|**OpenCV, TACO, WasteNet**|**Recycling Statistics**|Feedback to the user which category the object has to be recycled|
+|An object to the camera in real-time|**OpenCV, TACO**|**Recycling Statistics**|Feedback to the user which category the object has to be recycled|
+
