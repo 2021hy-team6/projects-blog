@@ -6,6 +6,14 @@ permalink: /se/
 
 > Identifying and Categorizing Objects based on Recyclability
 
+### Table of Content
+
+* [Introduction](#introduction)
+* [Development Envirionment](#development-envirionment)
+* [Specifications](#specifications)
+* [Architecture Implementation](#architecture-implementation)
+* [Conclusion](#conclusion)
+
 ### Repositories
 
 - C++ Application Repository : [RecycleM8 Github Repository](https://github.com/2021hy-team6/recyclem8) 
@@ -63,22 +71,27 @@ As the project has a focus on using models, and the detection and classification
 
 #### SQL-PostgreSQL
 To allow the possibility of expansion and to also leave the data accessible, while offloading the data to the disk rather than the memory, PostgreSQL will be used in order to store data from the detections.
+
+
 ### Modules
 
-**SSD MobileNet v2**
+#### SSD MobileNet v2
+SSD MobileNet v2 is an object recognition algorithm that is fast - using a "single shot" to detect multiple objects. This will fit our necessity for speediness, especially once frozen for inference, as we are going for real-time detection. 
+#### OpenCV
+OpenCV is a software library that focuses on computer vision. It contains support for ML model execution, as well as various image manipulation functions.
 
-**OpenCV**
+A lot of the internal UI features will be implemented via OpenCV (ie. bounding boxes, displaying of results, etc), and the model will be fed to OpenCV's native model handling to return these results. It is available on many platforms and languages, supporting Linux, C++ and Python, amongst many others.
 
 ### Dataset
 
-**TACO**
+#### TACO
 We are mainly looking to use the TACO dataset, as it is a specialized dataset on the topic of waste/litter, with segmentation support, and a large set of COCO annotated images.
 However, we will be altering the training data slightly, due to the TACO dataset also containing categories and images that are not completely applicable to our targeted usage - such as cigarette detection.
 The TACO dataset also contains enough categories that we feel would cover general use, such as plastic film, plastic bottle, cans, glass, etc - which is commonly seen waste that falls into recycling categories.
 In addition, the TACO dataset seems to be centered around the topic of identifying different types of objects. While other datasets seem to go for more of a "litter detection dataset" binary classification (litter or not litter), the TACO dataset goes for a more specific classification approach. This will allow us to provide more specific tips to each category of recycling.
 
 * < http://tacodataset.org/ >
-* <https://github.com/pedropro/TACO > (MIT License
+* <https://github.com/pedropro/TACO > (MIT License)
 * < https://arxiv.org/abs/2003.06975 >
 
 
@@ -86,27 +99,27 @@ In addition, the TACO dataset seems to be centered around the topic of identifyi
 
 ### Initial Setting & Connection
 
-![Initial_Page] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/start.eps)
+![Initial_Page] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/start.jpg)
 
 When the user first runs the application, their settings/config file will be read, and then they will be directed an initial starting screen. As the application will be run locally, there will be no login or registration required. The window size should be fixed. 
 Once the "Start" button is clicked, they will be brought to the next menu.
 
-![Connection] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/nothing_detected.eps)
+![Connection] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/nothing_detected.jpg)
 
 The default connection value is camera index 0 (the device index - 0 refers to the default camera for the system), however it can be assigned to another index, or to a video (ie. mp4 or webcam stream) through the settings menu. For a webcam stream, a valid webcam stream link must be provided.
 
-![Setting1] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_1.eps)
-![Setting2] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_2.eps)
+![Setting1] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_1.jpg)
+![Setting2] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_2.jpg)
 
 In the setting menu, the user can change the setting at any time.
 
 ### Object Detection
 
-![Detection] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/successful_detection.eps)
+![Detection] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/successful_detection.jpg)
 
 When an object is detected by the model, a bounding box will be drawn on the object, alongside what it recognized, and the confidence level. In addition, the recycling category and any special instructions will be displayed.
 
-![Aerosol] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/aerosol_detected.eps)
+![Aerosol] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/aerosol_detected.jpg)
 
 When an object class as a tip attached in the classification file, it will be shown alongside the detection in the text. For example, the tip to not pierce an aerosol canister, or not to crush an aluminum drink can. However, if the object does not have a tip attached, such as the metal bottle cap, then no tip will be shown - only the detected object name, and the recycling class (Metal).
 
@@ -114,7 +127,7 @@ When an object class as a tip attached in the classification file, it will be sh
 
 #### Database Settings
 
-![Database] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_3.eps)
+![Database] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/settings_3.jpg)
 
 This tab will contain settings related to the database. In this, the user may simply decide to choose to disable, or enable, the usage of database with regards to scans. The user may choose to do this if they would prefer not to have a database instance running, have no need for a database, or for privacy reasons or convenience reasons (ie. choosing not to run the dashboard)
 
@@ -122,13 +135,13 @@ Specific settings such as the database connection string will only be accessible
 
 #### Statistics
 
-![Statistics] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_overall.eps)
-![Session_Statistics] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_session.eps)
+![Statistics] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_overall.jpg)
+![Session_Statistics] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/statistics_session.jpg)
 
 When the user clicks on "View Statistics" in the Statistics Context Menu Button, they will be presented with a Statistics Window. The window should be non-modal - as in, the user should still be able to interact with the other window at the same time while viewing statistics. In the window, they will see two tabs - one for session stats, and one for overall stats.
 
 #### Dashboard
-![Dashboard] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/stats_overall.eps)
+![Dashboard] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/stats_overall.jpg)
 
 In the dashboard window, it shows the number of detected objects for each hour and each super categories. The graph contains not all super categories, but displays top five most recognized super categories in a day.
 
@@ -136,13 +149,13 @@ In the dashboard window, it shows the number of detected objects for each hour a
 
 ### System Diagram
 
-![App_diagram] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/app_diagram.eps)
+![App_diagram] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/app_diagram.jpg)
 
 The following diagram shows our overall architecture and application ecosystem for this project.
 
 ### Database Architecture
 
-![Database_diagram] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/db_diagram.eps)
+![Database_diagram] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/db_diagram.jpg)
 
 The following diagram shows our architecture for the database, and the source of the database data (insertion sources). Note that the dashboard is not showcased here, as the dashboard mainly only does selections from the database, and is not a source of data.
 

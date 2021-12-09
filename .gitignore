@@ -4,5 +4,4 @@ docs/files/*.fdb_latexmk
 docs/files/*.fls
 docs/files/*.log
 docs/files/*.synctex.gz
-docs/files/images/*.pdf
-docs/files/images/*.dps
+docs/files/images/*.jpg
