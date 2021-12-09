@@ -14,13 +14,13 @@ permalink: /se/
 
 ### Paper
 
-- View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/RecyclingAssistant-Paper.pdf)
-- Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/RecyclingAssistant-Paper.pdf)
+- View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/recycling-assistant-paper-WIP.pdf)
+- Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/recycling-assistant-paper-WIP.pdf)
 
 ### Demo
 - Application demo : [Application Demo Video](https://streamable.com/kcvpuh)
 - Detection demo : [Detection Demo Video](https://streamable.com/6ysf35)
-- Dashboard demo : [Dashboard Demo Video](https://streamable.com/mcp8dr)
+- Dashboard demo : [Dashboard Demo Video](https://aiseteamproject.slack.com/files/U02EYF2MTAQ/F02PW8Z5E7Q/recycle-assistant-dashboard.mp4)
 
 
 ### Members
@@ -210,9 +210,14 @@ The diagram shows our architecture for the database, and the source of the datab
 ## Conclusion
 
 #### Meaning
-Recycling Assistant is available on all devices equipped with webcams. If it is an item that requires attention when recycling, Recycling assistant explains precautions to the user along with an appropriate method of recycling. It can be used as an educational tool, to help clear up common misconceptions about recycling items, as well as help users determine whether the item they hold is recyclable.
+Recycling Assistant is available on all devices equipped with webcams. If it is an item that requires attention when recycling, Recycling assistant explains precautions to the user along with an appropriate method of recycling.
 
 By providing statistics, users can know the type of garbage that is most discharged, and encourage them to reduce disposable consumption by raising awareness.
+
+#### Further Research Direction
+
+If home appliances or large products equipped with recycling assistant are released in the future, products that can be automatically separated can be developed by adding automatic recycling functions. In case of this software is designed with cute characters, it can be used as educational software even for young children.
+
 
 ### Related Work
 
@@ -229,3 +234,4 @@ By providing statistics, users can know the type of garbage that is most dischar
 * "PostgreSQL" [PostgreSQL](https://www.postgresql.org/)
 * "libpqxx" [jtv](https://github.com/jtv/libpqxx/)
 * "rapidjson" [Tencent](https://github.com/Tencent/rapidjson/)
+* "React Dashboard Template" [Creative Tim](https://www.creative-tim.com/templates/admin-dashboard)
