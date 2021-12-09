@@ -9,6 +9,8 @@ permalink: /se/
 ### Repositories
 
 - C++ Application Repository : [RecycleM8 Github Repository](https://github.com/2021hy-team6/recyclem8) 
+- Recycling Assistant Repository : [Recycing Assistant Repository](https://github.com/2021hy-team6/recycle-assistant)
+- Dashboard Repository : [Dashboard Github Repository](https://github.com/2021hy-team6/dashboard)
 
 ### Paper
 
