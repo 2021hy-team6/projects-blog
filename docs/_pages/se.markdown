@@ -98,16 +98,16 @@ We are mainly looking to use the TACO dataset, as it is a specialized dataset on
 
 The TACO dataset also contains enough categories that we feel would cover general use, such as plastic film, plastic bottle, cans, glass, etc - which is commonly seen waste that falls into recycling categories. In addition, the TACO dataset seems to be centered around the topic of identifying different types of objects. While other datasets seem to go for more of a "litter detection dataset" binary classification (litter or not litter), the TACO dataset goes for a more specific classification approach. This will allow us to provide more specific tips to each category of recycling.
 
-* < http://tacodataset.org/ >
-* <https://github.com/pedropro/TACO > (MIT License)
-* < https://arxiv.org/abs/2003.06975 >
+* <http://tacodataset.org/>
+* <https://github.com/pedropro/TACO> (MIT License)
+* <https://arxiv.org/abs/2003.06975>
 
 
 ## Specifications
 
 ### Initial Setting & Connection
 
-<img src="https://user-images.githubusercontent.com/53211603/145336503-a7b09de6-5088-4655-b906-af883394dd2f.jpg" alt='initial page' width='450px' />
+<img src="https://user-images.githubusercontent.com/53211603/1453ß36503-a7b09de6-5088-4655-b906-af883394dd2f.jpg" alt='initial page' width='450px' />
 
 When the user first runs the application, their settings/config file will be read, and then they will be directed an initial starting screen. As the application will be run locally, there will be no login or registration required. The window size should be fixed. 
 
