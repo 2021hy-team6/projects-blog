@@ -11,6 +11,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 ### Table of Content
 
 * [Member](#member)
+* [Demo Video](#demo)
 * [Introduction](#introduction)
 * [Dataset](#dataset)
 * [Dataset Inspection](#dataset-inspection)
@@ -27,6 +28,14 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 * Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
 * Kim Soohyun, Dept. Information Systems, soowithwoo@gmail.com
 * Lim Hongrok, Dept. Information Systems, hongrr123@gmail.com
+
+### Demo Video
+
+Direct Link: [Sentiment Transcriber Demo](https://streamable.com/2113kz)
+
+<iframe width="480" height="360" src="https://streamable.com/2113kz" frameborder="0"> </iframe>
+
+##### The analyzed sentiment is displayed as a grey (neutral), green (positive), or red (negative) dot next to the sentence.
 
 ### Introduction
 
@@ -107,14 +116,14 @@ Explaining features or code (if any)
 -->
 
 First, we have to have Pandas read from our dataset. It's in a CSV format, so we can just use the read_csv function, and then check how the data looks with
-data.head(). Here, we only pull 100,000 rows.
+data.head(). Here, we pull 2,000,000 rows.
 
 <!--![reading-dataset](https://i.imgur.com/U5u5rg5.jpg)-->
 ```python
 import pandas
 
 # Read Dataset
-data = pandas.read_csv('amazon_review_full_csv/train.csv', nrows=100000)
+data = pandas.read_csv('amazon_review_full_csv/train.csv')
 
 # Assigning Column Names
 data.columns = ["score", "title", "text"]
@@ -447,43 +456,39 @@ By developing a model using Amazon's dataset, it was possible to conduct sentime
 
 For sentiment analysis, the degree of positive/negative of each word was divided by score. To organize the data, we read the csv file by using pandas module. For the model training, the word was returned to the most basic unit and tokenized. Training a multiclass classification system with all 5 classes resulted in low validation accuracy. Therefore we devide the result into three classses; Negative, Positive, and Neutral.
 
-
 To use multiclass training we converted the data into array value by using 'hot encoding'. It is a vector representation method of a word that uses the size of a set of words as a vector, gives the index of the word you want to represent, and gives the other index zero.
 
-Out model consists of several layers. Keras Embedding layer, Dropout layer, Avarage Pooling layer, ReLU activated layers, softwmax activated layer. Each layer balances data, removes deflection, and adusts weights during training. 
+Out model consists of several layers. Keras Embedding layer, Dropout layer, Avarage Pooling layer, ReLU activated layers, softmax activated layer. Each layer balances data, removes deflection, and adusts weights during training. 
 
-As a result, we have developed a model that has 65% accuracy. To increase the accuracy, we can shift the multi-classification to a binary classification which can increase the accuracy; 15-20% percent.
+As a result, we have developed a model that has 65% accuracy. To increase the accuracy, we can shift the multi-classification to a binary classification which can increase the accuracy about 15-20% percent.
 
 ### Limitation & Further Research Direction
 
-A limitation with our model is that it is not fully intended for our type of usage, which may cause further inaccuracies in our results. However, during our dataset evaluation/processing, we noticed that despite the dataset being sourced from Amazon Reviews, it is more applicable for our use-case than we initially considered. For example, our wordcloud shows words that are clearly negative or positive in a global context. 
+A limitation with our model is that it is not fully intended for our type of usage, which causes further inaccuracies in our results. However, during our dataset evaluation/processing, we noticed that despite the dataset being sourced from Amazon Reviews, it is more applicable for our use-case than we initially considered. For example, our wordcloud shows words that are clearly negative or positive in any context. 
 
-Some of the hardware limitations we encounter slow down the execution of our training. The dataset is much larger (~2 million rows), we're somewhat restricted to only using the first 100,000 rows due to execution and training time. For example, the function application of some parts of our pre-processing can take a significant amount of time when applied to an entire column. 
+In addition, some of the limitations we encounter with the format of this model is that the input must be formatted in a certain way. One of the further research directions would be to try and simplify this so that it would be less computationally expensive on the host application, so that the processing is done as a layer within the model.
 
-In addition, some of the limitations we encounter with the format of this model is that the input must be formatted in a certain way. One of the further research directions would be to try and simplify this so that it would be less computationally expensive on the host application (especially when inference is run on a frozen graph).
-
-Our next step would be to freeze or convert this into a inference graph for usage in the final product - in order to better slot it into the transcribing application, which is written in C++. We're also adjusting certain parameters and looking into ways to better our accuracy.
-
+We'd also like to see more accuracy/a better fit, as it is a bit awkward to see sentiment misclassification occurring (eg. an actual positive sentiment sentence being misconstrued as negative). Though there is always likely to be a mismatch, it would be nicer to see a higher overall accuracy, especially for our purposes.
 
 ### Related Work
 
-We referred to several blogs, datasets and libraries in order to create the model and its training notebook.
+We referred to several blogs, datasets and libraries in order to create the model and its training notebook. This is because the below work is heavily related to what we're trying to do (analyze textual sentiment).
 
-https://kaggle.com/bittlingmayer/amazonreviews
+[https://kaggle.com/bittlingmayer/amazonreviews](https://kaggle.com/bittlingmayer/amazonreviews)
 
-https://kaggle.com/paoloripamonti/twitter-sentiment-analysis
+[https://kaggle.com/paoloripamonti/twitter-sentiment-analysis](https://kaggle.com/paoloripamonti/twitter-sentiment-analysis)
 
-https://github.com/bentrevett/pytorch-sentiment-analysis
+[https://github.com/bentrevett/pytorch-sentiment-analysis](https://github.com/bentrevett/pytorch-sentiment-analysis)
 
-https://towardsdatascience.com/how-to-train-a-deep-learning-sentiment-analysis-model-4716c946c2ea
+[https://towardsdatascience.com/how-to-train-a-deep-learning-sentiment-analysis-model-4716c946c2ea](https://towardsdatascience.com/how-to-train-a-deep-learning-sentiment-analysis-model-4716c946c2ea)
 
-https://towardsdatascience.com/a-complete-step-by-step-tutorial-on-sentiment-analysis-in-keras-and-tensorflow-ea420cc8913f
+[https://towardsdatascience.com/a-complete-step-by-step-tutorial-on-sentiment-analysis-in-keras-and-tensorflow-ea420cc8913f](https://towardsdatascience.com/a-complete-step-by-step-tutorial-on-sentiment-analysis-in-keras-and-tensorflow-ea420cc8913f)
 
-https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6
+[https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)
 
-https://github.com/tensorflow/tensorflow
+[https://github.com/tensorflow/tensorflow](https://github.com/tensorflow/tensorflow)
 
-https://tensorflow.org/text/guide/word_embeddings
+[https://tensorflow.org/text/guide/word_embeddings](https://tensorflow.org/text/guide/word_embeddings)
 
 <!--
 (e.g., existing studies)
