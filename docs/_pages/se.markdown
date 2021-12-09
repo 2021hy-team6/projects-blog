@@ -17,6 +17,12 @@ permalink: /se/
 - View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/recycling-assistant-paper-WIP.pdf)
 - Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/recycling-assistant-paper-WIP.pdf)
 
+### Demo
+- Application demo : [Application Demo Video](https://streamable.com/kcvpuh)
+- Detection demo : [Detection Demo Video](https://streamable.com/6ysf35)
+- Dashboard demo : [Dashboard Demo Video](https://aiseteamproject.slack.com/files/U02EYF2MTAQ/F02PW8Z5E7Q/recycle-assistant-dashboard.mp4)
+
+
 ### Members
 
 * Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
