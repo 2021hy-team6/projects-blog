@@ -14,8 +14,8 @@ permalink: /se/
 
 ### Paper
 
-- View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/recycling-assistant-paper-WIP.pdf)
-- Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/recycling-assistant-paper-WIP.pdf)
+- View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/RecyclingAssistant-Paper.pdf)
+- Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/RecyclingAssistant-Paper.pdf)
 
 ### Demo
 - Application demo : [Application Demo Video](https://streamable.com/kcvpuh)
