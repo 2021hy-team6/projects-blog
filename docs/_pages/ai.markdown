@@ -6,8 +6,10 @@ permalink: /ai/
 
 > Sentiment Analysis on Live Transcription
 
-##### Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
-##### Transcription Application Repository : [Sentiment Transcriber](https://github.com/2021hy-team6/sentiment-transcriber-app)
+#### Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Sentiment_Analysis.ipynb)
+#### Transcription Application Repository : [Sentiment Transcriber](https://github.com/2021hy-team6/sentiment-transcriber-app)
+
+---
 
 ### Table of Content
 
