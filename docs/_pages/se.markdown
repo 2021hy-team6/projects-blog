@@ -210,14 +210,9 @@ The diagram shows our architecture for the database, and the source of the datab
 ## Conclusion
 
 #### Meaning
-Recycling Assistant is available on all devices equipped with webcams. If it is an item that requires attention when recycling, Recycling assistant explains precautions to the user along with an appropriate method of recycling.
+Recycling Assistant is available on all devices equipped with webcams. If it is an item that requires attention when recycling, Recycling assistant explains precautions to the user along with an appropriate method of recycling. It can be used as an educational tool, to help clear up common misconceptions about recycling items, as well as help users determine whether the item they hold is recyclable.
 
 By providing statistics, users can know the type of garbage that is most discharged, and encourage them to reduce disposable consumption by raising awareness.
-
-#### Further Research Direction
-
-If home appliances or large products equipped with recycling assistant are released in the future, products that can be automatically separated can be developed by adding automatic recycling functions. In case of this software is designed with cute characters, it can be used as educational software even for young children.
-
 
 ### Related Work
 
