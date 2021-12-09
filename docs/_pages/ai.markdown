@@ -66,6 +66,8 @@ In essence, since the accuracy of the transcription also directly impacts the ac
 
 ![deepspeech_result](https://i.imgur.com/PYyHI9t.png)
 
+As such, we decided to use Amazon Web Service's Transcription API, due to significantly higher accuracy, and availability.
+
 ### Dataset
 
 For our dataset, we will be using a data from Amazon's reviews, due to their variance in vocabulary,
