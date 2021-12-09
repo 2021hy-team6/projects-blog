@@ -20,7 +20,7 @@ permalink: /se/
 ### Demo
 - Application demo : [Application Demo Video](https://streamable.com/kcvpuh)
 - Detection demo : [Detection Demo Video](https://streamable.com/6ysf35)
-- Dashboard demo : [Dashboard Demo Video](https://aiseteamproject.slack.com/files/U02EYF2MTAQ/F02PW8Z5E7Q/recycle-assistant-dashboard.mp4)
+- Dashboard demo : [Dashboard Demo Video](https://streamable.com/mcp8dr)
 
 
 ### Members

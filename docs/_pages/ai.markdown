@@ -11,7 +11,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 ### Table of Content
 
 * [Members](#member)
-* [Demo Video](#demo)
+* [Demo Video](#demo-video)
 * [Introduction](#introduction)
 * [Preamble](#preamble)
 * [Dataset](#dataset)
@@ -62,7 +62,7 @@ Sentiment transcriber can also help those people's lives in that they can delive
 
 Initially, we were planning to use NUGU's SDK and provided models for transcription. However, upon getting access to the SDK and publicly available models, we found that the only models available were models such as an endpoint detection model, a keyword detection model, and a NUGU activation model - none of which would be suitable for our use. As such, we looked to use other available models, such as Mozilla's DeepSpeech. While testing it out with the provided model, we found that it was not accurate enough for our use-case. While our goal was never to have 100% transcription accuracy, we wanted to at least be able to look back and get the gist of what was said earlier, and the sentiment of that sentence. 
 
-In essence, since the accuracy of the transcription also directly impacts the accuracy of the sentiment analyzer, it would also result in both an inaccurate transcription of the conversation, but also a completely incorrect sentiment reading. For example, this is the result we received - which is incomprehensible. https://i.imgur.com/PYyHI9t.png
+In essence, since the accuracy of the transcription also directly impacts the accuracy of the sentiment analyzer, it would also result in both an inaccurate transcription of the conversation, but also a completely incorrect sentiment reading. For example, this is the result we received - which is incomprehensible.
 
 ![deepspeech_result](https://i.imgur.com/PYyHI9t.png)
 
