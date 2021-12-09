@@ -50,13 +50,19 @@ Sentiment transcriber can also help those people's lives in that they can delive
 
 ### Dataset
 
+For our dataset, we will be using a data from Amazon's reviews, due to their variance in vocabulary,
+and phrasing. 
+
 ```sh
 $ wget https://s3.amazonaws.com/fast-ai-nlp/amazon_review_full_csv.tgz
 $ tar -xvzf amazon_review_full_csv.tgz
+$ head -n 5 amazon_review_full_csv/train.csv # score, title, text
 ```
-
-For our dataset, we will be using a data from Amazon's reviews, due to their variance in vocabulary,
-and phrasing. 
+<pre>"3","more like funchuck","Gave this to my dad for a gag gift after directing ""Nunsense,"" he got a reall kick out of it!"
+"5","Inspiring","I hope a lot of people hear this cd. We need more strong and positive vibes like this. Great vocals, fresh tunes, cross-cultural happiness. Her blues is from the gut. The pop sounds are catchy and mature."
+"5","The best soundtrack ever to anything.","I'm reading a lot of reviews saying that this is the best 'game soundtrack' and I figured that I'd write a review to disagree a bit. This in my opinino is Yasunori Mitsuda's ultimate masterpiece. The music is timeless and I'm been listening to it for years now and its beauty simply refuses to fade.The price tag on this is pretty staggering I must say, but if you are going to buy any cd for this much money, this is the only one that I feel would be worth every penny."
+"4","Chrono Cross OST","The music of Yasunori Misuda is without question my close second below the great Nobuo Uematsu.Chrono Cross OST is a wonderful creation filled with rich orchestra and synthesized sounds. While ambiance is one of the music's major factors, yet at times it's very uplifting and vigorous. Some of my favourite tracks include; ""Scars Left by Time, The Girl who Stole the Stars, and Another World""."
+"5","Too good to be true","Probably the greatest soundtrack in history! Usually it's better to have played the game first but this is so enjoyable anyway! I worked so hard getting this soundtrack and after spending [money] to get it it was really worth every penny!! Get this OST! it's amazing! The first few tracks will have you dancing around with delight (especially Scars Left by Time)!! BUY IT NOW!!"</pre>
 
 The dataset is described as the following by the dataset author (Xiang Zhang (xiang.zhang@nyu.edu)):
 
@@ -71,7 +77,7 @@ In total there are 3,000,000 trainig samples and 650,000 testing samples."
 
 ### Dataset Inspection
 
-GitHub Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analysis_nb/blob/main/Data_Inspection.ipynb)
+![pos_and_neg_words](https://user-images.githubusercontent.com/59322692/145327478-31e6de82-e125-439a-af3c-c0390ac00b52.png)
 
 In this dataset, after parsing text into words with categorized labels,
 positive, neutral and negative labeling ratio are calculated per word.
@@ -242,10 +248,10 @@ sample label : 1</pre>
 import tensorflow
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-max_length = 50
+MAX_WORD_LENGTH = 50
 
 indexed_text = tf_tokenizer.texts_to_sequences(text_list)
-rectangularized = pad_sequences(indexed_text, maxlen=max_length, truncating='post')
+rectangularized = pad_sequences(indexed_text, maxlen=MAX_WORD_LENGTH, truncating='post')
 
 tf_text = tensorflow.convert_to_tensor(rectangularized)
 print(tf_text)
@@ -301,15 +307,16 @@ it becomes [0, 0, 1], negative reviews being [1, 0, 0] and neutral being [0, 0, 
 <!--![define-model](https://i.imgur.com/WeiZBJD.jpg)-->
 ```python
 # Create an model
-tensorflow.keras.backend.clear_session()
+tf.keras.backend.clear_session()
 
-model = tensorflow.keras.models.Sequential()
-model.add(tensorflow.keras.layers.Embedding(MAX_VOCAB_COUNT, 16, input_length=max_length))
-model.add(tensorflow.keras.layers.Conv1D(128, 5, activation='relu'))
-model.add(tensorflow.keras.layers.GlobalAveragePooling1D())
-model.add(tensorflow.keras.layers.Dense(64, activation=tensorflow.nn.relu))
-model.add(tensorflow.keras.layers.Dense(32, activation=tensorflow.nn.relu))
-model.add(tensorflow.keras.layers.Dense(3, activation=tensorflow.nn.softmax))
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Embedding(MAX_VOCAB_COUNT, 16, input_length=MAX_WORD_LENGTH))
+model.add(tf.keras.layers.Dropout(0.2))
+model.add(tf.keras.layers.GlobalAveragePooling1D())
+model.add(tf.keras.layers.Dropout(0.2))
+model.add(tf.keras.layers.Dense(64, activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(32, activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(3, activation=tf.nn.softmax))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.summary()
@@ -318,22 +325,24 @@ model.summary()
 _________________________________________________________________
  Layer (type)                Output Shape              Param #   
 =================================================================
- embedding (Embedding)       (None, 50, 16)            11200     
+ embedding (Embedding)       (None, 50, 16)            12800     
                                                                  
- conv1d (Conv1D)             (None, 46, 128)           10368     
+ dropout (Dropout)           (None, 50, 16)            0         
                                                                  
- global_average_pooling1d (G  (None, 128)              0         
+ global_average_pooling1d (G  (None, 16)               0         
  lobalAveragePooling1D)                                          
                                                                  
- dense (Dense)               (None, 64)                8256      
+ dropout_1 (Dropout)         (None, 16)                0         
+                                                                 
+ dense (Dense)               (None, 64)                1088      
                                                                  
  dense_1 (Dense)             (None, 32)                2080      
                                                                  
  dense_2 (Dense)             (None, 3)                 99        
                                                                  
 =================================================================
-Total params: 32,003
-Trainable params: 32,003
+Total params: 16,067
+Trainable params: 16,067
 Non-trainable params: 0
 _________________________________________________________________</pre>
 
@@ -421,8 +430,8 @@ print(classification_report(val_y, val_p, target_names=['Negative', 'Neutral', '
         <tr><th>Neutral</th><td>0.51</td><td>0.16</td><td>0.24</td><td>80495</td></tr>
         <tr><th>Positive</th><td>0.68</td><td>0.81</td><td>0.74</td><td>160427</td></tr>
         <tr><th>accuracy</th><td></td><td></td><td>0.67</td><td>400000</td></tr>
-        <tr><th>macro avg</th><td>0.62</td><td>0.58</td><td>0.57</td><td>400000</td></tr>
-        <tr><th>weighted avg</th><td>0.64</td><td>0.67</td><td>0.63</td><td>400000</td></tr>
+        <!--<tr><th>macro avg</th><td>0.62</td><td>0.58</td><td>0.57</td><td>400000</td></tr>
+        <tr><th>weighted avg</th><td>0.64</td><td>0.67</td><td>0.63</td><td>400000</td></tr>-->
     </tbody>
 </table>
 
