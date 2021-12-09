@@ -100,7 +100,7 @@ The TACO dataset also contains enough categories that we feel would cover genera
 ### Initial Setting & Connection
 
 <div style = "text-align: center">
-    <img src="https://user-images.githubusercontent.com/53211603/145336503-a7b09de6-5088-4655-b906-af883394dd2f.jpg" alt='initial page' style='width: calc(70%)' />
+    <img src="https://user-images.githubusercontent.com/53211603/145336503-a7b09de6-5088-4655-b906-af883394dd2f.jpg" alt='initial page' width='450px' />
 </div>
 
 When the user first runs the application, their settings/config file will be read, and then they will be directed an initial starting screen. As the application will be run locally, there will be no login or registration required. The window size should be fixed. 
