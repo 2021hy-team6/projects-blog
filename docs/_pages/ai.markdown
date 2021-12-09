@@ -10,7 +10,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 
 ### Table of Content
 
-* [Member](#member)
+* [Members](#member)
 * [Demo Video](#demo)
 * [Introduction](#introduction)
 * [Dataset](#dataset)
@@ -23,7 +23,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 * [Limitation & Further Research Direction](#limitation--further-research-direction)
 * [Related Work](#related-work)
 
-### Member
+### Members
 
 * Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
 * Kim Soohyun, Dept. Information Systems, soowithwoo@gmail.com
@@ -33,7 +33,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 
 Direct Link: [Sentiment Transcriber Demo](https://streamable.com/2113kz)
 
-<iframe width="720" height="480" src="https://streamable.com/e/mcp8dr" frameborder="0"> </iframe>
+<iframe width="720" height="480" src="https://streamable.com/e/2113kz" frameborder="0"> </iframe>
 
 ##### The analyzed sentiment is displayed as a grey (neutral), green (positive), or red (negative) dot next to the sentence.
 
