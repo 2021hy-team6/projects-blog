@@ -13,6 +13,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 * [Members](#member)
 * [Demo Video](#demo)
 * [Introduction](#introduction)
+* [Preamble](#preamble)
 * [Dataset](#dataset)
 * [Dataset Inspection](#dataset-inspection)
 * [Methodology](#methodology)
@@ -56,6 +57,14 @@ be available on the screen in real-time.
 When a meeting is held on video in a business situation, it may be difficult to accurately convey opinions. This can help you understand each other's intentions accurately by recording your remarks and help convey your opinions even in a video communication environment where communication is not smooth.
 
 Sentiment transcriber can also help those people's lives in that they can deliver accurate opinions and emotions at the same time to people with hearing impairment or speech impairment who have difficulty in communicating. In addition, sentimental transceiver can be helpful for those who have difficulty empathizing or recognizing other people's emotions. By recognizing positive and negative emotions, they can lead their communication in a better direction.
+
+### Preamble
+
+Initially, we were planning to use NUGU's SDK and provided models for transcription. However, upon getting access to the SDK and publicly available models, we found that the only models available were models such as an endpoint detection model, a keyword detection model, and a NUGU activation model - none of which would be suitable for our use. As such, we looked to use other available models, such as Mozilla's DeepSpeech. While testing it out with the provided model, we found that it was not accurate enough for our use-case. While our goal was never to have 100% transcription accuracy, we wanted to at least be able to look back and get the gist of what was said earlier, and the sentiment of that sentence. 
+
+In essence, since the accuracy of the transcription also directly impacts the accuracy of the sentiment analyzer, it would also result in both an inaccurate transcription of the conversation, but also a completely incorrect sentiment reading. For example, this is the result we received - which is incomprehensible. https://i.imgur.com/PYyHI9t.png
+
+![deepspeech_result](https://i.imgur.com/PYyHI9t.png)
 
 ### Dataset
 
@@ -494,3 +503,17 @@ We referred to several blogs, datasets and libraries in order to create the mode
 (e.g., existing studies)
 Tools, libraries, blogs, or any documentation that you have used to do this project.
 -->
+
+### Conclusion
+
+The above model was then saved, and then exported to the C++ application for use, alongside with a JSON of the word index. The application consists of a simple server, serving a webpage with basic HTML/CSS/JS to output the results of the transcription and sentiment analysis.
+
+The process that happens is that AWS Transcription SDK uses PortAudio to forward audio to the AWS Transcription API in order to begin the transcription process. As the audio is transcribed, there are two types - partial, and full. Partial can be described as the "incomplete" transcription, while Full is described as the "complete" transcription - essentially the final prediction of what the audio said.
+
+The final transcribed text is forwarded to the inference class. Internally, a similar text pre-processing occurs, where Amazon's Transcriptions results are then vectorized, processed, and then inserted into the model for inference. Partial text is not analyzed in order to cut down on unnecessary computation/inference on a non-final result, that will often be inaccurate. Partial text is still sent to the server however, to be displayed. The vectorized text was then passed through the word indexing map, to produce a vector of word indices, for inference. For inference, a Tensorflow wrapper library called Cppflow was used. This vector of word indices were then turned into the Cppflow Tensor objects, and inserted into the model for inference.
+
+A tensor is returned from this, looking like the following `[0 9 12]`. This is similar to our hot-encoding process, so it would be equivalent to `[0 0 1]`, or 2 - positive sentiment. The max index is computed and cast into a matching Sentiment Enum, and passed with the text to the server. The server then sends a websocket message to all subscribed clients, where the javascript on the page places a corresponding colored dot at the end of the final sentence based on the inferred sentiment (as is seen in the demo, or the picture below).
+
+![sentiment-transcriber-result](https://i.imgur.com/jvu3Zmh.png)
+
+Overall we noticed that there is some bias towards either positive or negative sentiment, as expected, with often neutral text being construed as negative or positive. In addition, there are times where it provides incorrect readings, which we suspect come down to overall model inaccuracies.
