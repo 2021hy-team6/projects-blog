@@ -109,8 +109,8 @@ Once the "Start" button is clicked, they will be brought to the next menu.
 
 The default connection value is camera index 0 (the device index - 0 refers to the default camera for the system), however it can be assigned to another index, or to a video (ie. mp4 or webcam stream) through the settings menu. For a webcam stream, a valid webcam stream link must be provided.
 
-![settings_1](https://user-images.githubusercontent.com/53211603/145336497-6b58d305-ff4b-468f-9201-086debdb7d68.jpg) {: width="50%" height="50%"}
-![app_settings](https://user-images.githubusercontent.com/53211603/145336472-7a5580b4-b637-4d76-a65e-1c9748da67bb.jpg){: width="50%" height="50%"}
+![settings_1](https://user-images.githubusercontent.com/53211603/145336497-6b58d305-ff4b-468f-9201-086debdb7d68.jpg)
+![app_settings](https://user-images.githubusercontent.com/53211603/145336472-7a5580b4-b637-4d76-a65e-1c9748da67bb.jpg)
 
 When the user clicks on "Adjust Settings" in the Settings Context Menu Button, they will be presented with a modal Settings Menu Window. In the window, they will see three tabs - one for OpenCV Settings, one for Application Settings, and one for Database Settings.
 
@@ -128,7 +128,7 @@ When an object class as a tip attached in the classification file, it will be sh
 
 #### Database Settings
 
-![settings_3](https://user-images.githubusercontent.com/53211603/145336500-c3f0478f-56b5-4320-bbe3-2cbedf310b90.jpg){: width="50%" height="50%"}
+![settings_3](https://user-images.githubusercontent.com/53211603/145336500-c3f0478f-56b5-4320-bbe3-2cbedf310b90.jpg)
 
 This tab will contain settings related to the database. In this, the user may simply decide to choose to disable, or enable, the usage of database with regards to scans. The user may choose to do this if they would prefer not to have a database instance running, have no need for a database, or for privacy reasons or convenience reasons (ie. choosing not to run the dashboard)
 
@@ -138,7 +138,7 @@ Specific settings such as the database connection string will only be accessible
 
 When the user clicks on "View Statistics" in the Statistics Context Menu Button, they will be presented with a Statistics Window. In the window, they will see two tabs - one for session stats, and one for overall stats.
 
-![statistics_session](https://user-images.githubusercontent.com/53211603/145336526-5bfb9d3e-267a-4d4d-b6b4-c488723a9a95.jpg){: width="50%" height="50%"}
+![statistics_session](https://user-images.githubusercontent.com/53211603/145336526-5bfb9d3e-267a-4d4d-b6b4-c488723a9a95.jpg)
 
 In the session stats window, they will see an "Overall Scan Count", and a "Categorical Scan Count". Overall scan count is self-explanatory - it is the number of times any object was scanned.
 
@@ -149,7 +149,7 @@ Categorical scan count is the number of times an object from a category was scan
 * Glass
 * Others
 
-![stats_overall](https://user-images.githubusercontent.com/53211603/145336532-db09194c-538e-4914-bcb6-fa019aa0ad95.jpg){: width="50%" height="50%"}
+![stats_overall](https://user-images.githubusercontent.com/53211603/145336532-db09194c-538e-4914-bcb6-fa019aa0ad95.jpg)
 
 This section is only functional if database is enabled and set up, as it requires database data in order to operate. It shows a button that will automatically launch the user's browser and direct them to the set dashboard for more in-depth information.
 
@@ -159,7 +159,7 @@ This section is only functional if database is enabled and set up, as it require
 
 In the dashboard window, it shows the number of detected objects for each hour and each super categories. The graph contains not all super categories, but displays top five most recognized super categories in a day.
 
-![chart_recyclable_rate](https://user-images.githubusercontent.com/53211603/145336490-0306851d-2880-448f-88c1-7fa7d33ee7c4.jpg){: width="70%"}
+![chart_recyclable_rate](https://user-images.githubusercontent.com/53211603/145336490-0306851d-2880-448f-88c1-7fa7d33ee7c4.jpg)
 
 Among the detected objects today, recyclable rates shows the percentage of recyclable objects for each hour. The number of objects which is marked as a recyclable ones is divided by the overall detection count. If an object has no label whether it is recyclable or not, those kinds of counts will be discarded in this statistics.
 
