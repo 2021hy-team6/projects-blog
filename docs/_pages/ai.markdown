@@ -33,7 +33,7 @@ Notebook Repository : [Notebook](https://github.com/2021hy-team6/sentiment_analy
 
 Direct Link: [Sentiment Transcriber Demo](https://streamable.com/2113kz)
 
-<iframe width="480" height="360" src="https://streamable.com/2113kz" frameborder="0"> </iframe>
+<iframe width="720" height="480" src="https://streamable.com/e/mcp8dr" frameborder="0"> </iframe>
 
 ##### The analyzed sentiment is displayed as a grey (neutral), green (positive), or red (negative) dot next to the sentence.
 
