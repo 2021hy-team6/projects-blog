@@ -191,7 +191,7 @@ This diagram shows our overall architecture and application ecosystem for this p
 
 ![db_diagram](https://user-images.githubusercontent.com/53211603/145336492-e35d368d-0dc8-44e6-a74e-2b3fede5926c.jpg)
 
-The diagram shows our architecture for the database, and the source of the database data (insertion sources).
+The diagram shows our architecture for the database, and the source of the database data.
 
 ## Conclusion
 
@@ -214,7 +214,7 @@ If home appliances or large products equipped with recycling assistant are relea
 * "Greyparrot AI." [Greyparrot](https://www.greyparrot.ai/waste-composition-analysis-software)
 * "Trash-Talking Recycling AI." [Nvidia Blogs](https://blogs.nvidia.com/blog/2020/02/03/intuitive-ai-schools-you-on-recycling/)
 * “Training SSD MobileNet v2 with TACO dataset” [Bouwe Ceunen](https://www.kaggle.com/bouweceunen/training-ssd-mobilenet-v2-with-taco-dataset/)
-* “Mask-RCNN-Tensorflow” [AWS] https://github.com/tensorflow/
+* “Mask-RCNN-Tensorflow” [AWS](https://github.com/tensorflow/)
 * “OpenCV” [OpenCV](https://github.com/opencv/opencv/)
 * "Qt" [Qt](https://www.qt.io/)
 * "PostgreSQL" [PostgreSQL](https://www.postgresql.org/)
