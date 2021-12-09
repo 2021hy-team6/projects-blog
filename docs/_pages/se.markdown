@@ -207,3 +207,16 @@ If home appliances or large products equipped with recycling assistant are relea
 
 ### Related Work
 
+* “Recycle Mate.” [Recycle Mate](https://recyclemate.com.au/)
+* “Bin-e Smart Waste Bin.” [Bin-e](https://www.bine.world/)
+* "World Waste Platform." [Let's Do It AI Project](https://ai.letsdoitworld.org/)
+* "TrashBot." [CleanRobotics](https://cleanrobotics.com/trashbot/)
+* "Greyparrot AI." [Greyparrot](https://www.greyparrot.ai/waste-composition-analysis-software)
+* "Trash-Talking Recycling AI." [Nvidia Blogs](https://blogs.nvidia.com/blog/2020/02/03/intuitive-ai-schools-you-on-recycling/)
+* “Training SSD MobileNet v2 with TACO dataset” [Bouwe Ceunen](https://www.kaggle.com/bouweceunen/training-ssd-mobilenet-v2-with-taco-dataset/)
+* “Mask-RCNN-Tensorflow” [AWS] https://github.com/tensorflow/
+* “OpenCV” [OpenCV](https://github.com/opencv/opencv/)
+* "Qt" [Qt](https://www.qt.io/)
+* "PostgreSQL" [PostgreSQL](https://www.postgresql.org/)
+* "libpqxx" [jtv](https://github.com/jtv/libpqxx/)
+* "rapidjson" [Tencent](https://github.com/Tencent/rapidjson/)
