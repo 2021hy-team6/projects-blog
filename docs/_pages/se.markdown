@@ -99,38 +99,40 @@ The TACO dataset also contains enough categories that we feel would cover genera
 
 ### Initial Setting & Connection
 
-<div style = "text-align: center">
-    <img src="https://user-images.githubusercontent.com/53211603/145336503-a7b09de6-5088-4655-b906-af883394dd2f.jpg" alt='initial page' width='450px' />
-</div>
+<img src="https://user-images.githubusercontent.com/53211603/145336503-a7b09de6-5088-4655-b906-af883394dd2f.jpg" alt='initial page' width='450px' />
 
 When the user first runs the application, their settings/config file will be read, and then they will be directed an initial starting screen. As the application will be run locally, there will be no login or registration required. The window size should be fixed. 
 
 Once the "Start" button is clicked, they will be brought to the next menu.
 
-![nothing_detected](https://user-images.githubusercontent.com/53211603/145336494-cf2fdd3f-7036-49bd-923d-4a87a623b7bb.jpg)
+<img src="https://user-images.githubusercontent.com/53211603/145336494-cf2fdd3f-7036-49bd-923d-4a87a623b7bb.jpg" alt='nothing_detected' width='450px'>
 
 The default connection value is camera index 0 (the device index - 0 refers to the default camera for the system), however it can be assigned to another index, or to a video (ie. mp4 or webcam stream) through the settings menu. For a webcam stream, a valid webcam stream link must be provided.
 
-![settings_1](https://user-images.githubusercontent.com/53211603/145336497-6b58d305-ff4b-468f-9201-086debdb7d68.jpg)
-![app_settings](https://user-images.githubusercontent.com/53211603/145336472-7a5580b4-b637-4d76-a65e-1c9748da67bb.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336497-6b58d305-ff4b-468f-9201-086debdb7d68.jpg' alt='setting_1' width='40%'>
+
+<img src='https://user-images.githubusercontent.com/53211603/145336472-7a5580b4-b637-4d76-a65e-1c9748da67bb.jpg' alt='app_setting' width='40%'>
 
 When the user clicks on "Adjust Settings" in the Settings Context Menu Button, they will be presented with a modal Settings Menu Window. In the window, they will see three tabs - one for OpenCV Settings, one for Application Settings, and one for Database Settings.
 
 ### Object Detection
 
-![successful_detection](https://user-images.githubusercontent.com/53211603/145336536-197c2166-c912-4fae-8f41-58fd8e1865ff.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336536-197c2166-c912-4fae-8f41-58fd8e1865ff.jpg' alt='successful_detection' width='450px'>
 
 When an object is detected by the model, a bounding box will be drawn on the object, alongside what it recognized, and the confidence level. In addition, the recycling category and any special instructions will be displayed.
 
-![aerosol_detected](https://user-images.githubusercontent.com/53211603/145336442-30741ea8-daa5-4353-b50c-9ca14aa153ff.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336442-30741ea8-daa5-4353-b50c-9ca14aa153ff.jpg' alt='aerosol_detected' width='450px'>
 
-When an object class as a tip attached in the classification file, it will be shown alongside the detection in the text. For example, the tip to not pierce an aerosol canister, or not to crush an aluminum drink can. However, if the object does not have a tip attached, such as the metal bottle cap, then no tip will be shown - only the detected object name, and the recycling class (Metal).
+When an object class as a tip attached in the classification file, it will be shown alongside the detection in the text. For example, the tip to not pierce an aerosol canister, or not to crush an aluminum drink can.
+
+However, if the object does not have a tip attached, such as the metal bottle cap, then no tip will be shown - only the detected object name, and the recycling class (Metal).
 
 ### Database & Statistics
 
 #### Database Settings
 
-![settings_3](https://user-images.githubusercontent.com/53211603/145336500-c3f0478f-56b5-4320-bbe3-2cbedf310b90.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336500-c3f0478f-56b5-4320-bbe3-2cbedf310b90.jpg' alt='Setting_3' width='450px'>
+
 
 This tab will contain settings related to the database. In this, the user may simply decide to choose to disable, or enable, the usage of database with regards to scans. The user may choose to do this if they would prefer not to have a database instance running, have no need for a database, or for privacy reasons or convenience reasons (ie. choosing not to run the dashboard)
 
@@ -140,7 +142,7 @@ Specific settings such as the database connection string will only be accessible
 
 When the user clicks on "View Statistics" in the Statistics Context Menu Button, they will be presented with a Statistics Window. In the window, they will see two tabs - one for session stats, and one for overall stats.
 
-![statistics_session](https://user-images.githubusercontent.com/53211603/145336526-5bfb9d3e-267a-4d4d-b6b4-c488723a9a95.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336526-5bfb9d3e-267a-4d4d-b6b4-c488723a9a95.jpg' alt='statistics_session' width='450px'>
 
 In the session stats window, they will see an "Overall Scan Count", and a "Categorical Scan Count". Overall scan count is self-explanatory - it is the number of times any object was scanned.
 
@@ -151,33 +153,35 @@ Categorical scan count is the number of times an object from a category was scan
 * Glass
 * Others
 
-![stats_overall](https://user-images.githubusercontent.com/53211603/145336532-db09194c-538e-4914-bcb6-fa019aa0ad95.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336532-db09194c-538e-4914-bcb6-fa019aa0ad95.jpg' alt='stats_overall' width='450px'>
 
 This section is only functional if database is enabled and set up, as it requires database data in order to operate. It shows a button that will automatically launch the user's browser and direct them to the set dashboard for more in-depth information.
 
 #### Dashboard
 
-![chart_hourly_detected](https://user-images.githubusercontent.com/53211603/145336479-f3aacef9-f71a-49cd-b9fa-f4d2e8881d37.jpg)
+<img src='https://user-images.githubusercontent.com/53211603/145336479-f3aacef9-f71a-49cd-b9fa-f4d2e8881d37.jpg' alt='chart_hourly_detected' width='450px'>
+
 
 In the dashboard window, it shows the number of detected objects for each hour and each super categories. The graph contains not all super categories, but displays top five most recognized super categories in a day.
 
-![chart_recyclable_rate](https://user-images.githubusercontent.com/53211603/145336490-0306851d-2880-448f-88c1-7fa7d33ee7c4.jpg)
+<img src = 'https://user-images.githubusercontent.com/53211603/145336490-0306851d-2880-448f-88c1-7fa7d33ee7c4.jpg' alt = 'chart_recyclable_rate' width = '450px'>
 
 Among the detected objects today, recyclable rates shows the percentage of recyclable objects for each hour. The number of objects which is marked as a recyclable ones is divided by the overall detection count. If an object has no label whether it is recyclable or not, those kinds of counts will be discarded in this statistics.
 
-![chart_detection_time](https://user-images.githubusercontent.com/53211603/145336476-67cf9c1d-4655-45e3-9633-e97750d213ac.jpg)
+<img src = 'https://user-images.githubusercontent.com/53211603/145336476-67cf9c1d-4655-45e3-9633-e97750d213ac.jpg' alt = 'chart_detection_time' width='450px'>
 
 Detection time chart tracks how long it takes to make an prediction for a scanned image in the precision of a millisecond. This statistics contains the average of these times for each hour of today. If there is no detection in some hours, the graph won't contain those hours in x axis.
 
-![chart_usage_counts](https://user-images.githubusercontent.com/53211603/145338528-3d3d7fa9-b1d2-44cb-a2ea-6d5596767769.jpg)
+<img src = 'https://user-images.githubusercontent.com/53211603/145338528-3d3d7fa9-b1d2-44cb-a2ea-6d5596767769.jpg' alt = 'chart_usage_counts' width = '450px'>
 
 Usage counts collects the overall number of detected images for a week. The images without any detection will be excluded in this statistics. It also contains today's records until the time of stats.
 
-![chart_monthly_comp](https://user-images.githubusercontent.com/53211603/145336483-d38feb34-923c-47d9-916c-aabde680f43d.jpg)
+<img src = 'https://user-images.githubusercontent.com/53211603/145336483-d38feb34-923c-47d9-916c-aabde680f43d.jpg' alt = 'chart_monthly_comp' width='450px'>
 
 Monthly comparison table compares this month's scanned counts for each super category with the last month's one. This charts shows five super categories with the most counts at this month. The differences of numbers between two months will be also shown.
 
-![chart_most_detected](https://user-images.githubusercontent.com/53211603/145336487-8bd7bdc1-f3ce-4e1c-af3e-652f39cf874e.jpg)
+<img src = 'https://user-images.githubusercontent.com/53211603/145336487-8bd7bdc1-f3ce-4e1c-af3e-652f39cf874e.jpg' alt = 'chart_most_deteched' width = '450px'>
+
 
 Most detected objects table shows the cumulative counts of recyclable objects in this year. This list will have top 10 most detected objects' names with their super category. It also calculates the proportions of scanned objects, divided by the number of overall scanned images.
 
@@ -185,13 +189,13 @@ Most detected objects table shows the cumulative counts of recyclable objects in
 
 ### System Diagram
 
-![app_diagram](https://user-images.githubusercontent.com/53211603/145336468-d8642519-eb56-49d8-a7f7-0ee2365c45a7.jpg)
+<img src = "https://user-images.githubusercontent.com/53211603/145336468-d8642519-eb56-49d8-a7f7-0ee2365c45a7.jpg" alt = "app_diagram" width = "70%">
 
 This diagram shows our overall architecture and application ecosystem for this project.
 
 ### Database Architecture
 
-![db_diagram](https://user-images.githubusercontent.com/53211603/145336492-e35d368d-0dc8-44e6-a74e-2b3fede5926c.jpg)
+<img src = "https://user-images.githubusercontent.com/53211603/145336492-e35d368d-0dc8-44e6-a74e-2b3fede5926c.jpg" alt = "db_diagram" width = "70%">
 
 The diagram shows our architecture for the database, and the source of the database data.
 
