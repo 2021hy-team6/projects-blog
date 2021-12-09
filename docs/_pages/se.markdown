@@ -119,7 +119,7 @@ In the setting menu, the user can change the setting at any time.
 
 When an object is detected by the model, a bounding box will be drawn on the object, alongside what it recognized, and the confidence level. In addition, the recycling category and any special instructions will be displayed.
 
-![Aerosol] (/Users/kimsoohyun/Documents/GitHub/projects-blog/docs/files/images/aerosol_detected.jpg)
+![aerosol_detected](https://user-images.githubusercontent.com/53211603/145336442-30741ea8-daa5-4353-b50c-9ca14aa153ff.jpg)
 
 When an object class as a tip attached in the classification file, it will be shown alongside the detection in the text. For example, the tip to not pierce an aerosol canister, or not to crush an aluminum drink can. However, if the object does not have a tip attached, such as the metal bottle cap, then no tip will be shown - only the detected object name, and the recycling class (Metal).
 
