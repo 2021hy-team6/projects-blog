@@ -24,7 +24,7 @@
 
     iframe {
         width: calc(100% - 120px);
-        aspect-ratio: 16/6.85;
+        aspect-ratio: 16/6.84;
         border: 0;
         box-shadow: 0 5px 5px #666;
 
@@ -40,12 +40,8 @@
         }
     }
 
-    .highlight-list {
-        font-weight: 700;
-
-        li::marker{
-            content: "► ";
-        }
+    em {
+        font-size: 20px;
     }
 
     .eyebrow {
@@ -80,6 +76,10 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 24px;
+
+        &.text-bold {
+            font-weight: 700;
+        }
     }
 
     .endnote {
