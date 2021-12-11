@@ -1,47 +1,23 @@
 ---
-layout: page
+layout: se-page
 title: Recycling Assistant
 permalink: /se/
 ---
 
-> Identifying and Categorizing Objects based on Recyclability
-
-### Repositories
-
-- C++ Application Repository : [RecycleM8 Github Repository](https://github.com/2021hy-team6/recyclem8) 
-- Recycling Assistant Repository : [Recycing Assistant Repository](https://github.com/2021hy-team6/recycle-assistant)
-- Dashboard Repository : [Dashboard Github Repository](https://github.com/2021hy-team6/dashboard)
-
-### Paper
-
-- View Paper : [Direct PDF Viewing Link](https://github.com/2021hy-team6/se-paper/blob/main/recycling-assistant-paper-WIP.pdf)
-- Download Paper : [Direct PDF Download Link](https://raw.githubusercontent.com/2021hy-team6/se-paper/main/recycling-assistant-paper-WIP.pdf)
-
-### Demo
-- Application demo : [Application Demo Video](https://streamable.com/kcvpuh)
-- Detection demo : [Detection Demo Video](https://streamable.com/6ysf35)
-- Dashboard demo : [Dashboard Demo Video](https://aiseteamproject.slack.com/files/U02EYF2MTAQ/F02PW8Z5E7Q/recycle-assistant-dashboard.mp4)
-
-
-### Members
-
-* Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
-* Kim Soohyun, Dept. Information Systems, soowithwoo@gmail.com
-* Lim Hongrok, Dept. Information Systems, hongrr123@gmail.com
-
-### Abstract
-
-|Input|Modules that help Classification|Using AI Technology|Output|
-|:-------------------:|:-------------------:|:----------------:|:--------------------:|
-|An object to the camera in real-time|**OpenCV, TACO**|**Recycling Statistics**|Feedback to the user which category the object has to be recycled|
-
 ### Table of Content
 
+* [Members](#members)
 * [Introduction](#introduction)
 * [Development Envirionment](#development-envirionment)
 * [Specifications](#specifications)
 * [Architecture Implementation](#architecture-implementation)
 * [Conclusion](#conclusion)
+
+## Members
+
+* Doo Woong Chung, Dept. Information Systems, dwchung@hanyang.ac.kr
+* Kim Soohyun, Dept. Information Systems, soowithwoo@gmail.com
+* Lim Hongrok, Dept. Information Systems, hongrr123@gmail.com
 
 ## Introduction
 
