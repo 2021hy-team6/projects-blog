@@ -29,8 +29,6 @@
     iframe {
         width: calc(100% - 120px);
         aspect-ratio: 16/6.8;
-        border: 0;
-        box-shadow: 0 5px 5px #666;
 
         @media (max-width: $se-media-breakpoint) {
             width: calc(100% - 12px);
@@ -38,7 +36,7 @@
     }
 
     img {
-        width: calc(100% - 30px);
+        max-width: calc(100% - 30px);
         @media (max-width: $se-media-breakpoint) {
             max-width: calc(#{$se-media-breakpoint} / 2);
         }
@@ -47,7 +45,12 @@
     em {
         font-size: 20px;
     }
-
+    
+    .border-shadow {
+        border: 0;
+        box-shadow: 0 5px 5px #666;
+    }
+    
     .eyebrow {
         color: #666;
         
