@@ -12,7 +12,7 @@ include:
 
 header_pages:
   - _pages/ai.markdown
-  - _pages/se.markdown
+  - _pages/se-kor.markdown
   - _pages/posts.markdown
 
 sass:

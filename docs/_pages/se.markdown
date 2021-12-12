@@ -1,8 +1,15 @@
 ---
-layout: se-page
+layout: page
 title: Recycling Assistant
 permalink: /se/
 ---
+
+> Identifying and Categorizing Objects based on Recyclability
+
+* Introduction : [서비스 설명 (한글)]({{ '/se-kor' | relative_url }})
+* Repository : [Recycing Assistant](https://github.com/2021hyt6-recyclingassistant)
+* Paper : [PDF Download Link](https://github.com/2021hyt6-techblog/se-paper/raw/main/RecyclingAssistant-Paper.pdf)
+* Demo : [Introduction Video](https://streamable.com/cciqhb)
 
 ### Table of Content
 
