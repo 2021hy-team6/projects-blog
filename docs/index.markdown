@@ -8,7 +8,7 @@ title: Team 6 Tech Blog
 |Category|Project                |Post                               |
 |--------|-----------------------|-----------------------------------|
 |AI      |sentiment-transcriber  |[link]({{ "/ai/" | relative_url }})|
-|SE      |recycle-assistant      |[link]({{ "/se-kor/" | relative_url }}) / [link]({{ "/se/" | relative_url }})|
+|SE      |recycle-assistant      |[kor]({{ "/se-kor/" | relative_url }}) / [en]({{ "/se/" | relative_url }})|
 
 **Members**
 
